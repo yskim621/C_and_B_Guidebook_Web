@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+	"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+	"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+	<hibernate-mapping package="gmail.yskim62100.c_and_b_guidebook.domain">
+		<class name="Boardtbl" table="boardtbl">
+			<id name="boardnum" column="boardnum"/>
+			<property name="boardtitle" column="boardtitle"/>
+			<property name="boardcontent" column="boardcontent"/>
+			<property name="boardwritedate" column="boardwritedate"/>
+			<property name="boardreadcnt" column="boardreadcnt"/>
+			<property name="boardattachment" column="boardattachment"/>
+			<property name="membernickname" column="membernickname"/>
+		</class>
+	</hibernate-mapping>
