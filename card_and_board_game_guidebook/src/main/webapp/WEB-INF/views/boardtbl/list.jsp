@@ -5,10 +5,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>데이터 목록 보기</title>
+<title>서비스 개선 건의사항</title>
 </head>
 <body>
-	<h3 align="center">데이터 목록 보기</h3>
+	<h3 align="center">서비스 개선 건의사항</h3>
 	<div align="center" id="board">
 		<table align="center" border="1">
 			<tr>
@@ -20,7 +20,6 @@
 			</tr>
 			<c:forEach var="boardtbl" items="${list}">
 				<tr>
-				<a href="detail/${item.itemid}">${item.itemname}</a>
 					<td align="center">&nbsp;${boardtbl.boardnum}</td>
 					<td>
 					<a href="detail/${boardtbl.boardnum}">&nbsp;${boardtbl.boardtitle}</a>
@@ -37,7 +36,7 @@
 </body>
 <script>
 	document.getElementById("boardwrite").addEventListener("click", function(){
-		location="${pageContext.request.contextPath}/boardtbl/insert";
+		location="${pageContext.request.contextPath}/board/write";
 	});
 	document.getElementById("mainbtn").addEventListener("click", function() {
 		location.href = "${pageContext.request.contextPath}/";

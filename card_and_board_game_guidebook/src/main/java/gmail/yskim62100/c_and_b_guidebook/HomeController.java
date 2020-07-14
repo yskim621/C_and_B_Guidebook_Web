@@ -3,8 +3,12 @@ package gmail.yskim62100.c_and_b_guidebook;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -50,6 +54,18 @@ public class HomeController {
 		return "membertbl/login/login";
 	}
 	
+	@RequestMapping(value="board/write", method = RequestMethod.GET)
+	public String insert(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "boardtbl/write";
+	}
 	
-	
+	/*
+	// 예외가 발생하면 처리하는 메소드
+	@ExceptionHandler(Exception.class)
+	public String handleException(Exception e, Model model) {
+		model.addAttribute("result", e.getMessage());
+		return "exceptionhandling/error404";
+	}
+	*/
 }

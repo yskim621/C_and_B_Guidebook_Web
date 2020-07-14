@@ -5,8 +5,8 @@
 	
 	<hibernate-mapping package="gmail.yskim62100.c_and_b_guidebook.domain">
 		<class name="Membertbl" table="membertbl">
-			<id name="membernickname" column="membernickname"/>
-			<property name="memberemail" column="memberemail"/>
+			<id name="memberemail" column="memberemail"/>
+			<property name="membernickname" column="membernickname"/>
 			<property name="membergender" column="membergender"/>
 			<property name="memberleave" column="memberleave"/>
 			<property name="membername" column="membername"/>

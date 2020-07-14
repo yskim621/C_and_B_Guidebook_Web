@@ -25,8 +25,7 @@
 			</tr>
 			<tr>
 				<td>
-				<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">
-				${boardtbl.boardcontent}</textarea>
+				<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
 				</td>
 			</tr>
 		</table>

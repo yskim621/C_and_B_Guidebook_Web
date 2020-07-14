@@ -9,8 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
+// Spring엣 JUnit4 라이브러리를 사용하기 위한 설정
 @RunWith(SpringJUnit4ClassRunner.class)
+// locations에 설정된 파일들을 실행시켜서 메모리에 로드하기 위한 설정
+// 프레임워크마다 설정 파일의 경로가 다르므로 web.xml에 설정된 내용을 확인
+@WebAppConfiguration
 @ContextConfiguration(locations = { "file:src/main/webapp/WEB-INF/spring/root-context.xml" })
 public class BoardtblTest {
 	// 데이터 베이스 접속 정보 주입

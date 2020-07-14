@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!-- 에러가 발생한 경우 보여질 페이지 설정 -->
-<%@ page errorPage="${pageContext.request.contextPath}/ceptionhandling/error404.jsp"%>
+<%@ page errorPage="${pageContext.request.contextPath}/WEB-INF/views/exceptionhandling/error404.jsp"%>
 <!DOCTYPE html>
 <html>
 <head>

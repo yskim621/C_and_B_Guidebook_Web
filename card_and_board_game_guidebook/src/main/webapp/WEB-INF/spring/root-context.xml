@@ -34,6 +34,7 @@
 			<list>
 				<!-- 변하는 부분 -->
 				<value>gmail/yskim62100/c_and_b_guidebook/dao/boardtbl.hbm.xml</value>
+				<value>gmail/yskim62100/c_and_b_guidebook/dao/membertbl.hbm.xml</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -43,5 +44,4 @@
 		</property>
 	</bean>
 	
-
 </beans>

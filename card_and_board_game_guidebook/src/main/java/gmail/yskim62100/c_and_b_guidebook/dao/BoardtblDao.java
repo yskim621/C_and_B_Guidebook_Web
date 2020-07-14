@@ -1,6 +1,7 @@
 package gmail.yskim62100.c_and_b_guidebook.dao;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.hibernate.SessionFactory;
@@ -18,17 +19,25 @@ public class BoardtblDao {
 	
 	// 전체 데이터 가져오기
 	public List<Boardtbl> list() {
-		return sessionFactory.getCurrentSession().createCriteria(Boardtbl.class).list();
-		
+		List<Boardtbl> list = sessionFactory.getCurrentSession().createCriteria(Boardtbl.class).list();
+		return list;	
 	}
 	
 	// 상세보기
-	public Boardtbl detail(Integer boardtblnum) {
-		return sessionFactory.getCurrentSession().get(Boardtbl.class, boardtblnum);
+	public Boardtbl detail(Integer boardnum) {
+		return sessionFactory.getCurrentSession().get(Boardtbl.class, boardnum);
 	}
 	
 	
+	// 데이터 삽입
+	public Boardtbl insert(Boardtbl boardtbl) {
+		//System.out.println("DAO 요청 도달");
 
+		sessionFactory.getCurrentSession().save(boardtbl);
+		return boardtbl;
+	}
+	
+	
 	
 	
 }

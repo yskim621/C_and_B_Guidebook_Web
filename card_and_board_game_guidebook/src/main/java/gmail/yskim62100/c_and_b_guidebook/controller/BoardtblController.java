@@ -32,4 +32,7 @@ public class BoardtblController {
 		
 		return "boardtbl/detail";
 	}
+	
+
+
 }
