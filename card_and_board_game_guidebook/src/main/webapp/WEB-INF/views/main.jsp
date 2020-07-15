@@ -68,68 +68,20 @@
 		</section>
 
 		<!-- Features -->
-		<section id="features">
-			<div class="container">
-				<div class="row">
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #1 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic01.jpg" alt="" /></a>
-							<h2>Welcome to Halcyonic</h2>
-							<p>
-								This is <strong>Halcyonic</strong>, a free site template by <a
-									href="http://twitter.com/ajlkn">AJ</a> for <a
-									href="http://html5up.net">HTML5 UP</a>. It's responsive, built
-								on HTML5 + CSS3, and includes 5 unique page layouts.
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #2 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic02.jpg" alt="" /></a>
-							<h2>Responsive You Say?</h2>
-							<p>Yes! Halcyonic is built to be fully responsive so it looks
-								great at every screen size, from desktops to tablets to mobile
-								phones.</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #3 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic03.jpg" alt="" /></a>
-							<h2>License Info</h2>
-							<p>
-								Halcyonic is licensed under the <a
-									href="http://html5up.net/license">CCA</a> license, so use it
-								for personal/commercial use as much as you like (just keep our
-								credits intact).
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #4 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic04.jpg" alt="" /></a>
-							<h2>Volutpat etiam aliquam</h2>
-							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
-								sed. Suspendisse eu varius nibh. Suspendisse vitae magna mollis.
-							</p>
-						</section>
-
-					</div>
-				</div>
+		<section id="features" >
+			<div class="container" align="center">
+				<h2 align="center">▶Welcome to C & B Guidebook◀</h2><br/>
+				<p>
+					<strong>
+						<h2>Card and Bard Game Guidebook은</h2><br/>
+						
+						트럼프 카드 -> 포커 / 블랙잭 / 훌라 / 바카라<br/>
+						보드 게임 -> 체스 / 바둑 / 장기 / 오목<br/>
+						화투 -> 맞고 / 섯다<br/>
+						<br/>
+						트럼프 카드, 화투 및 보드 게임에 관한 각각의 게임 정보와 룰에 대한 서비스를 제공합니다.<br/>
+					</strong> 
+				</p>
 			</div>
 		</section>
 
@@ -145,8 +97,7 @@
 								<h2>Who We Are</h2>
 								<h3>A subheading about who we are</h3>
 							</header>
-							<a href="#" class="feature-image"><img src="images/pic05.jpg"
-								alt="" /></a>
+							
 							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
 								magna sed. Suspendisse eu varius nibh. Suspendisse vitae magna
 								eget odio amet mollis justo facilisis quis. Sed sagittis amet
@@ -181,13 +132,13 @@
 								<h3>And a final subheading about our clients</h3>
 							</header>
 							<ul class="quote-list">
-								<li><img src="images/pic06.jpg" alt="" />
+								
 									<p>"Neque nisidapibus mattis"</p> <span>Jane Doe, CEO of
 										UntitledCorp</span></li>
-								<li><img src="images/pic07.jpg" alt="" />
+								
 									<p>"Lorem ipsum consequat!"</p> <span>John Doe,
 										President of FakeBiz</span></li>
-								<li><img src="images/pic08.jpg" alt="" />
+								
 									<p>"Magna veroeros amet tempus"</p> <span>Mary Smith,
 										CFO of UntitledBiz</span></li>
 							</ul>

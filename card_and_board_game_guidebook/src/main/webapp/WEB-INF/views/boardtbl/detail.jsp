@@ -7,7 +7,7 @@
 <title>게시글</title>
 </head>
 <body>
-	<h3 align="center">데이터 목록 보기</h3>
+	<h3 align="center">게시글 보기</h3>
 	<div align="center" id="board">
 		<table align="center" border="1">
 			<tr>
@@ -34,6 +34,9 @@
 	</div>
 </body>
 <script>
+	document.getElementById("updatebtn").addEventListener("click", function() {
+		location.href = "${pageContext.request.contextPath}/board/update/{boardtblnum}";
+	});
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "${pageContext.request.contextPath}/board/list";
 	});

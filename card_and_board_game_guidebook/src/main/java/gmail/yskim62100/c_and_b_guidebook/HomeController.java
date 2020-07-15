@@ -54,11 +54,7 @@ public class HomeController {
 		return "membertbl/login/login";
 	}
 	
-	@RequestMapping(value="board/write", method = RequestMethod.GET)
-	public String insert(HttpServletRequest request, HttpServletResponse response) {
-		
-		return "boardtbl/write";
-	}
+
 	
 	/*
 	// 예외가 발생하면 처리하는 메소드

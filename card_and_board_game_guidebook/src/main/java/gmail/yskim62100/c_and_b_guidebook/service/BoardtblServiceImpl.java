@@ -1,15 +1,13 @@
 package gmail.yskim62100.c_and_b_guidebook.service;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.hibernate.SQLQuery;
+
 import org.hibernate.SessionFactory;
-import org.hibernate.query.NativeQuery;
-import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -21,7 +19,7 @@ import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 public class BoardtblServiceImpl implements BoardtblService {
 	@Autowired
 	private BoardtblDao boardtblDao;
-	private SessionFactory sessionFactory;
+
 	
 	@Override
 	@Transactional
@@ -69,21 +67,13 @@ public class BoardtblServiceImpl implements BoardtblService {
 			String boardcontent = request.getParameter("boardcontent");
 			
 			
-			//SQLQuery query  = sessionFactory.getCurrentSession().createSQLQuery("select max(boardnum) from boardtbl").addEntity(entityName)
-			//int boardnum = (Integer) query.getParameterValue("boardnum");
-			//boardnum = boardnum + 1;
-			
-			
 			// System.out.println("boardtitle:" + boardtitle);
 			// System.out.println("boardcontent: " + boardcontent);
 		
-			boardtbl.setBoardnum(7);
 			boardtbl.setBoardtitle(boardtitle);
 			boardtbl.setBoardcontent(boardcontent);
-			boardtbl.setMembernickname("광고문의");
 			
-			
-			System.out.println(boardtbl);
+			System.out.println("Service: " + boardtbl);
 			boardtbl = boardtblDao.insert(boardtbl);
 			
 			request.setAttribute("boardtbl", boardtbl);

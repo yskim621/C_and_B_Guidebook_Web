@@ -32,7 +32,17 @@ public class BoardtblController {
 		
 		return "boardtbl/detail";
 	}
+		
+	@RequestMapping(value="board/write", method = RequestMethod.GET)
+	public String insert(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "boardtbl/write";
+	}
 	
-
+	@RequestMapping(value="board/update/{boardtblnum}", method = RequestMethod.GET)
+	public String update(HttpServletRequest request, HttpServletResponse response) {
+		
+		return "boardtbl/update";
+	}
 
 }

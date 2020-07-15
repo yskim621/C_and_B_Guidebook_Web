@@ -32,11 +32,19 @@ public class BoardtblDao {
 	// 데이터 삽입
 	public Boardtbl insert(Boardtbl boardtbl) {
 		//System.out.println("DAO 요청 도달");
-
+		List<Boardtbl> list = sessionFactory.getCurrentSession().createSQLQuery("select * from boardtbl where boardnum = (select max(boardnum) from boardtbl)").addEntity(Boardtbl.class).list();
+		// System.out.println("DAO: " + list);
+		// System.out.println("DAO: " + list.get(0));
+		
+		boardtbl.setBoardnum(list.get(0).getBoardnum() + 1);
+		boardtbl.setMembernickname("광고문의");
+		
 		sessionFactory.getCurrentSession().save(boardtbl);
 		return boardtbl;
 	}
 	
+	// 데이터 수정
+	 
 	
 	
 	
