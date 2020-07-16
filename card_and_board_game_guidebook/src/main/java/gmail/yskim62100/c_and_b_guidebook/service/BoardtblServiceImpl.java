@@ -73,8 +73,10 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardtitle(boardtitle);
 			boardtbl.setBoardcontent(boardcontent);
 			
-			System.out.println("Service: " + boardtbl);
+			System.out.println("Service1: " + boardtbl);
+			
 			boardtbl = boardtblDao.insert(boardtbl);
+			System.out.println("Service2: " + boardtbl);
 			
 			request.setAttribute("boardtbl", boardtbl);
 			

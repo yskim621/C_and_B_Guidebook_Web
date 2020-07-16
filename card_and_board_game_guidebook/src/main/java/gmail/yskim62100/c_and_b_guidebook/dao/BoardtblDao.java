@@ -33,8 +33,8 @@ public class BoardtblDao {
 	public Boardtbl insert(Boardtbl boardtbl) {
 		//System.out.println("DAO 요청 도달");
 		List<Boardtbl> list = sessionFactory.getCurrentSession().createSQLQuery("select * from boardtbl where boardnum = (select max(boardnum) from boardtbl)").addEntity(Boardtbl.class).list();
-		// System.out.println("DAO: " + list);
-		// System.out.println("DAO: " + list.get(0));
+		System.out.println("DAO: " + list);
+		System.out.println("DAO: " + list.get(0));
 		
 		boardtbl.setBoardnum(list.get(0).getBoardnum() + 1);
 		boardtbl.setMembernickname("광고문의");

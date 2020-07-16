@@ -19,10 +19,13 @@ public class BoardtblRestController {
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
 	public Boardtbl insert(HttpServletRequest request, HttpServletResponse response) {
 		
-		// System.out.println("요청도달");
+		System.out.println("요청도달");
+		
 		boardtblService.insert(request, response);
+		
 		Boardtbl boardtbl = (Boardtbl)request.getAttribute("boardtbl");
 		System.out.println("RestController: " + boardtbl);
+		
 		return boardtbl;
 	}
 }
