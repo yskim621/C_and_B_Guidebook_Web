@@ -29,14 +29,11 @@
 				</td>
 			</tr>
 		</table>
-		<input type="button" value="수정" id="updatebtn" name="updatebtn" /> 
+		<a href="../update/${boardtbl.boardnum}"><input type="button" value="수정" id="updatebtn" name="updatebtn" /></a>
 		<input type="button" value="목록으로" id="listbtn" />
 	</div>
 </body>
 <script>
-	document.getElementById("updatebtn").addEventListener("click", function() {
-		location.href = "${pageContext.request.contextPath}/board/update/{boardtblnum}";
-	});
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "${pageContext.request.contextPath}/board/list";
 	});

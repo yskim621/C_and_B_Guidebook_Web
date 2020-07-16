@@ -9,26 +9,10 @@
 <body>
 	<h3 align="center">게시글 수정</h3>
 	<div align="center" id="board">
-		<table align="center" border="1">
-			<tr>
-				<td>제목: &nbsp;${boardtbl.boardtitle}</td><br/>
-			</tr>
-			<tr>	
-				<td>
-				&nbsp;${boardtbl.membernickname}<br/>
-				&nbsp;${boardtbl.boardwritedate}
-				&nbsp;	조회수:${boardtbl.boardreadcnt}
-				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;${boardtbl.boardattachment}</td>
-			</tr>
-			<tr>
-				<td>
+		<form>
+				<input type="text" value="${boardtbl.boardtitle}" name="boardtitle" id="boardtitle" size="30"/><br/>
 				<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
-				</td>
-			</tr>
-		</table>
+		</form>
 		<input type="button" value="수정 취소" id="cancelupdatebtn" name="cancelupdatebtn" /> 
 		<input type="button" value="목록으로" id="listbtn" />
 	</div>

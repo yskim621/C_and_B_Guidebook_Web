@@ -42,6 +42,9 @@ public class BoardtblController {
 	@RequestMapping(value="board/update/{boardtblnum}", method = RequestMethod.GET)
 	public String update(HttpServletRequest request, HttpServletResponse response) {
 		
+		// 서비스 메소드 호출
+		boardtblService.detail(request, response);
+		
 		return "boardtbl/update";
 	}
 

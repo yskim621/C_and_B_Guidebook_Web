@@ -28,4 +28,6 @@ public class BoardtblRestController {
 		
 		return boardtbl;
 	}
+	
+	
 }
