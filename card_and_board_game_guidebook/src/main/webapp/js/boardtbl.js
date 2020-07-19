@@ -34,9 +34,12 @@ window.addEventListener("load", function(event){
 			// console.log("클릭");
 			// console.log(e.target.responseText)
 			// 결과를 파싱
-			var obj = JSON.parse(e.target.responseText);
-			// console.log(obj);
+			var data = JSON.parse(e.target.responseText);
+			// console.log(data);
 			
+			if(data != null){
+				location.href = "list";
+			}
 		});
 		
 	});

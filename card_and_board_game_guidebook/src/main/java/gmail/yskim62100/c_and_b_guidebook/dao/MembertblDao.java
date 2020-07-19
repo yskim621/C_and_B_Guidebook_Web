@@ -21,4 +21,10 @@ public class MembertblDao {
 	public Membertbl detail(String memberemail) {
 		return sessionFactory.getCurrentSession().get(Membertbl.class, memberemail);
 	}
+	
+	public Membertbl register(Membertbl membertbl) {
+		
+		sessionFactory.getCurrentSession().save(membertbl);
+		return membertbl;
+	}
 }

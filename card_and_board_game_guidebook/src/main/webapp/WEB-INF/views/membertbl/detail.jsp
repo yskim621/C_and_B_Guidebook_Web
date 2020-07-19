@@ -1,41 +1,64 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>게시글</title>
+<title>회원 정보</title>
+
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
+<!-- register/js/register.js -->
+<script src="${pageContext.request.contextPath}/js/register.js"></script>
 </head>
 <body>
-	<h3 align="center">데이터 목록 보기</h3>
-	<div align="center" id="board">
-		<table align="center" border="1">
-			<tr>
-				<td>제목: &nbsp;${boardtbl.boardtitle}</td><br/>
-			</tr>
-			<tr>	
-				<td>
-				&nbsp;${boardtbl.membernickname}<br/>
-				&nbsp;${boardtbl.boardwritedate}
-				&nbsp;	조회수:${boardtbl.boardreadcnt}
-				</td>
-			</tr>
-			<tr>
-				<td>&nbsp;${boardtbl.boardattachment}</td>
-			</tr>
-			<tr>
-				<td>
-				<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
-				</td>
-			</tr>
-		</table>
-		<input type="button" value="수정" id="updatebtn" name="updatebtn" /> 
-		<input type="button" value="목록으로" id="listbtn" />
+	<div id="form" align="center">
+		<form  id="registerform" enctype="multipart/form-data">
+			<h2 align="center">회원 정보</h2><br />
+			<table align="center">
+				<tr>
+					<td>
+					<input type="text" id="memberemail" name="memberemail"class="textinput" placeholder="email을 입력하십시오." readonly="readonly"/>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="password" id="memberpassword" name="memberpassword" class="textinput" placeholder="비밀번호(15자리이하)를 입력하시오." /></td>
+				</tr>
+				<tr>
+					<td><input type="text" id="membername" name="membername" class="textinput" placeholder="이름을 입력하시오." /></td>
+				</tr>
+				<tr>
+					<td>
+					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="별명을 입력하시오." />
+					<div id="membernicknamemsg"></div>
+					</td>
+				</tr>
+				<tr>
+					<td><input type="text" id="memberphone" name="memberphone"
+						class="textinput" placeholder="전화번호 8자리(숫자만 입력)를 입력하시오." /></td>
+				</tr>
+				<tr>
+					<td>
+						<fieldset id="membergender">
+							<legend>성별</legend>
+							<input type="radio" value="man" name="membergender" checked="checked" />남자
+							<input type="radio" value="woman" name="membergender" />여자
+						</fieldset>
+					</td>
+				</tr>
+				<tr>
+					<td>
+					<!--  웹만 하면 type은 submit -->
+					<input type="button" value="메인 페이지로" id="mainbtn"/>
+					<input type="button" value="로그인 페이지로" id="loginbtn"/>
+					</td>
+				</tr>
+			</table>
+		</form>
+
+		<footer>
+			<h3>C & B Guidebook에 오신 것을 환영합니다</h3>
+		</footer>
 	</div>
 </body>
-<script>
-	document.getElementById("listbtn").addEventListener("click", function() {
-		location.href = "${pageContext.request.contextPath}/board/list";
-	});
-</script>
 </html>

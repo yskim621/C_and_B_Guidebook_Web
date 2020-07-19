@@ -8,4 +8,6 @@ public interface MembertblService {
 	public void list(HttpServletRequest request, HttpServletResponse response);
 	
 	public void detail(HttpServletRequest request, HttpServletResponse response);
+	
+	public void register(HttpServletRequest request, HttpServletResponse response);
 }
