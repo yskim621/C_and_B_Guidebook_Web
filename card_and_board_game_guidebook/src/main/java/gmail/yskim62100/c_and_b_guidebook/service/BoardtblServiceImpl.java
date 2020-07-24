@@ -86,4 +86,32 @@ public class BoardtblServiceImpl implements BoardtblService {
 		}
 		 
 	}
+
+	@Override
+	public void update(HttpServletRequest request, HttpServletResponse response) {
+		Boardtbl boardtbl = new Boardtbl();
+		try {
+			// 요청 주소의 마지막 부분 가져오기
+			// localhost/board/update/boardnum
+			String requestURI = request.getRequestURI();
+			String [] ar = requestURI.split("/");
+			String boardnum = ar[ar.length-1];
+			
+			System.out.println("boardnum: " + boardnum);
+			
+			String boardtitle = request.getParameter("boardtitle");
+			String boardcontent = request.getParameter("boardcontent");
+			
+			boardtbl.setBoardtitle(boardtitle);
+			boardtbl.setBoardcontent(boardcontent);
+			
+			boardtbl = boardtblDao.update(boardtbl);
+			
+			request.setAttribute("boardtbl", boardtbl);
+		} catch(Exception e) {
+			System.out.println("Servcie: " + e.getMessage());
+			e.printStackTrace();
+		}
+		
+	}
 }

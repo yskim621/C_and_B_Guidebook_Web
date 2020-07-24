@@ -24,7 +24,7 @@ public class BoardtblController {
 		return "boardtbl/list";
 	}
 	
-	@RequestMapping(value="board/detail/{boardtblnum}", method = RequestMethod.GET)
+	@RequestMapping(value="board/detail/{boardnum}", method = RequestMethod.GET)
 	public String detail(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 서비스 메소드 호출
@@ -39,7 +39,7 @@ public class BoardtblController {
 		return "boardtbl/write";
 	}
 	
-	@RequestMapping(value="board/update/{boardtblnum}", method = RequestMethod.GET)
+	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.GET)
 	public String update(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 서비스 메소드 호출

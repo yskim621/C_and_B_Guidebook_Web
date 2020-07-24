@@ -44,6 +44,11 @@ public class BoardtblDao {
 	}
 	
 	// 데이터 수정
+	public Boardtbl update(Boardtbl boardtbl) {
+		
+		sessionFactory.getCurrentSession().update(boardtbl);
+		return boardtbl;
+	}
 	 
 	
 	

@@ -3,10 +3,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>데이터 입력 화면</title>
+<title>게시글 입력</title>
 </head>
 <body>
-	<h3 align="center">게시물 입력</h3>
+	<h3 align="center">게시글 입력</h3>
 	<!-- boardtitle, boardcontent. boardattchment 입력 -->
 	<div align="center">
 		<form id="boardform">
@@ -18,5 +18,5 @@
 		<input type="button" value="메인으로" id="mainbtn" />
 	</div>
 </body>
-<script src="${pageContext.request.contextPath}/js/boardtbl.js"></script>
+<script src="${pageContext.request.contextPath}/js/boardtbl/boardwrite.js"></script>
 </html>

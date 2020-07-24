@@ -29,5 +29,18 @@ public class BoardtblRestController {
 		return boardtbl;
 	}
 	
+	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.POST)
+	public Boardtbl update(HttpServletRequest request, HttpServletResponse response) {
+		
+		System.out.println("요청도달");
+		
+		boardtblService.update(request, response);
+		
+		Boardtbl boardtbl = (Boardtbl)request.getAttribute("boardtbl");
+		System.out.println("RestController: " + boardtbl);
+		
+		return boardtbl;
+	}
+	
 	
 }

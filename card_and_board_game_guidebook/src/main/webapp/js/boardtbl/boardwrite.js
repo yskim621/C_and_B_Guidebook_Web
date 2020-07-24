@@ -1,15 +1,15 @@
 window.addEventListener("load", function(event){
 	var boardwritebtn = document.getElementById("boardwritebtn");
-	var mainbtn = document.getElementById("mainbtn");
 	
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "list";
 	});
+
 	document.getElementById("mainbtn").addEventListener("click", function() {
 		location.href = "../";
 	});
 	
-	var flag = false
+	
 	boardwritebtn.addEventListener("click", function(event){
 		//ajax 요청 : insert
 		var url = "write";

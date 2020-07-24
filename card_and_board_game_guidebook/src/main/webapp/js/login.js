@@ -10,20 +10,11 @@ window.addEventListener("load", function(event) {
 			
 			var loginmsg = document.getElementById("loginmsg");
 			
-			// mainbtn을 클릭할 때 메인 페이지로 보내기
-			/*
-			mainbtn.addEventlistener("click", function(event){
-				location.href = "../";
-			});
-			*/
-			
-			
-			
-			
+
 			
 			
 			loginbtn.addEventListener("click", function(event) {
-				/*
+				
 				loginmsg.innerHTML = '';
 						var flag = false;
 						if (memberemail.value.trim().length < 1) {
@@ -44,7 +35,7 @@ window.addEventListener("load", function(event) {
 				if (flag == true) {
 					event.preventDefault();
 				}
-				*/
+				
 				
 				// alert("클릭");
 				
@@ -65,7 +56,7 @@ window.addEventListener("load", function(event) {
 				// 4. ajax 응답이 온 경우 처리할 콜백함수 등록
 				request.addEventListener('load', function(event){
 					// 결과만 확인
-					// alert(event.target.responseText);
+					alert(event.target.responseText);
 					
 					// 로그인 실패한 경우
 					if(event.target.responseText.trim().length == 0){
@@ -73,7 +64,7 @@ window.addEventListener("load", function(event) {
 					}
 					// 로그인 성공한 경우
 					else {
-						location.href = "../";
+						location.href = "../board/list";
 					}
 				});
 				
