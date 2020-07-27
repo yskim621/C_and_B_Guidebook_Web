@@ -28,8 +28,16 @@ public class Replytbl {
 		return replynum;
 	}
 
+	public void setReplynum(int replynum) {
+		this.replynum = replynum;
+	}
+
 	public int getBoardnum() {
 		return boardnum;
+	}
+
+	public void setBoardnum(int boardnum) {
+		this.boardnum = boardnum;
 	}
 
 	@Override
