@@ -1,5 +1,9 @@
 package gmail.yskim62100.c_and_b_guidebook.controller;
 
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -15,6 +19,21 @@ import gmail.yskim62100.c_and_b_guidebook.service.BoardtblService;
 public class BoardtblRestController {
 	@Autowired
 	private BoardtblService boardtblService;
+	
+	// 검색해서 데이터를 전송하는 요청을 생성
+	@RequestMapping(value = "board/select")
+	public Map<String, Object> select(HttpServletRequest request) {
+		// 서비스 메소드를 호출해서 결과를 가져옵니다.
+		boardtblService.select(request);
+		List<Boardtbl> list = (List<Boardtbl>) request.getAttribute("list");
+		int count = (Integer) request.getAttribute("count");
+		// 가져온 데이터를 출력할 Map에 저장하고 Map을 출력
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("count", count);
+		map.put("list", list);
+		
+		return map;
+	}
 
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
 	public Boardtbl insert(HttpServletRequest request, HttpServletResponse response) {

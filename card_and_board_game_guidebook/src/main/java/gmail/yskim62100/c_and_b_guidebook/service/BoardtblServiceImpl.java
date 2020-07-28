@@ -1,7 +1,9 @@
 package gmail.yskim62100.c_and_b_guidebook.service;
 
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -23,21 +25,36 @@ public class BoardtblServiceImpl implements BoardtblService {
 	
 	@Override
 	@Transactional
-	public void list(HttpServletRequest request, HttpServletResponse response) {
-		//1.파라미터 읽기
-		
-		//2.필요한 처리 수행
-				
-		//3.DAO 메소드의 매개변수 생성
-				
-		//4.DAO 메소드를 호출
-		List<Boardtbl> list = boardtblDao.list();
-		
-		//5.결과를 가공
-				
-		//6.결과를 저장 - REST API Server의 경우는 request에 저장
-		request.setAttribute("list", list);	
+	public void select(HttpServletRequest request) {
+		// 파라미터 읽기
+		String searchtype = request.getParameter("searchtype");
+		String value = request.getParameter("value");
+		String pageno = request.getParameter("pageno");
+		// 작업을 수행
+		// 한 페이지에 보여질 데이터 개수
+		int size = 10;
+		// 시작 위치 번호를 저장할 변수
+		// MySQL은 데이터 번호가 0부터 시작합니다.
+		int start = 0;
+		if (pageno != null) {
+			start = (Integer.parseInt(pageno) - 1) * size;
+		}
+
+		// DAO 메소드의 파라미터를 만들기
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("searchtype", searchtype);
+		map.put("value", value);
+		map.put("start", start);
+		map.put("size", size);
+
+		// DAO 메소드를 호출해서 결과를 저장
+		List<Boardtbl> list = boardtblDao.select(map);
+		request.setAttribute("list", list);
+		int count = boardtblDao.count(map).intValue();
+		request.setAttribute("count", count);
+
 	}
+
 
 	@Override
 	@Transactional

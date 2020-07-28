@@ -16,10 +16,7 @@ public class BoardtblController {
 	private BoardtblService boardtblService;
 	
 	@RequestMapping(value="board/list", method = RequestMethod.GET)
-	public String board(HttpServletRequest request, HttpServletResponse response) {
-		
-		// 서비스 메소드 호출
-		boardtblService.list(request, response);
+	public String board(HttpServletRequest request) {
 		
 		return "boardtbl/list";
 	}

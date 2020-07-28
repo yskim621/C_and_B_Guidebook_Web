@@ -11,13 +11,6 @@
 	<h3 align="center">서비스 개선 건의사항</h3>
 	<div align="center" id="board">
 		<table align="center" border="1">
-			<tr>
-				<th>게시글 번호</th>
-				<th>제목</th>
-				<th>작성일</th>
-				<th>조회수</th>
-				<th>작성자</th>
-			</tr>
 			<c:forEach var="boardtbl" items="${list}">
 				<tr>
 					<td align="center">&nbsp;${boardtbl.boardnum}</td>
@@ -34,12 +27,5 @@
 		<input type="button" value="메인으로" id="mainbtn"/>
 	</div>
 </body>
-<script>
-	document.getElementById("boardwrite").addEventListener("click", function(){
-		location="${pageContext.request.contextPath}/board/write";
-	});
-	document.getElementById("mainbtn").addEventListener("click", function() {
-		location.href = "${pageContext.request.contextPath}/";
-	});
-</script>
+<script src="${pageContext.request.contextPath}/js/boardtbl/boardlist.js"></script>
 </html>
