@@ -8,7 +8,7 @@ public interface BoardtblService {
 	public void select(HttpServletRequest request);
 	
 	// 상세 보기를 위한 메소드
-	public void detail(HttpServletRequest request, HttpServletResponse response);
+	public void detail(HttpServletRequest request);
 	
 	// 데이터 삽입을 위한 메소드
 	public void insert(HttpServletRequest request, HttpServletResponse response);

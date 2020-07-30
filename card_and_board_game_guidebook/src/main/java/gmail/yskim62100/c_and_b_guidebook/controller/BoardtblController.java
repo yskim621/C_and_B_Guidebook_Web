@@ -25,7 +25,7 @@ public class BoardtblController {
 	public String detail(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 서비스 메소드 호출
-		boardtblService.detail(request, response);
+		boardtblService.detail(request);
 		
 		return "boardtbl/detail";
 	}
@@ -40,7 +40,7 @@ public class BoardtblController {
 	public String update(HttpServletRequest request, HttpServletResponse response) {
 		
 		// 서비스 메소드 호출
-		boardtblService.detail(request, response);
+		boardtblService.detail(request);
 		
 		return "boardtbl/update";
 	}

@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import gmail.yskim62100.c_and_b_guidebook.dao.BoardtblDao;
 import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 
@@ -58,7 +59,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 
 	@Override
 	@Transactional
-	public void detail(HttpServletRequest request, HttpServletResponse response) {
+	public void detail(HttpServletRequest request) {
 		// 요청 주소의 마지막 부분 가져오기
 		// localhost/board/detail/boardnum
 		String requestURI = request.getRequestURI();
@@ -69,6 +70,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		
 		// DAO 메소드 호출
 		Boardtbl boardtbl = boardtblDao.detail(Integer.parseInt(boardnum));
+		
 		
 		// 결과 저장
 		request.setAttribute("boardtbl", boardtbl);

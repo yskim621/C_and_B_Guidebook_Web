@@ -34,6 +34,18 @@ public class BoardtblRestController {
 		
 		return map;
 	}
+	
+	/*
+	@RequestMapping(value = "board/detail/{boardnum}")
+	public Map<String, Object> detail(HttpServletRequest request) {
+
+		boardtblService.detail(request);
+		Boardtbl boardtbl = (Boardtbl) request.getAttribute("boardtbl");
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("boardtbl", boardtbl);
+		return map;
+	}
+	*/
 
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
 	public Boardtbl insert(HttpServletRequest request, HttpServletResponse response) {

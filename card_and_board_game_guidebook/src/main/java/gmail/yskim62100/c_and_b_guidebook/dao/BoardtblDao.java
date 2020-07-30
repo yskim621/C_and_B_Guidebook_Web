@@ -91,7 +91,8 @@ public class BoardtblDao {
 	
 	// 상세보기
 	public Boardtbl detail(Integer boardnum) {
-		return sessionFactory.getCurrentSession().get(Boardtbl.class, boardnum);
+		Boardtbl boardtbl = sessionFactory.getCurrentSession().get(Boardtbl.class, boardnum);
+		return boardtbl;
 	}
 	
 	

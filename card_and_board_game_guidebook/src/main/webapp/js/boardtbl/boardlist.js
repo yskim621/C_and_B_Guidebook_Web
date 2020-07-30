@@ -5,7 +5,7 @@ window.addEventListener("load", function(event){
 	document.writeln(" <h3 align=\"center\">서비스 개선 건의사항</h3> \n ");
 	document.writeln(" <div align=\"center\" id=\"board\"> ");
 	document.writeln(" <table align=\"center\" border=\"1\"> \n <tr> ");
-	ar = [ '게시글 번호', '제목', '게시글', '작성일', '조회수', '첨부파일', '작성자', ]; 
+	ar = [ '게시글 번호', '제목', '작성일', '조회수', '첨부파일', '작성자' ]; 
 	for(var i=0; i<ar.length; i=i+1){
 		document.writeln("<th>" + ar[i] + "</th>");
 	}
@@ -36,9 +36,12 @@ window.addEventListener("load", function(event){
 		//ar = data.list.split(",");
 		for (temp in data.list){
 			document.writeln("<tr>");
-			for( imsi in data.list[temp]){
-				document.writeln("<td>" + data.list[temp][imsi] + "</td>");
-			}
+			document.writeln("<td>"+ data.list[temp][0] +"</td>");
+			document.writeln("<td><a href='detail/" + data.list[temp][0] + "'>"+ data.list[temp][1] +"</a></td>");
+			document.writeln("<td>"+ data.list[temp][3] +"</td>");
+			document.writeln("<td>"+ data.list[temp][4] +"</td>");
+			document.writeln("<td>"+ data.list[temp][5] +"</td>");
+			document.writeln("<td>"+ data.list[temp][6] +"</td>");				
 			document.writeln("</tr>");	
 		}	
 		document.writeln(" </table> \n");
