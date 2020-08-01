@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
 import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 import gmail.yskim62100.c_and_b_guidebook.service.BoardtblService;
@@ -19,6 +21,8 @@ import gmail.yskim62100.c_and_b_guidebook.service.BoardtblService;
 public class BoardtblRestController {
 	@Autowired
 	private BoardtblService boardtblService;
+	//ModelAndView mav = null;
+	
 	
 	// 검색해서 데이터를 전송하는 요청을 생성
 	@RequestMapping(value = "board/select")
@@ -35,7 +39,7 @@ public class BoardtblRestController {
 		return map;
 	}
 	
-	/*
+	
 	@RequestMapping(value = "board/detail/{boardnum}")
 	public Map<String, Object> detail(HttpServletRequest request) {
 
@@ -43,9 +47,13 @@ public class BoardtblRestController {
 		Boardtbl boardtbl = (Boardtbl) request.getAttribute("boardtbl");
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardtbl", boardtbl);
+		
+		
+		//mav.setViewName("boardtbl/datail");
+		
 		return map;
 	}
-	*/
+	
 
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
 	public Boardtbl insert(HttpServletRequest request, HttpServletResponse response) {

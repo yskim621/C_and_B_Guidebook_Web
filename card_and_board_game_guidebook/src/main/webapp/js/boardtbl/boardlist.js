@@ -37,7 +37,7 @@ window.addEventListener("load", function(event){
 		for (temp in data.list){
 			document.writeln("<tr>");
 			document.writeln("<td>"+ data.list[temp][0] +"</td>");
-			document.writeln("<td><a href='detail/" + data.list[temp][0] + "'>"+ data.list[temp][1] +"</a></td>");
+			document.writeln("<td><a id='detaillink' href='get/" + data.list[temp][0] + "'>"+ data.list[temp][1] +"</a></td>");
 			document.writeln("<td>"+ data.list[temp][3] +"</td>");
 			document.writeln("<td>"+ data.list[temp][4] +"</td>");
 			document.writeln("<td>"+ data.list[temp][5] +"</td>");
@@ -55,5 +55,8 @@ window.addEventListener("load", function(event){
 		document.getElementById("mainbtn").addEventListener("click", function() {
 			location.href = "../";
 		});
+
+
 	});
+	
 });
