@@ -1,6 +1,6 @@
 package gmail.yskim62100.c_and_b_guidebook.domain;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class Boardtbl {
 	private Integer boardnum;

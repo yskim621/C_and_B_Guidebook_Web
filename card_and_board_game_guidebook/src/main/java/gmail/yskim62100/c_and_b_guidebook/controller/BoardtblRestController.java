@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 
 import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
@@ -56,16 +57,19 @@ public class BoardtblRestController {
 	
 
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
-	public Boardtbl insert(HttpServletRequest request, HttpServletResponse response) {
+	public Map<String, Object> insert(MultipartHttpServletRequest request) {
 		
 		System.out.println("요청도달");
 		
-		boardtblService.insert(request, response);
-		
-		Boardtbl boardtbl = (Boardtbl)request.getAttribute("boardtbl");
-		System.out.println("RestController: " + boardtbl);
-		
-		return boardtbl;
+		boardtblService.insert(request);
+		Boolean result = (Boolean) request.getAttribute("insert");
+		Map<String, Object> map = new HashMap<String, Object>();
+		// 삽입에 성공하면 result는 true 그렇지 않으면 false
+		if (result != null)
+			map.put("result", result);
+		else
+			map.put("result", false);
+		return map;	
 	}
 	
 	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.POST)
