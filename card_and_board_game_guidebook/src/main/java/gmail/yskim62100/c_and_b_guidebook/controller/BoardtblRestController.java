@@ -49,7 +49,6 @@ public class BoardtblRestController {
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("boardtbl", boardtbl);
 		
-		
 		//mav.setViewName("boardtbl/datail");
 		
 		return map;
@@ -72,6 +71,7 @@ public class BoardtblRestController {
 		return map;	
 	}
 	
+	
 	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.POST)
 	public Map<String, Object> update(MultipartHttpServletRequest request) {
 		
@@ -90,6 +90,18 @@ public class BoardtblRestController {
 		System.out.println("RestController: " + result);
 		return map;
 		
+	}
+	
+	
+	@RequestMapping(value="board/delete", method=RequestMethod.POST)
+	public Map<String, Object> delete(HttpServletRequest request){
+		
+		boardtblService.delete(request);
+		
+		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		
+		System.out.println("RestController: " + map);
+		return map;
 	}
 	
 	

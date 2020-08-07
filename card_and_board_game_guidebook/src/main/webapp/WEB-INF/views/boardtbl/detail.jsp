@@ -31,6 +31,7 @@
 			</tr>
 		</table>
 		<a href="../alter/${boardtbl.boardnum}"><input type="button" value="수정" id="updatebtn" name="updatebtn" /></a>
+		<a href="../delete"><input type="button" value="삭제" id="deletebtn" name="deletebtn" /></a>
 		<input type="button" value="목록으로" id="listbtn" />
 		</form>
 	</div>

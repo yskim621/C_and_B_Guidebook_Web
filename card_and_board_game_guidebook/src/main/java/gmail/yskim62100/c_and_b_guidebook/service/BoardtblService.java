@@ -17,4 +17,7 @@ public interface BoardtblService {
 	
 	// 데이터 수정을 위한 메소드
 	public void update(MultipartHttpServletRequest request);
+	
+	// 데이터 삭제을 위한 메소드
+	public void delete(HttpServletRequest request);
 }

@@ -80,6 +80,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		request.setAttribute("boardtbl", boardtbl);
 	}
 	
+	
 	@Override
 	@Transactional
 	public void insert(MultipartHttpServletRequest request) {
@@ -190,7 +191,23 @@ public class BoardtblServiceImpl implements BoardtblService {
 		System.out.println("Service: " + boardtbl);
 		boardtblDao.update(boardtbl);
 
-		request.setAttribute("update", true);
-		 
+		request.setAttribute("update", true); 
+	}
+	
+	
+	@Override
+	@Transactional
+	public void delete(HttpServletRequest request) {
+		String boardnum = request.getParameter("boardnum");
+		Boardtbl boardtbl = boardtblDao.detail(Integer.parseInt(boardnum));
+		System.out.println("Service: " + boardtbl);
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", false);
+		
+		boardtblDao.delete(boardtbl);
+		map.put("result", true);
+		
+		request.setAttribute("result", map);
 	}
 }

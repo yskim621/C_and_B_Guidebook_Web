@@ -16,6 +16,7 @@ public class BoardtblController {
 	@Autowired
 	private BoardtblService boardtblService;
 	
+	
 	@RequestMapping(value="board/list", method = RequestMethod.GET)
 	public String board(HttpServletRequest request) {
 		
@@ -31,14 +32,13 @@ public class BoardtblController {
 		return "boardtbl/detail";
 	}
 	
-	
-	
 		
 	@RequestMapping(value="board/write", method = RequestMethod.GET)
 	public String insert() {
 		
 		return "boardtbl/write";
 	}
+	
 	
 	@RequestMapping(value="board/alter/{boardnum}", method = RequestMethod.GET)
 	public String update(HttpServletRequest request) {
@@ -47,6 +47,13 @@ public class BoardtblController {
 		boardtblService.detail(request);
 		
 		return "boardtbl/update";
+	}
+	
+	
+	@RequestMapping(value="board/delete", method = RequestMethod.GET)
+	public String delete() {
+		
+		return "boardtbl/delete";
 	}
 
 }

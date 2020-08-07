@@ -116,11 +116,11 @@ public class BoardtblDao {
 		sessionFactory.getCurrentSession().saveOrUpdate(boardtbl);
 	}
 	 
-	// 데이터 삭제
-	public void delete(Integer boardnum) {
+	// 데이터 삭제 -> Hibernate는 Delete시 DTO를 매개변수로 받음
+	public void delete(Boardtbl boardtbl) {
 		//이전에 수행 중인 내용을 모두 삭제하고 작업을 수행
 		sessionFactory.getCurrentSession().clear();
-		sessionFactory.getCurrentSession().delete(boardnum);
+		sessionFactory.getCurrentSession().delete(boardtbl);
 	}
 	
 	
