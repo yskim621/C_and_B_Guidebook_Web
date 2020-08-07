@@ -35,7 +35,6 @@ window.addEventListener("load", function(event){
 			// console.log(e.target.responseText)
 			// 결과를 파싱
 			var data = JSON.parse(e.target.responseText);
-			alert(data.insert);
 			console.log(data);
 			
 			if(data != null){

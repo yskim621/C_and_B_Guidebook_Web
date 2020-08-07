@@ -1,6 +1,9 @@
 window.addEventListener("load", function(event){
 	var boarddeletebtn = document.getElementById("boarddeletebtn");
-	var boarddeletecancelbtn = document.getElementById("boarddeletecancelbtn");
+	
+	document.getElementById("boarddeletecancelbtn").addEventListener("click", function() {
+		location.href = "list";
+	});
 	
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "list";
@@ -36,7 +39,6 @@ window.addEventListener("load", function(event){
 			
 			// 결과를 파싱
 			var data = JSON.parse(e.target.responseText);
-			alert(data.insert);
 			console.log(data);
 			
 			if(data != null){
