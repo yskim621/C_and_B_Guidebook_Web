@@ -9,9 +9,12 @@
 <body>
 	<h3 align="center">게시글 수정</h3>
 	<div align="center" id="board">
-		<form id="boardform">
-			<input type="text" value="${boardtbl.boardtitle}" name="boardtitle" id="boardtitle" size="30"/><br/>
-			<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
+		<form id="boardform" method="post" enctype="multipart/form-data">
+			제목:<input type="text" value="${boardtbl.boardtitle}" name="boardtitle" id="boardtitle" size="30"/><br/>
+			첨부파일:<input type="file" name="boardattachment" id="boardattachment"/> <br/> 
+			게시글:<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
+			<input type="hidden" id="boardnum" name="boardnum" value="${boardtbl.boardnum}"/>
+			<input type="hidden" id="oldfile" name="oldfile" value="${boardtbl.boardattachment}"/>
 		</form>
 		<input type="button" value="수정 완료" id="boardupdatebtn" name="boardupdatebtn" />
 		<input type="button" value="수정 취소" id="cancelupdatebtn" name="cancelupdatebtn" /> 

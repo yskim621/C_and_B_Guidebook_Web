@@ -110,13 +110,18 @@ public class BoardtblDao {
 	}
 	
 	// 데이터 수정
-	public Boardtbl update(Boardtbl boardtbl) {
+	public void update(Boardtbl boardtbl) {
+		System.out.println("DAO 요청 도달");
 		
-		sessionFactory.getCurrentSession().update(boardtbl);
-		return boardtbl;
+		sessionFactory.getCurrentSession().saveOrUpdate(boardtbl);
 	}
 	 
-	
+	// 데이터 삭제
+	public void delete(Integer boardnum) {
+		//이전에 수행 중인 내용을 모두 삭제하고 작업을 수행
+		sessionFactory.getCurrentSession().clear();
+		sessionFactory.getCurrentSession().delete(boardnum);
+	}
 	
 	
 }

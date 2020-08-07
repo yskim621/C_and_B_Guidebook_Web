@@ -59,7 +59,7 @@ public class BoardtblRestController {
 	@RequestMapping(value="board/write", method = RequestMethod.POST)
 	public Map<String, Object> insert(MultipartHttpServletRequest request) {
 		
-		System.out.println("요청도달");
+		// System.out.println("요청도달");
 		
 		boardtblService.insert(request);
 		Boolean result = (Boolean) request.getAttribute("insert");
@@ -73,16 +73,23 @@ public class BoardtblRestController {
 	}
 	
 	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.POST)
-	public Boardtbl update(HttpServletRequest request, HttpServletResponse response) {
+	public Map<String, Object> update(MultipartHttpServletRequest request) {
 		
-		System.out.println("요청도달");
+		System.out.println("RestController 요청도달");
 		
-		boardtblService.update(request, response);
+		boardtblService.update(request);
 		
-		Boardtbl boardtbl = (Boardtbl)request.getAttribute("boardtbl");
-		System.out.println("RestController: " + boardtbl);
+		Boolean result = (Boolean) request.getAttribute("update");
+		Map<String, Object> map = new HashMap<String, Object>();
+		// 삽입에 성공하면 result는 true 그렇지 않으면 false
+		if (result != null)
+			map.put("result", result);
+		else
+			map.put("result", false);
 		
-		return boardtbl;
+		System.out.println("RestController: " + result);
+		return map;
+		
 	}
 	
 	

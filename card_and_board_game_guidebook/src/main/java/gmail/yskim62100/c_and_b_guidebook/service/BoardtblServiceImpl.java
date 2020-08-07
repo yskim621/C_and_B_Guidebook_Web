@@ -74,7 +74,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		
 		// DAO 메소드 호출
 		Boardtbl boardtbl = boardtblDao.detail(Integer.parseInt(boardnum));
-		
+		System.out.println("Service: " + boardtbl);
 		
 		// 결과 저장
 		request.setAttribute("boardtbl", boardtbl);
@@ -92,12 +92,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 		if (count != 0) {
 			boardnum = boardtblDao.maxid() + 1;
 		}
-
+		
 		String boardtitle = request.getParameter("boardtitle");
 		String boardcontent = request.getParameter("boardcontent");
-		
-		
-
 
 		// 파일의 기본값을 설정
 		String boardattachment = null;
@@ -135,32 +132,65 @@ public class BoardtblServiceImpl implements BoardtblService {
 		}	
 		 
 	}
-
+	
+	
 	@Override
-	public void update(HttpServletRequest request, HttpServletResponse response) {
-		Boardtbl boardtbl = new Boardtbl();
-		try {
-			// 요청 주소의 마지막 부분 가져오기
-			// localhost/board/update/boardnum
-			String requestURI = request.getRequestURI();
-			String [] ar = requestURI.split("/");
-			String boardnum = ar[ar.length-1];
-			
-			System.out.println("boardnum: " + boardnum);
-			
-			String boardtitle = request.getParameter("boardtitle");
-			String boardcontent = request.getParameter("boardcontent");
-			
-			boardtbl.setBoardtitle(boardtitle);
-			boardtbl.setBoardcontent(boardcontent);
-			
-			boardtbl = boardtblDao.update(boardtbl);
-			
-			request.setAttribute("boardtbl", boardtbl);
-		} catch(Exception e) {
-			System.out.println("Servcie: " + e.getMessage());
-			e.printStackTrace();
-		}
+	@Transactional
+	// Annotation에 Transactional 입력 안하면 하이버네이트 transaction 에러
+	public void update(MultipartHttpServletRequest request) {
+		// boardnum, boardtitle, boardcontent,
+		// boardattachment을 만들어서 데이터를 삽입
+		String requestURI = request.getRequestURI();
+		String [] ar = requestURI.split("/");
+		String boardnum = ar[ar.length-1];
 		
+		String boardtitle = request.getParameter("boardtitle");
+		String boardcontent = request.getParameter("boardcontent");
+		String oldfile = request.getParameter("oldfile");
+		System.out.println(boardnum);
+		System.out.println(boardtitle);
+		System.out.println(boardcontent);
+		
+		
+		// 파일의 기본값을 설정
+		String boardattachment = oldfile;
+
+		// 파일 파라미터 가져오기
+		MultipartFile image = request.getFile("boardattachment");
+		
+		System.out.println(image.toString());
+		// 전송된 파일이 존재하면
+		if (image != null && image.isEmpty() == false) {
+			// 파일을 저장할 디렉토리 경로 가져오기
+			String filePath = request.getRealPath("/img");
+			// 새로운 파일명 만들기
+			boardattachment = UUID.randomUUID() + image.getOriginalFilename();
+			// 실제 파일 경로 만들기
+			filePath = filePath + "/" + boardattachment;
+			try {
+				// 파일을 기록할 출력 스트림 생성
+				FileOutputStream fos = new FileOutputStream(filePath);
+				// 파일 업로드
+				fos.write(image.getBytes());
+				fos.close();
+			} catch (Exception e) {
+				System.out.println("파일 저장 예외:" + e.getMessage());
+			}
+		}	
+		System.out.println("Service(boardattachment): " + boardattachment);
+
+		Boardtbl boardtbl = new Boardtbl();
+		boardtbl.setBoardnum(Integer.parseInt(boardnum));
+		boardtbl.setBoardtitle(boardtitle);
+		boardtbl.setBoardcontent(boardcontent);
+		boardtbl.setBoardattachment(boardattachment);
+		boardtbl.setBoardwritedate(new Date());
+		boardtbl.setMembernickname("광고문의");
+
+		System.out.println("Service: " + boardtbl);
+		boardtblDao.update(boardtbl);
+
+		request.setAttribute("update", true);
+		 
 	}
 }

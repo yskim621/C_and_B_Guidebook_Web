@@ -35,13 +35,13 @@ public class BoardtblController {
 	
 		
 	@RequestMapping(value="board/write", method = RequestMethod.GET)
-	public String insert(HttpServletRequest request, HttpServletResponse response) {
+	public String insert() {
 		
 		return "boardtbl/write";
 	}
 	
-	@RequestMapping(value="board/update/{boardnum}", method = RequestMethod.GET)
-	public String update(HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping(value="board/alter/{boardnum}", method = RequestMethod.GET)
+	public String update(HttpServletRequest request) {
 		
 		// 서비스 메소드 호출
 		boardtblService.detail(request);

@@ -11,7 +11,7 @@
 	<div align="center">
 		<form id="boardform" method="post" enctype="multipart/form-data">
 			제목<input type="text" name="boardtitle" id="boardtitle" /><br />
-			첨부파일<input type="file" name=boardattachment id="boardattachment"/> <br/> 
+			첨부파일<input type="file" name="boardattachment" id="boardattachment"/> <br/> 
 			게시글<textarea cols="50" rows="30" name="boardcontent" id="boardcontent"></textarea><br />
 		</form>
 		<input type="button" value="글쓰기" id="boardwritebtn"/> 

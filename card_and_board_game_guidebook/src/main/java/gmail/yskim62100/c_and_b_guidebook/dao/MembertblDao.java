@@ -19,7 +19,9 @@ public class MembertblDao {
 	}
 	
 	public Membertbl detail(String memberemail) {
-		return sessionFactory.getCurrentSession().get(Membertbl.class, memberemail);
+		
+		Membertbl membertbl = sessionFactory.getCurrentSession().get(Membertbl.class, memberemail);
+		return membertbl;
 	}
 	
 	public Membertbl register(Membertbl membertbl) {

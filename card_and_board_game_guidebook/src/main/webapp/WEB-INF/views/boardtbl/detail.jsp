@@ -9,9 +9,10 @@
 <body>
 	<h3 align="center">게시글 보기</h3>
 	<div align="center" id="board">
-		<table align="center" border="1">
+		<form id="boardform" name="${boardtbl.boardnum}">
+		<table border="1" id="boardform">
 			<tr>
-				<td>제목: &nbsp;${boardtbl.boardtitle}</td><br/>
+				<td>제목: &nbsp;${boardtbl.boardtitle}</td>
 			</tr>
 			<tr>	
 				<td>
@@ -29,10 +30,12 @@
 				</td>
 			</tr>
 		</table>
-		<a href="../update/${boardtbl.boardnum}"><input type="button" value="수정" id="updatebtn" name="updatebtn" /></a>
+		<a href="../alter/${boardtbl.boardnum}"><input type="button" value="수정" id="updatebtn" name="updatebtn" /></a>
 		<input type="button" value="목록으로" id="listbtn" />
+		</form>
 	</div>
 </body>
+<!-- <script src="${pageContext.request.contextPath}/js/boardtbl/boarddetail.js"></script> -->
 <script>
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "${pageContext.request.contextPath}/board/list";

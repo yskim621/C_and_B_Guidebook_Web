@@ -16,5 +16,5 @@ public interface BoardtblService {
 	public void insert(MultipartHttpServletRequest request);
 	
 	// 데이터 수정을 위한 메소드
-	public void update(HttpServletRequest request, HttpServletResponse response);
+	public void update(MultipartHttpServletRequest request);
 }

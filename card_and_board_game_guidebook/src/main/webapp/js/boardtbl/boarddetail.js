@@ -1,9 +1,10 @@
 window.addEventListener("load", function(event){
 	
-	
+	alert(document.getElementById("boardform").getAttribute('name'));
+	var boardnum = document.getElementById("boardform").getAttribute('name');
 	
 	//ajax 요청 : detail
-	var url = "../detail/" + boardtbl["boardnum"];
+	var url = "../detail/" + boardnum;
 		
 	//ajax 객체를 생성
 	var request = new XMLHttpRequest();
@@ -26,7 +27,7 @@ window.addEventListener("load", function(event){
 		document.writeln(" <div align='center' id='board'> ");
 		document.writeln(' <table align="center" border="1"> \n ');
 	
-		document.writeln(" <tr><td>제목: " + "테스트" +"</td><br/> </tr> \n");
+		document.writeln(" <tr><td>제목: 테스트</td><br/> </tr> \n");
 		document.writeln(" </table> \n");
 		document.writeln("<input type=\"button\" value=\"글쓰기\" id=\"boardwritebtn\" name=\"boardwritebtn\" />");
 		document.writeln("<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" />");

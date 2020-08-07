@@ -1,5 +1,9 @@
 window.addEventListener("load", function(event){
+
+	alert(document.getElementById("boardnum").value);
+
 	var boardupdatebtn = document.getElementById("boardupdatebtn");
+	var boardnum = document.getElementById("boardnum").value;
 	
 	document.getElementById("listbtn").addEventListener("click", function() {
 		location.href = "../list";
@@ -12,8 +16,12 @@ window.addEventListener("load", function(event){
 	
 	
 	boardupdatebtn.addEventListener("click", function(event){
+		
+		
+		
 		//ajax 요청 : update
-		var url = "update/{boardnum}";
+		var url = "../update/" + boardnum;
+		alert(url);
 		
 		//ajax 객체를 생성
 		var request = new XMLHttpRequest();
@@ -36,11 +44,12 @@ window.addEventListener("load", function(event){
 			// console.log(e.target.responseText)
 			// 결과를 파싱
 			var data = JSON.parse(e.target.responseText);
+			alert(data);
 			// console.log(data);
 			
-			if(data != null){
-				location.href = "list";
-			}
+			//if(data != null){
+			//	location.href = "../list";
+			//}
 		});
 		
 	});
