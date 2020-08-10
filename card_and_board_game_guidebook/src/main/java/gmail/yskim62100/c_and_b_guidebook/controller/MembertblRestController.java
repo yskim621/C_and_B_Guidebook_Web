@@ -1,6 +1,8 @@
 package gmail.yskim62100.c_and_b_guidebook.controller;
 
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,17 +21,17 @@ public class MembertblRestController {
 	private MembertblService membertblService;
 	
 	@RequestMapping(value="member/register", method = RequestMethod.POST)
-	public Membertbl register(HttpServletRequest request, HttpServletResponse response) {
-		
-		System.out.println("요청도달");
-		
-		membertblService.register(request, response);
-		
-		
-		Membertbl membertbl = (Membertbl)request.getAttribute("membertbl");
-		System.out.println("RestController: " + membertbl);
-		
-		return membertbl;
+	public Map<String, Object> register(HttpServletRequest request, HttpServletResponse response) {
+		membertblService.register(request);
+		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		return map;
+	}
+	
+	@RequestMapping(value="member/login", method=RequestMethod.POST)
+	public Map<String, Object> login(HttpServletRequest request){
+		membertblService.login(request);
+		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		return map;
 	}
 
 }

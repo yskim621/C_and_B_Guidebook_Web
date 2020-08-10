@@ -11,7 +11,7 @@
 <link rel="stylesheet"
 	href="${pageContext.request.contextPath}/css/login.css">
 
-<script src="${pageContext.request.contextPath}/js/login.js"></script>
+<script src="${pageContext.request.contextPath}/js/membertbl/login.js"></script>
 </head>
 <body>
 	<h1 id="title">C & B Guidebook</h1>
@@ -25,9 +25,9 @@
 					<legend class="screen_out">로그인 정보 입력폼</legend>
 					<div class="box_login">
 						<div class="inp_text">
-							<label for="email" class="screen_out">이메일</label> <input
-								type="email" id="memberemail" name="memberemail"
-								placeholder="이메일을 입력하세요!">
+							<label for="text" class="screen_out">닉네임</label> <input
+								type="email" id="membernickname" name="membernickname"
+								placeholder="닉네임을 입력하세요!">
 						</div>
 						<div class="inp_text">
 							<label for="userpw" class="screen_out">비밀번호</label> <input

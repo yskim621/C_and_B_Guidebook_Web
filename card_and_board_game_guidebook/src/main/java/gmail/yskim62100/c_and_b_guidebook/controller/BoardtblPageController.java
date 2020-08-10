@@ -12,7 +12,7 @@ import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 import gmail.yskim62100.c_and_b_guidebook.service.BoardtblService;
 
 @Controller
-public class BoardtblController {
+public class BoardtblPageController {
 	@Autowired
 	private BoardtblService boardtblService;
 	

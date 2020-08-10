@@ -9,13 +9,19 @@
 
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
 <!-- register/js/register.js -->
-<script src="${pageContext.request.contextPath}/js/register.js"></script>
+<script src="${pageContext.request.contextPath}/js/membertbl/register.js"></script>
 </head>
 <body>
 	<div id="form" align="center">
-		<form  id="registerform" enctype="multipart/form-data">
+		<form  id="registerform">
 			<h2 align="center">-회원가입-</h2><br />
-			<table align="center">
+			<table>
+				<tr>
+					<td>
+					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="로그인에 사용할 별명을 입력하시오." />
+					<div id="membernicknamemsg"></div>
+					</td>
+				</tr>
 				<tr>
 					<td>
 					<input type="text" id="memberemail" name="memberemail"class="textinput" placeholder="email을 입력하십시오." />
@@ -31,12 +37,6 @@
 				</tr>
 				<tr>
 					<td><input type="text" id="membername" name="membername" class="textinput" placeholder="이름을 입력하시오." /></td>
-				</tr>
-				<tr>
-					<td>
-					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="별명을 입력하시오." />
-					<div id="membernicknamemsg"></div>
-					</td>
 				</tr>
 				<tr>
 					<td><input type="text" id="memberphone" name="memberphone"

@@ -39,7 +39,8 @@ window.addEventListener('load', function(event){
 		
 		// 폼의 데이터 생성
 		var formData = new FormData(registerform);
-		alert(formData)
+		// alert(formData)
+		
 		// 폼의 데이터 전송
 		request.send(formData);
 		

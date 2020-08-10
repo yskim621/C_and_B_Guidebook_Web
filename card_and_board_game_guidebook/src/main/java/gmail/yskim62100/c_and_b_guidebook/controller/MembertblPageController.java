@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import gmail.yskim62100.c_and_b_guidebook.service.MembertblService;
 
 @Controller
-public class MembertblController {
+public class MembertblPageController {
 	@Autowired
 	private MembertblService membertblService;
 	
@@ -30,4 +30,5 @@ public class MembertblController {
 		
 		return "membertbl/detail";
 	}
+	
 }
