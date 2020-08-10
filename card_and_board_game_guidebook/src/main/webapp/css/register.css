@@ -13,7 +13,7 @@ form {
 }
 
 tr {
-	height: 60px;
+	height: 80px;
 }
 
 .textinput {
@@ -28,7 +28,7 @@ tr {
 	font-size: 1em;
 }
 
-#memberemailmsg, #membernicknamemsg {
+#memberemailmsg, #membernicknamemsg, #memberpasswordmsg{
 	height: 2.5em;
 	margin-top: -2em;
 }

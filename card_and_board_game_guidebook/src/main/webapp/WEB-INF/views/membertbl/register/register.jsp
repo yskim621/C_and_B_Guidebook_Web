@@ -18,7 +18,7 @@
 			<table>
 				<tr>
 					<td>
-					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="로그인에 사용할 별명을 입력하시오." />
+					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="영문 혹은 숫자로 로그인에 사용할 별명(5~30자)을 입력하시오." />
 					<div id="membernicknamemsg"></div>
 					</td>
 				</tr>
@@ -29,8 +29,10 @@
 					</td>
 				</tr>
 				<tr>
-					<td><input type="password" id="memberpassword" name="memberpassword" class="textinput" placeholder="비밀번호(15자리이하)를 입력하시오." maxlength="15" /></td>
-					<td><div id="memberpasswordmsg"></div></td>
+					<td>
+					<input type="password" id="memberpassword" name="memberpassword" class="textinput" placeholder="영문 대소문자, 숫자, 특수문자를 포함한 비밀번호를 입력하시오." maxlength="15" />
+					<div id="memberpasswordmsg"></div>
+					</td>
 				</tr>
 				<tr>
 					<td><input type="password" id="memberpasswordinform" name="memberpasswordinform" class="textinput" placeholder="비밀번호 확인." maxlength="15" /></td>
@@ -40,7 +42,7 @@
 				</tr>
 				<tr>
 					<td><input type="text" id="memberphone" name="memberphone"
-						class="textinput" placeholder="전화번호 8자리(숫자만 입력)를 입력하시오." /></td>
+						class="textinput" placeholder="전화번호 11자리(숫자만 입력)를 입력하시오." /></td>
 				</tr>
 				<tr>
 					<td>

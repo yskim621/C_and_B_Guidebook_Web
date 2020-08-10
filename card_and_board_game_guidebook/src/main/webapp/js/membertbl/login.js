@@ -43,10 +43,10 @@ window.addEventListener("load", function(event) {
 				
 				// 3. ajax 파라미터 설정
 				// GET 방식이면 open의 URL뒤에 붙이고, POST 방식이면 FormData 객체를 생성하고 send
-				var data = new FormData(loginform);
+				var formdata = new FormData(loginform);
 				
 				// 4. ajax로 데이터 전송
-				request.send(data);
+				request.send(formdata);
 				
 				// 5. ajax 응답이 온 경우 처리할 콜백함수 등록
 				request.addEventListener('load', function(event){
