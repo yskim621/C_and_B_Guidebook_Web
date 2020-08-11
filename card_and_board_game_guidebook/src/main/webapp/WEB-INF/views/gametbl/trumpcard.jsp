@@ -10,6 +10,8 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/trumpcard.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.atAccordionOrTabs.css"/>
+
 </head>
 <body>
 	<div id="page-wrapper">
@@ -39,92 +41,51 @@
 				</div>
 			</div>
 
-			<div id="banner">
-				<div class="container">
-					<div class="row">
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/poker.jpg" id=poker />
-						</div>
-						
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack />
-						</div>
-						
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara />
-						</div>
-						
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/hoola.jpg" id=hoola />
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<!-- Features -->
 		<section id="features">
 			<div class="container">
-				<div class="row">
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #1 -->
+				<ul class="demo">
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/poker.jpg" id=poker /></a>
 						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic01.jpg" alt="" /></a>
-							<h2>Welcome to Halcyonic</h2>
-							<p>
-								This is <strong>Halcyonic</strong>, a free site template by <a
-									href="http://twitter.com/ajlkn">AJ</a> for <a
-									href="http://html5up.net">HTML5 UP</a>. It's responsive, built
-								on HTML5 + CSS3, and includes 5 unique page layouts.
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #2 -->
+							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+								Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id.
+								Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis
+								congue tincidunt, sapien purus suscipit odio, quis dictum odio
+								tortor in sem. Ut sit amet libero nec orci mattis fringilla.
+								Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam
+								accumsan dui at orci rhoncus pharetra tincidunt elit
+								ullamcorper. Sed ac mauris</p>
+						</section></li>
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack /></a>
 						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic02.jpg" alt="" /></a>
-							<h2>Responsive You Say?</h2>
-							<p>Yes! Halcyonic is built to be fully responsive so it looks
-								great at every screen size, from desktops to tablets to mobile
-								phones.</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #3 -->
+							<p>Ut laoreet augue et neque pretium non sagittis nibh
+								pulvinar. Etiam ornare tincidunt orci quis ultrices.</p>
+						</section></li>
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara /></a>
 						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic03.jpg" alt="" /></a>
-							<h2>License Info</h2>
-							<p>
-								Halcyonic is licensed under the <a
-									href="http://html5up.net/license">CCA</a> license, so use it
-								for personal/commercial use as much as you like (just keep our
-								credits intact).
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #4 -->
+							<p>Donec mattis mauris gravida metus laoreet non rutrum sem
+								viverra. Aenean nibh libero, viverra vel vestibulum in,
+								porttitor ut sapien. Phasellus tempor lorem id justo ornare
+								tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi
+								iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla
+								facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit
+								amet eros. Nullam fringilla, enim eu lobortis dapibus, quam
+								magna tincidunt nibh, sit amet imperdiet dolor justo congue
+								turpis.</p>
+						</section></li>
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.jpg" id=hoola /></a>
 						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic04.jpg" alt="" /></a>
-							<h2>Volutpat etiam aliquam</h2>
-							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
-								sed. Suspendisse eu varius nibh. Suspendisse vitae magna mollis.
-							</p>
-						</section>
-
-					</div>
-				</div>
+							<p>Cum sociis natoque penatibus et magnis dis parturient
+								montes, nascetur ridiculus mus. Phasellus dui urna, mollis vel
+								suscipit in, pharetra at ligula. Pellentesque a est vel est
+								fermentum pellentesque sed sit amet dolor. Nunc in dapibus nibh.
+								Aliquam erat volutpat. Phasellus vel dui sed nibh iaculis
+								convallis id sit amet urna. Proin nec tellus quis justo
+								consequat accumsan. Vivamus turpis enim, auctor eget placerat
+								eget, aliquam ut sapien.</p>
+						</section></li>
+				</ul>
 			</div>
 		</section>
 
@@ -140,8 +101,6 @@
 								<h2>Who We Are</h2>
 								<h3>A subheading about who we are</h3>
 							</header>
-							<a href="#" class="feature-image"><img src="images/pic05.jpg"
-								alt="" /></a>
 							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
 								magna sed. Suspendisse eu varius nibh. Suspendisse vitae magna
 								eget odio amet mollis justo facilisis quis. Sed sagittis amet
@@ -176,13 +135,13 @@
 								<h3>And a final subheading about our clients</h3>
 							</header>
 							<ul class="quote-list">
-								<li><img src="images/pic06.jpg" alt="" />
+								<li>
 									<p>"Neque nisidapibus mattis"</p> <span>Jane Doe, CEO of
 										UntitledCorp</span></li>
-								<li><img src="images/pic07.jpg" alt="" />
+								<li>
 									<p>"Lorem ipsum consequat!"</p> <span>John Doe,
 										President of FakeBiz</span></li>
-								<li><img src="images/pic08.jpg" alt="" />
+								<li>
 									<p>"Magna veroeros amet tempus"</p> <span>Mary Smith,
 										CFO of UntitledBiz</span></li>
 							</ul>
@@ -258,12 +217,6 @@
 			</div>
 		</section>
 
-		<!-- Copyright -->
-		<div id="copyright">
-			&copy; Untitled. All rights reserved. | Design: <a
-				href="http://html5up.net">HTML5 UP</a>
-		</div>
-
 	</div>
 
 	<!-- Scripts -->
@@ -273,5 +226,28 @@
 	<script src="${pageContext.request.contextPath}/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
+<!-- JQuery 이용을 위한 스크립트 링크  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.atAccordionOrTabs.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.bbq.js"></script>	
+<script type="text/javascript">
+$('.demo').accordionortabs();
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	
 </body>
 </html>

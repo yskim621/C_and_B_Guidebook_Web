@@ -1721,3 +1721,77 @@ section>:last-child, section:last-child, .last-child {
 	}
 }
 
+@media screen and (max-width: 1000px) {
+  /* line 146, ../scss/_form.scss */
+  select {
+    height: 34px;
+    line-height: 34px;
+  }
+}
+/* line 154, ../scss/_form.scss */
+input[type="text"], input[type="password"], input[type="submit"] {
+  height: 30px;
+  color: #666;
+  border: 1px solid #dadada;
+  width: 250px;
+  vertical-align: middle;
+  padding-left: 5px;
+  font-size: 14px;
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 165, ../scss/_form.scss */
+input[type="text"].sm, input[type="password"].sm, input[type="submit"].sm {
+  width: 100px;
+}
+/* line 168, ../scss/_form.scss */
+input[type="text"].mid, input[type="password"].mid, input[type="submit"].mid {
+  width: 150px;
+}
+/* line 171, ../scss/_form.scss */
+input[type="text"].rg, input[type="password"].rg, input[type="submit"].rg {
+  width: 200px;
+}
+/* line 174, ../scss/_form.scss */
+input[type="text"].fu, input[type="password"].fu, input[type="submit"].fu {
+  width: 100%;
+}
+
+@media screen and (max-width: 1000px) {
+  /* line 182, ../scss/_form.scss */
+  input[type="text"], input[type="password"], input[type="submit"] {
+    height: 34px;
+    line-height: 32px;
+    width: 150px;
+    font-size: 12px;
+  }
+}
+/* line 192, ../scss/_form.scss */
+input[type="button"] {
+  height: 50px;
+  line-height: 50px;
+  background: #00a79d;
+  color: #fff;
+  text-align: center;
+  min-width: 150px;
+  border: none;
+  font-size: 15px;
+  cursor: pointer;
+  vertical-align: middle;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+/* line 205, ../scss/_form.scss */
+input[type="button"].stroke {
+  background: #fff;
+  border: 2px solid #999;
+  color: #666;
+  margin-left: 5px;
+  line-height: 46px;
+}
