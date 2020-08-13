@@ -106,6 +106,7 @@ public class BoardtblDao {
 	public void insert(Boardtbl boardtbl) {
 		//System.out.println("DAO 요청 도달");
 		
+		// save는 입력된 기본키의 값을 리턴 -> 어떤 자료형일지 모를 때 Serializable로 리턴
 		sessionFactory.getCurrentSession().save(boardtbl);
 	}
 	

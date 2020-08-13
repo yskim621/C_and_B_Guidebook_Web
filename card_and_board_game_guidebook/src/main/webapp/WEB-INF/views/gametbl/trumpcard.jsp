@@ -43,24 +43,133 @@
 
 
 		<!-- Features -->
-		<section id="features">
+		<section id="header">
 			<div class="container">
 				<ul class="demo">
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/poker.jpg" id=poker /></a>
+						<li><a><img
+								src="${pageContext.request.contextPath}/resources/images/poker.jpg"
+								id=poker /></a>
+							<section>
+								<div class="thumb no6">
+									<p class="bg"></p>
+									<h2> 
+									<strong>포커</strong> 
+									<span>- 5장의 카드로 우열을 겨루어, 최고 등급의 조합을 가지면 이기는 게임</span>
+									</h2>
+								</div>
+
+								<div class="game-guide">
+
+									<div class="wrap">
+										<div class="image">
+											<img src="/Common/images/front/03_pr/46.jpg" width="100%" alt="" />
+										</div>
+										<div class="text">
+											<h3>Texas Held'em Poker</h3>
+											<p class="mt20">
+												Texas Held'em Poker는 2장의 Hole card(손에 든 카드, Poket card라고도
+												함)와 5장의 Community Card(테이블에 오픈 되는 공유카드)를 가지고 <span>총
+													7장 중 5장의 카드로 우열을 겨루어 최고 등급의 조합을 가지는 게임</span>입니다.
+											</p>
+											<p>각 포커 게임에서는 52장으로 이루어진 한 벌의 표준 카드를 사용합니다. 카드의 랭킹은 Ace,
+												King, Queen, Jack, 10...,4,3,2의 순으로 내려갑니다. 스트레이트(Straight)에서
+												Ace는 2보다 낮은 랭킹의 카드로 사용할 수도 있습니다.</p>
+										</div>
+									</div>
+
+									<div>
+										<h3>핸드의 종류 및 서열</h3>
+										<table class="center">
+											<colgroup>
+												<col width="25%" />
+												<col width="50%" />
+												<col width="25%" />
+											</colgroup>
+											<thead>
+												<tr>
+													<th>카드명</th>
+													<th>설명</th>
+													<th>예</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>Royal Flush</td>
+													<td>동일한 무늬의 에이스, 킹, 퀸, 잭, 10으로 구성</td>
+													<td>높음</td>
+												</tr>
+												<tr>
+													<td>Straight Flush</td>
+													<td>무늬가 동일하고 연속된 5개의 숫자로 구성</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Four of a Kind<br></td>
+													<td>동일한 랭킹의 카드 4장으로 구성('쿼즈 quads')</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Full House</td>
+													<td>3장의 카드가 동일한 랭킹이고, 다른 2장이 동일한 랭킹인 경우.<br>2명
+														이상의 플레이어가 풀 하우스라면 3장의 카드의 랭킹이 높은 쪽이 이깁니다.
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Flush</td>
+													<td>동일한 무늬의 카드 5장으로 구성.<br>두 명 이상이 플러쉬라면 가장 높은
+														카드를 가진 핸드가 승리합니다.
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Straight</td>
+													<td>무늬와 상관없이 5장의 카드가 연속되는 숫자인 경우.<br>에이스는 가장 높은
+														스트레이트(A, K, Q, J, 10)와 가장 낮은 스트레이트(A, 2, 3, 4, 5)에서 모두 사용될
+														수 있습니다.
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Three of a Kind</td>
+													<td>동일한 랭킹의 카드 3장으로 구성('트립스' 또는 '셋')</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Two Pairs</td>
+													<td>동일한 랭킹의 카드 2장이 2세트 있는 경우.<br>2명 이상의 플레이어가
+														투페어라면 가장 높은 페어를 가진 핸드가 승리합니다.<br>카드의 랭킹이 동일하다면 두 번째
+														페어가 높은 쪽이 승리합니다.<br>두 번째 페어도 동일하다면 다섯 번째 카드('키커')가 높은
+														쪽이 승리합니다.
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>One Pair</td>
+													<td>랭킹이 동일한 카드가 2장일 때.<br>2명 이상의 플레이어가 똑같이 원페어라면
+														아웃사이드 카드가 높은 쪽이 승리합니다.
+													</td>
+													<td></td>
+												</tr>
+												<tr>
+													<td>Ace+King</td>
+													<td>가장 높은 카드를 가진 핸드가 승리합니다</td>
+													<td>낮음</td>
+												</tr>
+											</tbody>
+										</table>
+										<p class="text mt20">만약 같은 순위를 가지는 플레이어가 있는 경우, 플레이어가 가진
+											카드 중 족보에 영향을 미치는 더 높은 카드를 가지는 자가 이기게 되며, 영향을 미치는 카드마저 같은 순위의
+											카드라면 Push가 됩니다. 이때 베팅금액을 나눠 갖게 되며, 이를 Split이라 합니다. 남은 플레이어
+											모두가 족보에 영향을 미치는 카드를 가지지 않았을 경우 역시 Split이 되며 베팅금액을 나눠 갖게 됩니다.</p>
+									</div>
+								</div>
+							</section></li>
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack /></a>
 						<section>
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-								Cras tincidunt pellentesque lorem, id suscipit dolor rutrum id.
-								Morbi facilisis porta volutpat. Fusce adipiscing, mauris quis
-								congue tincidunt, sapien purus suscipit odio, quis dictum odio
-								tortor in sem. Ut sit amet libero nec orci mattis fringilla.
-								Praesent eu ipsum in sapien tincidunt molestie sed ut magna. Nam
-								accumsan dui at orci rhoncus pharetra tincidunt elit
-								ullamcorper. Sed ac mauris</p>
-						</section></li>
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack /></a>
-						<section>
-							<p>Ut laoreet augue et neque pretium non sagittis nibh
-								pulvinar. Etiam ornare tincidunt orci quis ultrices.</p>
+							<div id="black_jack_data">
+							
+							</div>
 						</section></li>
 					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara /></a>
 						<section>
@@ -88,9 +197,10 @@
 				</ul>
 			</div>
 		</section>
+		</section>
 
 		<!-- Content -->
-		<section id="content">
+		<section id="header">
 			<div class="container">
 				<div class="row aln-center">
 					<div class="col-4 col-12-medium">

@@ -28,25 +28,27 @@
 	padding: 0 !important;
 	margin-bottom: 3px;
 	border: 1px solid #999;
+	/* 전체 글 색상 변경 */
+	color: #c6c8c8;
 }
 
 .at-accordion-or-tabs > li > a {
 	display: block;
 	background: #ccc;
 	text-decoration: none;
-	color: #000;
+	color: #c6c8c8;
 	padding: 5px 7px;
 	border: none;
 }
 
 .at-accordion-or-tabs > li > a:hover, .at-accordion-or-tabs > li > a.active {
-	background: #B3B3B3;
+	background: #ffffff;
 	color: #F2F2F2;
 }
 
 .at-accordion-or-tabs > li > section {
 	display: none;
-	background: #ffffff;
+	background: #3B4346;
 	overflow: hidden;
 	position: relative;
 	width: 100%;
@@ -63,7 +65,7 @@
 	display: none;
 	height:1px;
 	width:1px;
-	background-color:#000000;
+	background-color: #3B4346;
 	position:absolute;
 	left: -1px;
 	bottom: -1px;
@@ -85,7 +87,7 @@
 	
 .at-accordion-or-tabs.at-tabs > li > a {
 	display: inline-block;
-	border: 1px #000000 solid;
+	border: 1px #3B4346 solid;
 	z-index:98;
 	position: relative;
 	border-bottom-color: #ffffff;
@@ -95,8 +97,8 @@
 	
 .at-accordion-or-tabs.at-tabs > li > a.active {
 	z-index:100;
-	background-color: #ffffff;
-	color: #000000;
+	background-color: #3B4346;
+	color: #c6c8c8;
 	}
 .at-accordion-or-tabs.at-tabs .at-tab-one-pixel-fix-left, .at-accordion-or-tabs.at-tabs .at-tab-one-pixel-fix-right {
 	display:inline-block;

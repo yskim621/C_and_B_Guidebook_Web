@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
-import gmail.yskim62100.c_and_b_guidebook.domain.Membertbl;
 import gmail.yskim62100.c_and_b_guidebook.service.MembertblService;
 
 @RestController
