@@ -1,6 +1,6 @@
 window.addEventListener("load", function(event){
 
-	alert(document.getElementById("boardnum").value);
+	// alert(document.getElementById("boardnum").value);
 
 	var boardupdatebtn = document.getElementById("boardupdatebtn");
 	var boardnum = document.getElementById("boardnum").value;
@@ -21,7 +21,7 @@ window.addEventListener("load", function(event){
 		
 		//ajax 요청 : update
 		var url = "../update/" + boardnum;
-		alert(url);
+		// alert(url);
 		
 		//ajax 객체를 생성
 		var request = new XMLHttpRequest();

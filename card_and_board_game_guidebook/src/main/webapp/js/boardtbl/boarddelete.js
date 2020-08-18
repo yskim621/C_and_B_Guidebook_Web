@@ -33,13 +33,13 @@ window.addEventListener("load", function(event){
 		
 		//ajax 요청에 응답이 오면
 		request.addEventListener("load", function(e){
-			alert("클릭");
+			// alert("클릭");
 			// console.log("클릭");
 			// console.log(e.target.responseText)
 			
 			// 결과를 파싱
 			var data = JSON.parse(e.target.responseText);
-			console.log(data);
+			// console.log(data);
 			
 			if(data != null){
 				location.href = "list";

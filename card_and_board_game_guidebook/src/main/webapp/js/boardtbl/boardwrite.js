@@ -35,7 +35,7 @@ window.addEventListener("load", function(event){
 			// console.log(e.target.responseText)
 			// 결과를 파싱
 			var data = JSON.parse(e.target.responseText);
-			console.log(data);
+			// console.log(data);
 			
 			if(data != null){
 				location.href = "list";
