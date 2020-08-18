@@ -1,7 +1,7 @@
 package gmail.yskim62100.c_and_b_guidebook.domain;
 
 public class Gametbl {
-	// trumpcard - onecard, bacara, blackjack, poker, hoola
+	// trumpcard - bacara, blackjack, poker, hoola
 	// hwatu - gostop, seosda
 	// boardgame - go, chess, janggi, omok
 	
