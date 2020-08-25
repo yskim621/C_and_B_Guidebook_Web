@@ -124,7 +124,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardcontent(boardcontent);
 			boardtbl.setBoardattachment(boardattachment);
 			boardtbl.setBoardwritedate(new Date());
-			boardtbl.setMembernickname("광고문의");
+			boardtbl.setMembernickname("재간둥이");
 
 			boardtblDao.insert(boardtbl);
 
@@ -185,7 +185,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		boardtbl.setBoardcontent(boardcontent);
 		boardtbl.setBoardattachment(boardattachment);
 		boardtbl.setBoardwritedate(new Date());
-		boardtbl.setMembernickname("광고문의");
+		boardtbl.setMembernickname("재간둥이");
 
 		System.out.println("Service: " + boardtbl);
 		boardtblDao.update(boardtbl);

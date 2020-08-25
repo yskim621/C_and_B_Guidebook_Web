@@ -168,7 +168,6 @@
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack /></a>
 						<section>
 							<div id="black_jack_data">
-							
 							</div>
 						</section></li>
 					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara /></a>
@@ -335,7 +334,8 @@
 	<script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
-
+	<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
+	
 <!-- JQuery 이용을 위한 스크립트 링크  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 
