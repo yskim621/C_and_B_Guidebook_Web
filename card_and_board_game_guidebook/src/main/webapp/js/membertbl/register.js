@@ -29,7 +29,7 @@ window.addEventListener('load', function(event){
 		location.href="login";
 	})
 
-	var flag = false;
+	
 	var emailRegExp = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 	var pwRegExp = /^.*(?=^.{1,15}$)(?=.*\d)(?=.*[a-z])(?=.*[!@#$%^&+=]).*$/;
 	var nicknameRegExp = /^[a-zA-z0-9]{5,30}$/;
@@ -37,6 +37,10 @@ window.addEventListener('load', function(event){
 	// 회원가입 버튼을 누르면
 	registerbtn.addEventListener('click', function(event){
 		//alert("클릭");
+		var flag = false;
+		memberemailmsg.innerHTML = '';
+		memberpasswordmsg.innerHTML = '';
+		membernicknamemsg.innerHTML = '';
 		if (memberemail.value.trim().length < 1) {
 			memberemailmsg.innerHTML = '이메일은 필수 입력입니다.<br/>';
 			memberemailmsg.style.color = "red";
@@ -96,8 +100,9 @@ window.addEventListener('load', function(event){
 			
 			// JSON 파싱 결과를 사용하기 위해서
 			var data = JSON.parse(event.target.responseText);
+			//alert(data.result);
 			
-			if(data != null){
+			if(data.result == true){
 				// 로그인으로 이동
 				location.href = "login";
 			}

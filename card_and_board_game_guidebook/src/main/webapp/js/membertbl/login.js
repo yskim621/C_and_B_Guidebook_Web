@@ -15,8 +15,8 @@ window.addEventListener("load", function(event) {
 			
 			loginbtn.addEventListener("click", function(event) {
 				
-				loginmsg.innerHTML = '';
 				var flag = false;
+				loginmsg.innerHTML = '';
 				if (membernickname.value.trim().length < 1) {
 							loginmsg.innerHTML = '닉네임은 필수 입력입니다.<br/>';
 							flag = true;
@@ -28,6 +28,7 @@ window.addEventListener("load", function(event) {
 
 				if (flag == true) {
 					event.preventDefault();
+					return;
 				}
 				
 				
@@ -53,8 +54,11 @@ window.addEventListener("load", function(event) {
 					// 결과만 확인
 					// alert(event.target.responseText);
 					
+					var data = JSON.parse(event.target.responseText);
+					// alert(data.result)
+					
 					// 로그인 실패한 경우
-					if(event.target.responseText.trim().length == 0){
+					if(data.result == false){
 						alert("없는 email이거나 잘못된 비밀번호입니다.");
 					}
 					// 로그인 성공한 경우

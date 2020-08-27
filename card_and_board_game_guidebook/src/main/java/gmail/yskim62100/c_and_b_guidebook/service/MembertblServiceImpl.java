@@ -102,7 +102,8 @@ public class MembertblServiceImpl implements MembertblService {
 			// 회원가입 메소드 호출
 			membertblDao.register(membertbl);
 			map.put("result", true);
-			request.setAttribute("register", map);
+			System.out.println("Service check: " + map);
+			request.setAttribute("result", map);
 			// map에서 result가 회원가입 성공여부
 			// emailcheck는 이메일 중복 검사 통과 여부
 			// nicknamecheck는 닉네임 중복 검사 통과 여부
