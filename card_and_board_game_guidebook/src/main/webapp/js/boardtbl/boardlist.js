@@ -36,12 +36,12 @@ window.addEventListener("load", function(event){
 		//ar = data.list.split(",");
 		for (temp in data.list){
 			document.writeln("<tr>");
-			document.writeln("<td>"+ data.list[temp][0] +"</td>");
-			document.writeln("<td><a id='" + data.list[temp][0] + "' href='get/" + data.list[temp][0] + "'>"+ data.list[temp][1] +"</a></td>");
-			document.writeln("<td>"+ data.list[temp][3] +"</td>");
-			document.writeln("<td>"+ data.list[temp][4] +"</td>");
-			document.writeln("<td>"+ data.list[temp][5] +"</td>");
-			document.writeln("<td>"+ data.list[temp][6] +"</td>");				
+			document.writeln("<td>"+ data.list[temp].boardnum +"</td>");
+			document.writeln("<td><a id='" + data.list[temp][0] + "' href='get/" + data.list[temp].boardnum + "'>"+ data.list[temp].boardtitle +"</a></td>");
+			document.writeln("<td>"+ data.list[temp].boardwritedate +"</td>");
+			document.writeln("<td>"+ data.list[temp].boardreadcnt +"</td>");
+			document.writeln("<td>"+ data.list[temp].boardattachment +"</td>");
+			document.writeln("<td>"+ data.list[temp].membernickname +"</td>");				
 			document.writeln("</tr>");	
 		}	
 		document.writeln(" </table> \n");
