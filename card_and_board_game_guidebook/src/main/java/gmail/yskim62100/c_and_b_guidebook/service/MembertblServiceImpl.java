@@ -20,7 +20,8 @@ import gmail.yskim62100.c_and_b_guidebook.util.CryptoUtil;
 public class MembertblServiceImpl implements MembertblService {
 	@Autowired
 	private MembertblDao membertblDao;
-
+	CryptoUtil cryptoUtil = new CryptoUtil();
+	
 	@Override
 	@Transactional
 	public void list(HttpServletRequest request, HttpServletResponse response) {
@@ -70,12 +71,13 @@ public class MembertblServiceImpl implements MembertblService {
 			for (String temp : emaillist) {
 				try {
 					// 복호화 해서 비교
-					if (CryptoUtil.decryptAES256(temp, key).equals(memberemail)) {
+					if (cryptoUtil.decrypt(temp).equals(memberemail)) {
 						map.put("emailcheck", false);
 						request.setAttribute("result", map);
 						return;
 					}
 				} catch (Exception e) {
+					System.out.println("이메일 체크 예외" + e.getMessage());
 				}
 			}
 
@@ -90,7 +92,7 @@ public class MembertblServiceImpl implements MembertblService {
 			// Dao의 파라미터 만들기
 			Membertbl membertbl = new Membertbl();
 			try {
-				membertbl.setMemberemail(CryptoUtil.encryptAES256(memberemail, key));
+				membertbl.setMemberemail(cryptoUtil.encrypt(memberemail));
 			} catch (Exception e) {
 			}
 			membertbl.setMembergender(membergender);
@@ -145,7 +147,7 @@ public class MembertblServiceImpl implements MembertblService {
 			if(BCrypt.checkpw(memberpassword, member.getMemberpassword())) {
 				map.put("membernickname", membernickname);
 				try {
-					map.put("memberemail", CryptoUtil.decryptAES256(member.getMemberemail(), "yskim621"));
+					map.put("memberemail", cryptoUtil.decrypt(member.getMemberemail()));
 				} catch(Exception e) {}
 				map.put("result", true);
 				request.setAttribute("result", map);
