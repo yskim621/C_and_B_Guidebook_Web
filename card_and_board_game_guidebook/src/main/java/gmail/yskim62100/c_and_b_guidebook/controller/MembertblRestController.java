@@ -22,6 +22,7 @@ public class MembertblRestController {
 	public Map<String, Object> register(HttpServletRequest request, HttpServletResponse response) {
 		membertblService.register(request);
 		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		System.out.println("REST controller: " + map);
 		return map;
 	}
 	

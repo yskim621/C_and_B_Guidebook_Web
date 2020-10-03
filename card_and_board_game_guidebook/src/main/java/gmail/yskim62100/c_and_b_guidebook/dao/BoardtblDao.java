@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -124,5 +125,11 @@ public class BoardtblDao {
 		sessionFactory.getCurrentSession().delete(boardtbl);
 	}
 	
+	// 조회수
+	public void readcnt(Integer boardnum) {
+		SQLQuery sql = sessionFactory.getCurrentSession().createSQLQuery("update boardtbl set boardreadcnt = boardreadcnt + 1 where boardnum = :boardnum");
+		sql.setParameter("boardnum", boardnum);
+		sql.executeUpdate();
+	}
 	
 }

@@ -72,7 +72,11 @@ public class BoardtblServiceImpl implements BoardtblService {
 		System.out.println("boardnum: " + boardnum);
 		
 		// DAO 메소드 호출
+		
+		boardtblDao.readcnt(Integer.parseInt(boardnum));
+		
 		Boardtbl boardtbl = boardtblDao.detail(Integer.parseInt(boardnum));
+		
 		System.out.println("Service: " + boardtbl);
 		
 		// 결과 저장
@@ -86,6 +90,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		// boardnum, boardtitle, boardcontent,
 		// boardattachment을 만들어서 데이터를 삽입
 		int boardnum = 1;
+		int boardreadcnt = 0;
 		// 데이터 개수 가져오기
 		int count = boardtblDao.count(new HashMap<String, Object>()).intValue();
 		// 데이터가 존재하면 가장 큰 itemid의 값에 +1
@@ -123,6 +128,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardtitle(boardtitle);
 			boardtbl.setBoardcontent(boardcontent);
 			boardtbl.setBoardattachment(boardattachment);
+			boardtbl.setBoardreadcnt(boardreadcnt);
 			boardtbl.setBoardwritedate(new Date());
 			boardtbl.setMembernickname("재간둥이");
 

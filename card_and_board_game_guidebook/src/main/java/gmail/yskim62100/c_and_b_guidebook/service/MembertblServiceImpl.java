@@ -57,6 +57,11 @@ public class MembertblServiceImpl implements MembertblService {
 			String memberphone = request.getParameter("memberphone");
 			String membergender = request.getParameter("membergender");
 			
+			System.out.println("memberemail: " + memberemail);
+			System.out.println("memberpassword: " + memberpassword);
+			System.out.println("membernickname: " + membernickname);
+			System.out.println("memberphone: " + memberphone);
+			
 			// 결과를 저장할 Map을 생성
 			Map<String, Object> map = new HashMap<String, Object>();
 			map.put("result", false);
