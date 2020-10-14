@@ -30,16 +30,22 @@ public class BoardtblServiceImpl implements BoardtblService {
 	@Override
 	@Transactional
 	public void select(HttpServletRequest request) {
+		
+		// 한 페이지에 보여질 데이터 개수
+		int size = 10;
+		String no = "1";
+		
+		// 시작 위치 번호를 저장할 변수
+		// MySQL은 데이터 번호가 0부터 시작합니다.
+		int start = 0;
+		
+		
 		// 파라미터 읽기
 		String searchtype = request.getParameter("searchtype");
 		String value = request.getParameter("value");
 		String pageno = request.getParameter("pageno");
-		// 작업을 수행
-		// 한 페이지에 보여질 데이터 개수
-		int size = 10;
-		// 시작 위치 번호를 저장할 변수
-		// MySQL은 데이터 번호가 0부터 시작합니다.
-		int start = 0;
+
+
 		if (pageno != null) {
 			start = (Integer.parseInt(pageno) - 1) * size;
 		}
@@ -50,12 +56,45 @@ public class BoardtblServiceImpl implements BoardtblService {
 		map.put("value", value);
 		map.put("start", start);
 		map.put("size", size);
+		map.put("pageno", pageno);
+		
 
 		// DAO 메소드를 호출해서 결과를 저장
 		List<Boardtbl> list = boardtblDao.select(map);
 		request.setAttribute("list", list);
-		int count = boardtblDao.count(map).intValue();
-		request.setAttribute("count", count);
+		
+		
+		int totalCount = boardtblDao.count(map).intValue();
+		
+		//데이터 출력화면에 표시할 마지막 페이지 번호와 시작 페이지 번호를 생성
+		//하나의 페이지에 페이지 번호를 10개씩 출력 (종료 페이지 번호를 임시로 계산)
+		//1 - 10, 2 - 10, 12 - 20, 21 - 30
+		if(pageno == null) {
+			pageno = no;
+		}
+		int endPage = (int)(Math.ceil(Integer.parseInt(pageno)/10.0)*10.0);
+		
+		int startPage = endPage - 9; 
+		
+		//전체 페이지 개수 구하기
+		int tempEndPage = (int)(Math.ceil(totalCount/(double)size));
+		//끝나는 페이지 번호가 전체 페이지 개수보다 크면 끝나는 페이지 번호 수정
+		if(endPage > tempEndPage) {
+			endPage = tempEndPage;
+		}
+				
+		//이전과 다음의 출력 여부 생성
+		boolean prev = startPage == 1 ? false : true;
+		boolean next = endPage * size >= totalCount ? false : true;
+		
+		request.setAttribute("startpage", startPage);
+		request.setAttribute("endpage", endPage);
+		request.setAttribute("pageno", pageno);
+		request.setAttribute("prev", prev);
+		request.setAttribute("next", next);
+		
+		//전체 데이터 개수를 출력하고자 하면 저장
+		request.setAttribute("count", totalCount);
 
 	}
 

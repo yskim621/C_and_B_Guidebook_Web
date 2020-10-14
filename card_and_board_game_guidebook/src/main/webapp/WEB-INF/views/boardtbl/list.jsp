@@ -10,21 +10,24 @@
 <body>
 	<h3 align="center">서비스 개선 건의사항</h3>
 	<div align="center" id="board">
-		<table align="center" border="1">
-			<c:forEach var="boardtbl" items="${list}">
-				<tr>
-					<td align="center">&nbsp;${boardtbl.boardnum}</td>
-					<td>
-					<a href="detail/${boardtbl.boardnum}">&nbsp;${boardtbl.boardtitle}</a>
-					</td>
-					<td>&nbsp;${boardtbl.boardwritedate}</td>
-					<td>&nbsp;${boardtbl.boardreadcnt}</td>
-					<td>&nbsp;${boardtbl.membernickname}</td>
-				</tr>
-			</c:forEach>
-		</table>
-		<input type="button" value="글쓰기" id="boardwrite" name="boardwrite" />
-		<input type="button" value="메인으로" id="mainbtn"/>
+	</div>
+	<div align = "center">
+		<c:if test="${prev == true}">
+			<a href="list?no=${startpage-1}">이전</a>
+		</c:if>
+		
+		<c:forEach var="idx" begin="${startpage}" end="${endpage}">
+			<c:if test="${pageno == idx}">
+				${pageno}&nbsp;
+			</c:if>
+			<c:if test="${pageno != idx}">
+				<a href="list?no=${idx}">${idx}</a>&nbsp;
+			</c:if>
+		</c:forEach>
+		
+		<c:if test="${next == true}">
+			<a href="list?no=${endpage+1}">다음</a>
+		</c:if>
 	</div>
 </body>
 <script src="${pageContext.request.contextPath}/js/boardtbl/boardlist.js"></script>

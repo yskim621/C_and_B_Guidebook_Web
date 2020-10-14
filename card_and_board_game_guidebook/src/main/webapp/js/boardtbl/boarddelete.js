@@ -29,7 +29,6 @@ window.addEventListener("load", function(event){
 		//요청을 전송
 		request.send(formData);
 		// console.log(formData);
-		event.preventDefault();
 		
 		//ajax 요청에 응답이 오면
 		request.addEventListener("load", function(e){
