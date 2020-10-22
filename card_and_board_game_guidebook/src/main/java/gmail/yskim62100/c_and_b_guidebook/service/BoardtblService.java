@@ -1,7 +1,7 @@
 package gmail.yskim62100.c_and_b_guidebook.service;
 
+
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -20,4 +20,5 @@ public interface BoardtblService {
 	
 	// 데이터 삭제을 위한 메소드
 	public void delete(HttpServletRequest request);
+	
 }

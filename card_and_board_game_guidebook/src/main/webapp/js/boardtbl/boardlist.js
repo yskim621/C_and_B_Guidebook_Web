@@ -1,11 +1,12 @@
-window.addEventListener("load", function(event){
+var pageno = 1;
+var board = document.getElementById("board");
+
+
+function adddata(){
 	
-	ar = [ '게시글 번호', '제목', '작성일', '조회수', '첨부파일', '작성자' ];
-	
-	var board = document.getElementById("board");
 	
 	//ajax 요청 : select
-	var url = "select";
+	var url = "select?pageno=" + pageno;
 		
 	//ajax 객체를 생성
 	var request = new XMLHttpRequest();
@@ -22,10 +23,11 @@ window.addEventListener("load", function(event){
 		// console.log("클릭");
 		// console.log(e.target.responseText);
 		
+		
 		var msg = "<div align=\"center\" id=\"board\" >"+
-			 	  "<table align='center' border='1'>"+
+			 	  "<table align='center' border='4'>"+
 				  "<tr>"+
-				  "<th>"+'게시글 번호'+"</th>"+
+				  "<th align='center'>"+'게시글 번호'+"</th>"+
 				  "<th>"+'제목'+"</th>"+
 				  "<th>"+'작성일'+"</th>"+
 				  "<th>"+'조회수'+"</th>"+
@@ -35,7 +37,8 @@ window.addEventListener("load", function(event){
 		
 		// 결과를 파싱
 		var data = JSON.parse(e.target.responseText);
-
+		
+		//alert(data.count);
 
 	
 		for (temp in data.list){
@@ -49,10 +52,23 @@ window.addEventListener("load", function(event){
     				"</tr>"
 		};
 		
+		// 더보기 버튼 만들기
+		// 현재 페이지가 종료 페이지보다 작을 때만 생성
+		if(data.pageno < data.endpage){
+			//페이지 번호 하나 올리기
+			pageno = pageno + 1;
+					
+			msg += "<tr id='add'>" + "<td colspan='9' align='center'>" + "더보기"	+ "</td></tr>";
+			$("#board").html($("#board").html() + msg);
+			// id가 add 객체를 click하면 adddata라는 함수를 호출
+			
+		}	
+		
 		msg += 	"</table>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
 				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" />"+ 
 				"</div>"
+				
 		
 		board.innerHTML = msg;
 				
@@ -62,8 +78,14 @@ window.addEventListener("load", function(event){
 		document.getElementById("mainbtn").addEventListener("click", function() {
 			location.href = "../";
 		});
-
-
+		
+		document.getElementById("add").addEventListener("click", adddata);
 	});
-	
+
+}
+
+			
+
+window.addEventListener("load", function(event){
+	adddata();
 });
