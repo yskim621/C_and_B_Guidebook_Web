@@ -2,14 +2,13 @@ package gmail.yskim62100.c_and_b_guidebook.service;
 
 
 import java.io.FileOutputStream;
-import java.util.Date;
+import java.sql.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,7 +24,9 @@ import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 public class BoardtblServiceImpl implements BoardtblService {
 	@Autowired
 	private BoardtblDao boardtblDao;
-
+	java.util.Date datautil = new java.util.Date();
+	Date datasql = new Date(datautil.getYear(), datautil.getMonth(), datautil.getDate());
+	
 	
 	@Override
 	@Transactional
@@ -165,7 +166,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardcontent(boardcontent);
 			boardtbl.setBoardattachment(boardattachment);
 			boardtbl.setBoardreadcnt(boardreadcnt);
-			boardtbl.setBoardwritedate(new Date());
+			boardtbl.setBoardwritedate(datasql.toString());
 			boardtbl.setMembernickname("재간둥이");
 
 			boardtblDao.insert(boardtbl);
@@ -226,7 +227,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		boardtbl.setBoardtitle(boardtitle);
 		boardtbl.setBoardcontent(boardcontent);
 		boardtbl.setBoardattachment(boardattachment);
-		boardtbl.setBoardwritedate(new Date());
+		boardtbl.setBoardwritedate(datasql.toString());
 		boardtbl.setMembernickname("재간둥이");
 
 		System.out.println("Service: " + boardtbl);

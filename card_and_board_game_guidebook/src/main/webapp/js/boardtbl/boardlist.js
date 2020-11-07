@@ -43,17 +43,17 @@ function adddata(){
 	
 		for (temp in data.list){
 			msg +=  "<tr>" + 
-    				"<td>"+ data.list[temp].boardnum +"</td>"+
+    				"<td align='center'>"+ data.list[temp].boardnum +"</td>"+
     				"<td><a id='" + data.list[temp][0] + "' href='get/" + data.list[temp].boardnum + "'>"+ data.list[temp].boardtitle +"</a></td>"+
-    				"<td>"+ data.list[temp].boardwritedate +"</td>"+
-    				"<td>"+ data.list[temp].boardreadcnt +"</td>"+
+    				"<td align='center'>"+ data.list[temp].boardwritedate +"</td>"+
+    				"<td align='center'>"+ data.list[temp].boardreadcnt +"</td>"+
     				"<td>"+ data.list[temp].boardattachment +"</td>"+
     				"<td>"+ data.list[temp].membernickname +"</td>"+
     				"</tr>"
 		};
 		
 		// 더보기 버튼 만들기
-		// 현재 페이지가 종료 페이지보다 작을 때만 생성
+		/* 현재 페이지가 종료 페이지보다 작을 때만 생성
 		if(data.pageno < data.endpage){
 			//페이지 번호 하나 올리기
 			pageno = pageno + 1;
@@ -62,7 +62,8 @@ function adddata(){
 			$("#board").html($("#board").html() + msg);
 			// id가 add 객체를 click하면 adddata라는 함수를 호출
 			
-		}	
+		}
+		*/	
 		
 		msg += 	"</table>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
@@ -79,7 +80,7 @@ function adddata(){
 			location.href = "../";
 		});
 		
-		document.getElementById("add").addEventListener("click", adddata);
+		//document.getElementById("add").addEventListener("click", adddata);
 	});
 
 }

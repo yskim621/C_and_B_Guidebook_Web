@@ -1,12 +1,12 @@
 package gmail.yskim62100.c_and_b_guidebook.domain;
 
-import java.util.Date;
+
 
 public class Boardtbl {
 	private Integer boardnum;
 	private String boardtitle;
 	private String boardcontent;
-	private Date boardwritedate;
+	private String boardwritedate;
 	private Integer boardreadcnt;
 	private String boardattachment;
 	private String membernickname;
@@ -35,11 +35,11 @@ public class Boardtbl {
 		this.boardcontent = boardcontent;
 	}
 
-	public Date getBoardwritedate() {
+	public String getBoardwritedate() {
 		return boardwritedate;
 	}
 
-	public void setBoardwritedate(Date boardwritedate) {
+	public void setBoardwritedate(String boardwritedate) {
 		this.boardwritedate = boardwritedate;
 	}
 
