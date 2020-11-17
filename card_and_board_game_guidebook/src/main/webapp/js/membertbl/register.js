@@ -104,6 +104,7 @@ window.addEventListener('load', function(event){
 			
 			if(data.result == true){
 				// 로그인으로 이동
+				alert("회원 가입이 완료되었습니다.");
 				location.href = "login";
 			}
 		});

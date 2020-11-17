@@ -159,7 +159,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 			} catch (Exception e) {
 				System.out.println("파일 저장 예외:" + e.getMessage());
 			}
-
+		} else {
+			boardattachment = "첨부파일 없음";
+		}
 			Boardtbl boardtbl = new Boardtbl();
 			boardtbl.setBoardnum(boardnum);
 			boardtbl.setBoardtitle(boardtitle);
@@ -167,13 +169,12 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardattachment(boardattachment);
 			boardtbl.setBoardreadcnt(boardreadcnt);
 			boardtbl.setBoardwritedate(datasql.toString());
-			boardtbl.setMembernickname("재간둥이");
+			boardtbl.setMembernickname("karl");
 
 			boardtblDao.insert(boardtbl);
 
 			request.setAttribute("insert", true);
-		}	
-		 
+			
 	}
 	
 	
@@ -219,7 +220,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 			} catch (Exception e) {
 				System.out.println("파일 저장 예외:" + e.getMessage());
 			}
-		}	
+		}
 		System.out.println("Service(boardattachment): " + boardattachment);
 
 		Boardtbl boardtbl = new Boardtbl();
@@ -228,7 +229,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		boardtbl.setBoardcontent(boardcontent);
 		boardtbl.setBoardattachment(boardattachment);
 		boardtbl.setBoardwritedate(datasql.toString());
-		boardtbl.setMembernickname("재간둥이");
+		boardtbl.setMembernickname("karl");
 
 		System.out.println("Service: " + boardtbl);
 		boardtblDao.update(boardtbl);

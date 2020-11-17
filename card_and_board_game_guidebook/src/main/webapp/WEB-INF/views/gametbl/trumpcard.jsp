@@ -79,7 +79,7 @@
 
 									<div>
 										<h3>핸드의 종류 및 서열</h3>
-										<table class="center">
+										<table class="center" border="2" bordercolor="#FFFFFF">
 											<colgroup>
 												<col width="25%" />
 												<col width="50%" />
