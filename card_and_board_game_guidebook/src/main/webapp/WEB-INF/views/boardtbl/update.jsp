@@ -15,9 +15,10 @@
 			게시글:<textarea cols="50" rows="30" name="boardcontent" id="boardcontent">${boardtbl.boardcontent}</textarea>
 			<input type="hidden" id="boardnum" name="boardnum" value="${boardtbl.boardnum}"/>
 			<input type="hidden" id="oldfile" name="oldfile" value="${boardtbl.boardattachment}"/>
+			<input type="hidden" id="boardreadcnt" name="boardreadcnt" value="${boardtbl.boardreadcnt}"/>
 		</form>
 		<input type="button" value="수정 완료" id="boardupdatebtn" name="boardupdatebtn" />
-		<input type="button" value="수정 취소" id="cancelupdatebtn" name="cancelupdatebtn" /> 
+		<input type="reset" value="수정 취소" id="cancelupdatebtn" name="cancelupdatebtn" /> 
 		<input type="button" value="목록으로" id="listbtn" />
 	</div>
 </body>

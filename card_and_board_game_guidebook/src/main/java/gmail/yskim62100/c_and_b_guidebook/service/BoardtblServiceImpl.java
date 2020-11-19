@@ -128,6 +128,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		// boardattachment을 만들어서 데이터를 삽입
 		int boardnum = 1;
 		int boardreadcnt = 0;
+		
 		// 데이터 개수 가져오기
 		int count = boardtblDao.count(new HashMap<String, Object>()).intValue();
 		// 데이터가 존재하면 가장 큰 itemid의 값에 +1
@@ -190,7 +191,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 		
 		String boardtitle = request.getParameter("boardtitle");
 		String boardcontent = request.getParameter("boardcontent");
+		String boardreadcnt = request.getParameter("boardreadcnt");
 		String oldfile = request.getParameter("oldfile");
+		
 		System.out.println(boardnum);
 		System.out.println(boardtitle);
 		System.out.println(boardcontent);
@@ -228,6 +231,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		boardtbl.setBoardtitle(boardtitle);
 		boardtbl.setBoardcontent(boardcontent);
 		boardtbl.setBoardattachment(boardattachment);
+		boardtbl.setBoardreadcnt(Integer.parseInt(boardreadcnt));
 		boardtbl.setBoardwritedate(datasql.toString());
 		boardtbl.setMembernickname("karl");
 
