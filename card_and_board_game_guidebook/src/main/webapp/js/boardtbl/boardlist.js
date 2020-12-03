@@ -65,7 +65,16 @@ function adddata(){
 		}
 		*/	
 		
-		msg += 	"</table>"+
+		msg +=  "</table>"+
+				"<div align = 'center'>"
+		
+		for(i=1; i<=data.endpage; i=i+1){
+			msg +=  "<span>" + i + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</span>"	
+		}		
+				
+				
+		msg	+=	
+				"</div>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
 				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" />"+ 
 				"</div>"
