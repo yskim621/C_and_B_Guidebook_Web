@@ -46,9 +46,8 @@
 		<section id="header">
 			<div class="container">
 				<ul class="demo">
-						<li><a><img
-								src="${pageContext.request.contextPath}/resources/images/poker.jpg"
-								id=poker /></a>
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/poker.jpg" id=poker onmouseover="pokerChangeImg()"/>
+								<img src="${pageContext.request.contextPath}/resources/images/poker_hover.png" id=poker_hover height="200" width="275" onmouseout="pokerShowOriginal()" /></a>
 							<section>
 								<div class="thumb no6">
 									<p class="bg"></p>
@@ -165,12 +164,16 @@
 									</div>
 								</div>
 							</section></li>
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack /></a>
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack onmouseover="blackjackChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/blackjack_hover.png" id=blackjack_hover height="200" width="275" onmouseout="blackjackShowOriginal()"/></a>
 						<section>
 							<div id="black_jack_data">
 							</div>
 						</section></li>
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara /></a>
+						
+						
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara onmouseover="bacaraChangeImg()"/>
+							<img src="${pageContext.request.contextPath}/resources/images/bacara_hover.png" id=bacara_hover height="200" width="275" onmouseout="bacaraShowOriginal()"/></a>
 						<section>
 							<p>Donec mattis mauris gravida metus laoreet non rutrum sem
 								viverra. Aenean nibh libero, viverra vel vestibulum in,
@@ -335,6 +338,7 @@
 	<script src="${pageContext.request.contextPath}/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
+	<script src="${pageContext.request.contextPath}/js/gametbl/trumpcard.js"></script>
 	
 <!-- JQuery 이용을 위한 스크립트 링크  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -346,7 +350,10 @@
 $('.demo').accordionortabs();
 </script>
 <script type="text/javascript">
-
+  document.querySelector('#poker_hover').style.display = "none";
+  document.querySelector('#blackjack_hover').style.display = "none";
+  document.querySelector('#bacara_hover').style.display = "none";
+  
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);
   _gaq.push(['_setDomainName', 'jqueryscript.net']);

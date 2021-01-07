@@ -1,5 +1,5 @@
 window.addEventListener("load", function(event){
-	var black_jack = document.getElementById("black_jack");
+	var black_jack = document.getElementById("blackjack_hover");
 	
 	black_jack.addEventListener("click", function(event){
 		//alert("클릭");
@@ -35,3 +35,13 @@ window.addEventListener("load", function(event){
 	
 	
 });
+
+function blackjackChangeImg(){
+	document.querySelector('#black_jack').style.display = "none";
+	document.querySelector('#blackjack_hover').style.display = "block";	
+}
+  
+function blackjackShowOriginal() {	
+	document.querySelector('#blackjack_hover').style.display = "none";
+	document.querySelector('#black_jack').style.display = "block";
+}
