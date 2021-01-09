@@ -61,7 +61,7 @@ public class GametblServiceImpl implements GametblService {
 			
 			//3.스트림을 만들어서 문자열 읽어오기
 			//확인 한 후 한글이 깨지면 수정
-			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream()));
+			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
 			
 			//문자열을 임시로 저장할 인스턴스
 			StringBuilder sb = new StringBuilder();
