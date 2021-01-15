@@ -1,8 +1,11 @@
 window.addEventListener("load", function(event){
 	var black_jack = document.getElementById("blackjack_hover");
+	var black_jack_data = document.getElementById("black_jack_data");
+	
 	
 	black_jack.addEventListener("click", function(event){
 		//alert("클릭");
+		black_jack_data.innerHTML = " ";
 		
 		//ajax 요청 : select
 		var url = "trumpcard/black_jack";

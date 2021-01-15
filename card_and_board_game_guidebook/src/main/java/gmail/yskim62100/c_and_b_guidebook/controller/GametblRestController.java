@@ -20,9 +20,9 @@ public class GametblRestController {
 	private GametblService gametblService;
 	
 	@RequestMapping(value = "game/trumpcard/black_jack")
-	public Map<String, Object> gameinfo(HttpServletRequest request) {
+	public Map<String, Object> gameinfo_blackjack(HttpServletRequest request) {
 
-		gametblService.gameinfo(request);
+		gametblService.gameinfo_blackjack(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -34,5 +34,18 @@ public class GametblRestController {
 		return map;
 	}
 	
-	
+	@RequestMapping(value = "game/trumpcard/bacara")
+	public Map<String, Object> gameinfo_bacara(HttpServletRequest request) {
+
+		gametblService.gameinfo_bacara(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+		
+		// 리턴부분이 Json형태로 형태로 자료를 만들기 위해서는 Serializable이 필요
+		return map;
+	}
 }

@@ -175,15 +175,8 @@
 					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara onmouseover="bacaraChangeImg()"/>
 							<img src="${pageContext.request.contextPath}/resources/images/bacara_hover.png" id=bacara_hover height="200" width="275" onmouseout="bacaraShowOriginal()"/></a>
 						<section>
-							<p>Donec mattis mauris gravida metus laoreet non rutrum sem
-								viverra. Aenean nibh libero, viverra vel vestibulum in,
-								porttitor ut sapien. Phasellus tempor lorem id justo ornare
-								tincidunt. Nulla faucibus, purus eu placerat fermentum, velit mi
-								iaculis nunc, bibendum tincidunt ipsum justo eu mauris. Nulla
-								facilisi. Vestibulum vel lectus ac purus tempus suscipit nec sit
-								amet eros. Nullam fringilla, enim eu lobortis dapibus, quam
-								magna tincidunt nibh, sit amet imperdiet dolor justo congue
-								turpis.</p>
+							<div id="bacara_data">
+							</div>
 						</section></li>
 					<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.jpg" id=hoola /></a>
 						<section>
@@ -338,6 +331,7 @@
 	<script src="${pageContext.request.contextPath}/js/util.js"></script>
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
+	<script src="${pageContext.request.contextPath}/js/gametbl/bacara.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/trumpcard.js"></script>
 	
 <!-- JQuery 이용을 위한 스크립트 링크  -->
