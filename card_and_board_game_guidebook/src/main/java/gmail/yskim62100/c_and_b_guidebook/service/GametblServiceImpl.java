@@ -133,7 +133,8 @@ public class GametblServiceImpl implements GametblService {
 
 			// 1.주소 만들기 - 파라미터 확인
 			// String gameinfo = gametbl.getGameinfo();
-			String addr = "https://www.7luck.com/JSPVIEW/default?URL_JSP=--guid--GUID_04_02_01&sel_lang_typ=KR";
+			//String addr = "https://www.7luck.com/JSPVIEW/default?URL_JSP=--guid--GUID_04_02_01&sel_lang_typ=KR";
+			String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
 			connection(addr);
 
 			//System.out.println(html);
@@ -143,12 +144,19 @@ public class GametblServiceImpl implements GametblService {
 				// 문서 구조 가져오기
 				Document document = (Document) Jsoup.parse(html);
 				
-				Elements elements1 = document.getElementsByClass("casinoTxt");
-				Elements elements2 = document.getElementsByClass("ulType01");
+				
+				Elements elements1 = document.getElementsByClass("thumb no2");
+				Elements elements2 = document.getElementsByClass("game-guide");
+				
+				//System.out.println("Parsing: " + elements2.get(1));
+				
+				//Elements elements2 = temp.get(1);
+				//Elements elements1 = document.getElementsByClass("casinoTxt");
+				//Elements elements2 = document.getElementsByClass("ulType01");
 
 				
 				
-				String content = elements1.toString() + elements2.toString();
+				String content = elements1.toString() + elements2.get(1).toString();
 				
 				list.add(content);
 				
@@ -162,7 +170,7 @@ public class GametblServiceImpl implements GametblService {
 			} else {
 				System.out.println("읽어온 데이터가 없음");
 			}
-			
+			/*
 			addr = "https://www.7luck.com/JSPVIEW/default?URL_JSP=--guid--GUID_04_02_02&sel_lang_typ=KR";
 			connection(addr);
 			
@@ -187,6 +195,7 @@ public class GametblServiceImpl implements GametblService {
 			} else {
 				System.out.println("읽어온 데이터가 없음");
 			}
+			*/
 
 		} catch (Exception e) {
 			System.err.println("다운로드 예외: " + e.getMessage());

@@ -1,7 +1,7 @@
 window.addEventListener("load", function(event){
 	var bacara = document.getElementById("bacara_hover");
 	var bacara_data = document.getElementById("bacara_data");
-	
+
 
 	
 	bacara.addEventListener("click", function(event){
@@ -29,8 +29,13 @@ window.addEventListener("load", function(event){
 			var data = JSON.parse(e.target.responseText);
 			// alert(data.result);
 			// console.log(data);
-			
 			bacara_data.innerHTML = data.result
+			
+			document.querySelectorAll(".center")[1].setAttribute("border", 5);
+			document.querySelectorAll(".center")[1].setAttribute("style", "text-align: center;");
+			document.querySelectorAll(".center")[2].setAttribute("border", 5);
+			document.querySelectorAll(".center")[2].setAttribute("style", "text-align: center;");
+			
 			
 		});
 		
