@@ -1,12 +1,14 @@
-var pageno = 1;
 var board = document.getElementById("board");
+window.addEventListener("load", function(){
+	var pageno = 1;
+	adddata(pageno);
+});
 
+function adddata(pageno){
 
-function adddata(){
-	
 	
 	//ajax 요청 : select
-	var url = "select?pageno=" + pageno;
+	var url = "select/" + pageno;
 		
 	//ajax 객체를 생성
 	var request = new XMLHttpRequest();
@@ -64,24 +66,21 @@ function adddata(){
 			
 		}
 		*/	
-		
-		msg +=  "</table>"+
-				"<div align = 'center'>"
-		
-		for(i=1; i<=data.endpage; i=i+1){
-			msg +=  "<span>" + i + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</span>"	
-		}		
+
 				
+		msg	+=	"</table>"+
 				
-		msg	+=	
-				"</div>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
 				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" />"+ 
 				"</div>"
-				
 		
-		board.innerHTML = msg;
-				
+		
+		for(i=0; i<data.endpage; i=i+1){
+			msg +=  "<span align='center'><button onclick='adddata("+ (i +1) + ")'>" + (i+1) + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</button></span>"	
+			board.innerHTML = msg;
+		}
+		
+		
 		document.getElementById("boardwritebtn").addEventListener("click", function(){
 			location="write";
 		});
@@ -89,13 +88,13 @@ function adddata(){
 			location.href = "../";
 		});
 		
-		//document.getElementById("add").addEventListener("click", adddata);
+
 	});
+	
 
 }
 
+
+
 			
 
-window.addEventListener("load", function(event){
-	adddata();
-});

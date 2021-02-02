@@ -26,7 +26,7 @@ public class BoardtblRestController {
 	
 	
 	// 검색해서 데이터를 전송하는 요청을 생성
-	@RequestMapping(value = "board/select")
+	@RequestMapping(value = "board/select/{pageno}")
 	public Map<String, Object> select(HttpServletRequest request) {
 		// 서비스 메소드를 호출해서 결과를 가져옵니다.
 		boardtblService.select(request);

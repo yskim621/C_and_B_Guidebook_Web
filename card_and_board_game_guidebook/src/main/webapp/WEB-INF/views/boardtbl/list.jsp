@@ -46,6 +46,7 @@
 			<div class="container">
 				<div align="center" id="board"></div>
 					<div align="center">
+						<!-- 
 						<c:if test="${prev == true}">
 							<a href="select?pageno=${startpage-1}">이전</a>
 						</c:if>
@@ -62,6 +63,7 @@
 						<c:if test="${next == true}">
 							<a href="select?pageno=${endpage+1}">다음</a>
 						</c:if>
+						-->
 					</div>
 				</div>
 			</div>

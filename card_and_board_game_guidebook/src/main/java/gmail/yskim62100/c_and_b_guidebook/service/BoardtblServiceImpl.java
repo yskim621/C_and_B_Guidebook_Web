@@ -39,11 +39,16 @@ public class BoardtblServiceImpl implements BoardtblService {
 		// MySQL은 데이터 번호가 0부터 시작합니다.
 		int start = 0;
 		
+		String requestURI = request.getRequestURI();
+		String [] ar = requestURI.split("/");
+		String pageno = ar[ar.length-1];
+		
+		System.out.println("pageno = " + pageno);
 		
 		// 파라미터 읽기
 		String searchtype = request.getParameter("searchtype");
 		String value = request.getParameter("value");
-		String pageno = request.getParameter("pageno");
+
 		
 		if (pageno == null) {
 			pageno = "1";
