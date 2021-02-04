@@ -69,7 +69,6 @@ function adddata(pageno){
 
 				
 		msg	+=	"</table>"+
-				
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
 				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" />"+ 
 				"</div>"

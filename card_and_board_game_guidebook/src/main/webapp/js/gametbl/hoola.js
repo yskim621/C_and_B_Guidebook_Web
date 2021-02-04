@@ -44,12 +44,13 @@ window.addEventListener("load", function(event){
 	
 });
 
-function bacaraChangeImg(){
-	document.querySelector('#bacara').style.display = "none";
-	document.querySelector('#bacara_hover').style.display = "block";	
+function hoolaChangeImg(){
+	document.querySelector('#hoola').style.display = "none";
+	document.querySelector('#hoola_hover').style.display = "block";	
 }
   
-function bacaraShowOriginal() {	
-	document.querySelector('#bacara_hover').style.display = "none";
-	document.querySelector('#bacara').style.display = "block";
+function hoolaShowOriginal() {	
+	document.querySelector('#hoola_hover').style.display = "none";
+	document.querySelector('#hoola').style.display = "block";
 }
+

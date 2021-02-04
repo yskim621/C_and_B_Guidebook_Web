@@ -61,7 +61,7 @@
 
 									<div class="wrap">
 										<div class="image">
-											<img src="/Common/images/front/03_pr/46.jpg" width="100%" alt="" />
+											<img src="${pageContext.request.contextPath}/resources/images/poker.jpg" height="250" width="400" />
 										</div>
 										<div class="text">
 											<h3>Texas Held'em Poker</h3>
@@ -178,16 +178,11 @@
 							<div id="bacara_data">
 							</div>
 						</section></li>
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.jpg" id=hoola /></a>
+					<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.png" id=hoola onmouseover="hoolaChangeImg()" />
+							<img src="${pageContext.request.contextPath}/resources/images/hoola_hover.png" id=hoola_hover height="200" width="275" onmouseout="hoolaShowOriginal()"/></a>
 						<section>
-							<p>Cum sociis natoque penatibus et magnis dis parturient
-								montes, nascetur ridiculus mus. Phasellus dui urna, mollis vel
-								suscipit in, pharetra at ligula. Pellentesque a est vel est
-								fermentum pellentesque sed sit amet dolor. Nunc in dapibus nibh.
-								Aliquam erat volutpat. Phasellus vel dui sed nibh iaculis
-								convallis id sit amet urna. Proin nec tellus quis justo
-								consequat accumsan. Vivamus turpis enim, auctor eget placerat
-								eget, aliquam ut sapien.</p>
+							<div id="hoola_data">
+							</div>
 						</section></li>
 				</ul>
 			</div>
@@ -332,6 +327,7 @@
 	<script src="${pageContext.request.contextPath}/js/main.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/bacara.js"></script>
+	<script src="${pageContext.request.contextPath}/js/gametbl/hoola.js"></script>
 	<script src="${pageContext.request.contextPath}/js/gametbl/trumpcard.js"></script>
 	
 <!-- JQuery 이용을 위한 스크립트 링크  -->
@@ -347,6 +343,7 @@ $('.demo').accordionortabs();
   document.querySelector('#poker_hover').style.display = "none";
   document.querySelector('#blackjack_hover').style.display = "none";
   document.querySelector('#bacara_hover').style.display = "none";
+  document.querySelector('#hoola_hover').style.display = "none";
   
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);

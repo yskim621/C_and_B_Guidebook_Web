@@ -9,13 +9,3 @@ function pokerShowOriginal() {
 }
 
 
-
-function bacaraChangeImg(){
-	document.querySelector('#bacara').style.display = "none";
-	document.querySelector('#bacara_hover').style.display = "block";	
-}
-  
-function bacaraShowOriginal() {	
-	document.querySelector('#bacara_hover').style.display = "none";
-	document.querySelector('#bacara').style.display = "block";
-}

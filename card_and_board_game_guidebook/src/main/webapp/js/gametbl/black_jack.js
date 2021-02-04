@@ -32,12 +32,20 @@ window.addEventListener("load", function(event){
 			
 			black_jack_data.innerHTML = data.result
 			
+			
+			if(document.querySelectorAll(".image")[1] != null){
+				var blackjackImg = document.getElementById("black_jack").getAttribute("src");
+				document.querySelectorAll(".image")[1].setAttribute("src", blackjackImg);
+			}
 		});
 		
 	});
 	
 	
 });
+
+
+
 
 function blackjackChangeImg(){
 	document.querySelector('#black_jack').style.display = "none";
