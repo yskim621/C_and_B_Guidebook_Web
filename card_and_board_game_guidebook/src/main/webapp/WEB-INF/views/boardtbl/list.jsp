@@ -31,9 +31,9 @@
 							<a href="${pageContext.request.contextPath}/game/trumpcard">트럼프 카드</a> 
 							<a href="${pageContext.request.contextPath}/game/hwatu"> 화투</a> 
 							<a href="${pageContext.request.contextPath}/game/boardgame">보드게임</a> 
-							<a href="${pageContext.request.contextPath}/board/list">게시판</a>
+							<a href="${pageContext.request.contextPath}/board">게시판</a>
 							<a href="${pageContext.request.contextPath}/member/register">회원가입</a> 
-							<a href="${pageContext.request.contextPath}/member/login">로그인</a>
+							<a href="${pageContext.request.contextPath}/" id="loginBanner">로그아웃</a>
 							
 						</nav>
 

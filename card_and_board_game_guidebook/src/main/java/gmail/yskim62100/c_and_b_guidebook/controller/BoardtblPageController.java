@@ -17,8 +17,14 @@ public class BoardtblPageController {
 	private BoardtblService boardtblService;
 	
 	
-	@RequestMapping(value="board/list", method = RequestMethod.GET)
+	@RequestMapping(value="board", method = RequestMethod.GET)
 	public String board(HttpServletRequest request) {
+		
+		return "membertbl/login/login";
+	}
+	
+	@RequestMapping(value="board/list", method = RequestMethod.GET)
+	public String list(HttpServletRequest request) {
 		
 		return "boardtbl/list";
 	}
