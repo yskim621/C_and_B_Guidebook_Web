@@ -48,4 +48,18 @@ public class GametblRestController {
 		// 리턴부분이 Json형태로 형태로 자료를 만들기 위해서는 Serializable이 필요
 		return map;
 	}
+	
+	@RequestMapping(value = "game/trumpcard/hoola")
+	public Map<String, Object> gameinfo_hoola(HttpServletRequest request) {
+
+		gametblService.gameinfo_hoola(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
 }

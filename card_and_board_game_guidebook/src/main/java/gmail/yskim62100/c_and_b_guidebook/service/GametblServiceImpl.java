@@ -133,7 +133,6 @@ public class GametblServiceImpl implements GametblService {
 
 			// 1.주소 만들기 - 파라미터 확인
 			// String gameinfo = gametbl.getGameinfo();
-			//String addr = "https://www.7luck.com/JSPVIEW/default?URL_JSP=--guid--GUID_04_02_01&sel_lang_typ=KR";
 			String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
 			connection(addr);
 
@@ -148,11 +147,6 @@ public class GametblServiceImpl implements GametblService {
 				Elements elements1 = document.getElementsByClass("thumb no2");
 				Elements elements2 = document.getElementsByClass("game-guide");
 				
-				//System.out.println("Parsing: " + elements2.get(1));
-				
-				//Elements elements2 = temp.get(1);
-				//Elements elements1 = document.getElementsByClass("casinoTxt");
-				//Elements elements2 = document.getElementsByClass("ulType01");
 
 				
 				
@@ -161,41 +155,14 @@ public class GametblServiceImpl implements GametblService {
 				list.add(content);
 				
 				content = "";
-				
-				//System.out.println("Bacara parsing HTML: " + elements1.toString() + elements2.toString());
-				//System.out.println("Bacara initializated HTML: " + content);
+
 				
 				request.setAttribute("result", list);
 
 			} else {
 				System.out.println("읽어온 데이터가 없음");
 			}
-			/*
-			addr = "https://www.7luck.com/JSPVIEW/default?URL_JSP=--guid--GUID_04_02_02&sel_lang_typ=KR";
-			connection(addr);
-			
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				Elements elements3 = document.getElementsByClass("tblCol mt5");
-				
-				
-				String content = elements3.toString();
-				
-				list.add(content);
-				
-				content = "";
-				
-				//System.out.println("Bacara parsing HTML: " + elements1.toString() + elements2.toString());
-				//System.out.println("Bacara initializated HTML: " + content);
-				
-				request.setAttribute("result", list);
 
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-			*/
 
 		} catch (Exception e) {
 			System.err.println("다운로드 예외: " + e.getMessage());
@@ -205,5 +172,57 @@ public class GametblServiceImpl implements GametblService {
 		// System.out.println(html);
 
 	}
+	
+	
+	@Override
+	@Transactional
+	public void gameinfo_hoola(HttpServletRequest request) {
+		
+		// 파싱한 결과를 저장할 map
+		List<String> list = new ArrayList<String>();
+		
+		try {
 
+			// 1.주소 만들기 - 파라미터 확인
+			// String gameinfo = gametbl.getGameinfo();
+			String addr = "https://lovem74.tistory.com/15";
+			connection(addr);
+
+			//System.out.println(html);
+
+			// 데이터 존재 시 파싱
+			if (html != null && html.trim().length() > 0) {
+				// 문서 구조 가져오기
+				Document document = (Document) Jsoup.parse(html);
+				
+				
+				Elements elements1 = document.getElementsByClass("entry-content");
+				//Elements elements2 = document.getElementsByClass("game-guide");
+				
+
+				
+				
+				String content = elements1.toString();
+				
+				list.add(content);
+				
+				content = "";
+
+				
+				request.setAttribute("result", list);
+
+			} else {
+				System.out.println("읽어온 데이터가 없음");
+			}
+
+
+		} catch (Exception e) {
+			System.err.println("다운로드 예외: " + e.getMessage());
+			e.printStackTrace();
+		}
+		// 데이터 확인
+		// System.out.println(html);
+
+	}
+	//
 }

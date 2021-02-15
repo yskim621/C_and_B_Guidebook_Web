@@ -8,4 +8,6 @@ public interface GametblService {
 	public void gameinfo_blackjack(HttpServletRequest request);
 
 	public void gameinfo_bacara(HttpServletRequest request);
+	
+	public void gameinfo_hoola(HttpServletRequest request);
 }
