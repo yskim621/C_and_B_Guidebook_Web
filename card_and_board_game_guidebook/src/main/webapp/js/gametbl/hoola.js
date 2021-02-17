@@ -1,10 +1,10 @@
-window.addEventListener("load", function(event){
+window.addEventListener("load", function(){
 	var hoola = document.getElementById("hoola_hover");
 	var hoola_data = document.getElementById("hoola_data");
 
 
 	
-	hoola.addEventListener("click", function(event){
+	hoola.addEventListener("click", function(){
 		//alert("클릭");
 		hoola_data.innerHTML = " ";
 		//ajax 요청 : select

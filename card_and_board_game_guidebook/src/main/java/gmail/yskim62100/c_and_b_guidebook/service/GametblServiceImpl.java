@@ -197,12 +197,12 @@ public class GametblServiceImpl implements GametblService {
 				
 				
 				Elements elements1 = document.getElementsByClass("entry-content");
-				//Elements elements2 = document.getElementsByClass("game-guide");
-				
 
 				
 				
 				String content = elements1.toString();
+				
+				//System.out.println("content: " + content);
 				
 				list.add(content);
 				

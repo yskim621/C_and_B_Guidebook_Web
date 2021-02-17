@@ -172,13 +172,13 @@
 						</section></li>
 						
 						
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara onmouseover="bacaraChangeImg()"/>
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara onmouseover="bacaraChangeImg()"/>
 							<img src="${pageContext.request.contextPath}/resources/images/bacara_hover.png" id=bacara_hover height="200" width="275" onmouseout="bacaraShowOriginal()"/></a>
 						<section>
 							<div id="bacara_data">
 							</div>
 						</section></li>
-					<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.png" id=hoola onmouseover="hoolaChangeImg()" />
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.png" id=hoola onmouseover="hoolaChangeImg()" />
 							<img src="${pageContext.request.contextPath}/resources/images/hoola_hover.png" id=hoola_hover height="200" width="275" onmouseout="hoolaShowOriginal()"/></a>
 						<section>
 							<div id="hoola_data">
@@ -189,7 +189,7 @@
 		</section>
 		</section>
 
-		<!-- Content -->
+		<!-- Content ------------------------------------------------>
 		<section id="header">
 			<div class="container">
 				<div class="row aln-center">
@@ -319,16 +319,16 @@
 
 	</div>
 
-	<!-- Scripts -->
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/browser.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/util.js"></script>
-	<script src="${pageContext.request.contextPath}/js/main.js"></script>
-	<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
-	<script src="${pageContext.request.contextPath}/js/gametbl/bacara.js"></script>
-	<script src="${pageContext.request.contextPath}/js/gametbl/hoola.js"></script>
-	<script src="${pageContext.request.contextPath}/js/gametbl/trumpcard.js"></script>
+<!-- Scripts -->
+<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/browser.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/util.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/black_jack.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/bacara.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/hoola.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/trumpcard.js"></script>
 	
 <!-- JQuery 이용을 위한 스크립트 링크  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>

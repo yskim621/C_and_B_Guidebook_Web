@@ -10,12 +10,14 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/hwatu.css"/>
+<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/jquery.atAccordionOrTabs.css"/>
+
 </head>
 <body>
 	<div id="page-wrapper">
 
 		<!-- Header -->
-		<section id="header">
+		<section id="header" >
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -38,95 +40,33 @@
 					</div>
 				</div>
 			</div>
-
-			<div id="banner">
-				<div class="container">
-					<div class="row">
-						<div class="col-6 col-12-medium">
+		
+			<!-- Features -->
+			<section id="header">
+				<div class="container" align="center">
+					<ul class="demo">
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/gostop.jpg" id=gostop /></a>
+								
+						<section>
+							<div id="gostop_data">
+							</div>
+						</section></li>
+						
+						
+						<li><a><img src="${pageContext.request.contextPath}/resources/images/seosda.png" id=seosda /></a>
 							
-						</div>
-						
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/gostop.jpg" id=gostop />
-						</div>
-						
-						<div class="col-6 col-12-medium">
-							<img src="${pageContext.request.contextPath}/resources/images/seosda.png" id=seosda />
-						</div>
-						
-					</div>
+						<section>	
+							<div id="seosda_data">
+							</div>
+						</section></li>
+					</ul>
 				</div>
-			</div>
+			</section>
 		</section>
 
-		<!-- Features -->
-		<section id="features">
-			<div class="container">
-				<div class="row">
-					<div class="col-3 col-6-medium col-12-small">
 
-						<!-- Feature #1 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic01.jpg" alt="" /></a>
-							<h2>Welcome to Halcyonic</h2>
-							<p>
-								This is <strong>Halcyonic</strong>, a free site template by <a
-									href="http://twitter.com/ajlkn">AJ</a> for <a
-									href="http://html5up.net">HTML5 UP</a>. It's responsive, built
-								on HTML5 + CSS3, and includes 5 unique page layouts.
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #2 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic02.jpg" alt="" /></a>
-							<h2>Responsive You Say?</h2>
-							<p>Yes! Halcyonic is built to be fully responsive so it looks
-								great at every screen size, from desktops to tablets to mobile
-								phones.</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #3 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic03.jpg" alt="" /></a>
-							<h2>License Info</h2>
-							<p>
-								Halcyonic is licensed under the <a
-									href="http://html5up.net/license">CCA</a> license, so use it
-								for personal/commercial use as much as you like (just keep our
-								credits intact).
-							</p>
-						</section>
-
-					</div>
-					<div class="col-3 col-6-medium col-12-small">
-
-						<!-- Feature #4 -->
-						<section>
-							<a href="#" class="bordered-feature-image"><img
-								src="images/pic04.jpg" alt="" /></a>
-							<h2>Volutpat etiam aliquam</h2>
-							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
-								sed. Suspendisse eu varius nibh. Suspendisse vitae magna mollis.
-							</p>
-						</section>
-
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Content -->
-		<section id="content">
+		<!-- Content --------------------------------------------->
+		<section id="header">
 			<div class="container">
 				<div class="row aln-center">
 					<div class="col-4 col-12-medium">
@@ -263,12 +203,41 @@
 
 	</div>
 
-	<!-- Scripts -->
-	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/browser.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
-	<script src="${pageContext.request.contextPath}/js/util.js"></script>
-	<script src="${pageContext.request.contextPath}/js/main.js"></script>
+<!-- Scripts -->
+<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/browser.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/util.js"></script>
+<script src="${pageContext.request.contextPath}/js/main.js"></script>
 
+
+<!-- JQuery 이용을 위한 스크립트 링크  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<script src="http://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.atAccordionOrTabs.js"></script>
+<script src="${pageContext.request.contextPath}/js/jquery.bbq.js"></script>
+	
+<script type="text/javascript">
+$('.demo').accordionortabs();
+</script>
+<script type="text/javascript">
+  document.querySelector('#poker_hover').style.display = "none";
+  document.querySelector('#blackjack_hover').style.display = "none";
+  document.querySelector('#bacara_hover').style.display = "none";
+  document.querySelector('#hoola_hover').style.display = "none";
+  
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>	
 </body>
 </html>
