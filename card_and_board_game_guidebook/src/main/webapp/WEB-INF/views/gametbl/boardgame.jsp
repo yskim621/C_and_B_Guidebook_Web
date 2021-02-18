@@ -45,32 +45,49 @@
 		<section id="header">
 			<div class="container">
 				<ul class="demo">
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/chess.jpg" id=chess width="275" height="200" /></a>
-							
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/chess.jpg" id=chess width="275" height="200" onmouseover="chessChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/chess_hover.jpg" id=chess_hover height="200" width="275" onmouseout="chessShowOriginal()" />
+							</a>
 							<section>
 								<div id="chess_data">
 								</div>
 							</section></li>
 							
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/go.jpg" id=go width="275" height="200" /></a>
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/go.jpg" id=go width="275" height="200" onmouseover="goChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/go_hover.jpg" id=go_hover height="200" width="275" onmouseout="goShowOriginal()" />
+							</a>
+							<section>
+								<div id="go_data">
+								</div>
+							</section>
+						</li>	
 						
-						<section>
-							<div id="go_data">
-							</div>
-						</section></li>
-						
-						
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/janggi.jpg" id=janggi width="275" height="200" /></a>
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/janggi.jpg" id=janggi width="275" height="200" onmouseover="janggiChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/janggi_hover.png" id=janggi_hover height="200" width="275" onmouseout="janggiShowOriginal()" />
+							</a>
 						<section>
 							<div id="janggi_data">
 							</div>
-						</section></li>
+						</section>
 						
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/omok.jpeg" id=omok width="275" height="200" /></a>
-						<section>
-							<div id="omok_data">
-							</div>
-						</section></li>
+						</li>
+						
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/omok.jpeg" id=omok width="275" height="200" onmouseover="omokChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/omok_hover.jpg" id=omok_hover height="200" width="275" onmouseout="omokShowOriginal()" />
+							</a>
+							<section>
+								<div id="omok_data">
+								</div>
+							</section>
+						</li>
 					</ul>
 				</div>
 			</section>

@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-	var go = document.getElementById("go");
+	var go = document.getElementById("go_hover");
 	var go_data = document.getElementById("go_data");
 
 
@@ -38,7 +38,7 @@ window.addEventListener("load", function(){
 	
 });
 
-/*
+
 function goChangeImg(){
 	document.querySelector('#go').style.display = "none";
 	document.querySelector('#go_hover').style.display = "block";	
@@ -48,4 +48,3 @@ function goShowOriginal() {
 	document.querySelector('#go_hover').style.display = "none";
 	document.querySelector('#go').style.display = "block";
 }
-*/

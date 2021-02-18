@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-	var omok = document.getElementById("omok");
+	var omok = document.getElementById("omok_hover");
 	var omok_data = document.getElementById("omok_data");
 
 
@@ -39,7 +39,7 @@ window.addEventListener("load", function(){
 	
 });
 
-/*
+
 function omokChangeImg(){
 	document.querySelector('#omok').style.display = "none";
 	document.querySelector('#omok_hover').style.display = "block";	
@@ -49,4 +49,3 @@ function omokShowOriginal() {
 	document.querySelector('#omok_hover').style.display = "none";
 	document.querySelector('#omok').style.display = "block";
 }
-*/

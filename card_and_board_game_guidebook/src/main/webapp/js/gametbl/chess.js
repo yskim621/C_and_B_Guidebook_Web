@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-	var chess = document.getElementById("chess");
+	var chess = document.getElementById("chess_hover");
 	var chess_data = document.getElementById("chess_data");
 
 
@@ -38,7 +38,7 @@ window.addEventListener("load", function(){
 	
 });
 
-/*
+
 function chessChangeImg(){
 	document.querySelector('#chess').style.display = "none";
 	document.querySelector('#chess_hover').style.display = "block";	
@@ -48,4 +48,3 @@ function chessShowOriginal() {
 	document.querySelector('#chess_hover').style.display = "none";
 	document.querySelector('#chess').style.display = "block";
 }
-*/

@@ -1,5 +1,5 @@
 window.addEventListener("load", function(){
-	var janggi = document.getElementById("janggi");
+	var janggi = document.getElementById("janggi_hover");
 	var janggi_data = document.getElementById("janggi_data");
 
 
@@ -42,7 +42,7 @@ window.addEventListener("load", function(){
 	
 });
 
-/*
+
 function janggiChangeImg(){
 	document.querySelector('#janggi').style.display = "none";
 	document.querySelector('#janggi_hover').style.display = "block";	
@@ -52,4 +52,3 @@ function janggiShowOriginal() {
 	document.querySelector('#janggi_hover').style.display = "none";
 	document.querySelector('#janggi').style.display = "block";
 }
-*/
