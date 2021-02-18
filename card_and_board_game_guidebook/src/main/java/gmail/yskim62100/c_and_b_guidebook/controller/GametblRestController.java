@@ -65,6 +65,7 @@ public class GametblRestController {
 	}
 	
 	
+	
 	// Hwatu
 	@RequestMapping(value = "game/hwatu/gostop")
 	public Map<String, Object> gameinfo_gostop(HttpServletRequest request) {
@@ -94,6 +95,50 @@ public class GametblRestController {
 		return map;
 	}
 	
+	
+	
+	// Boardgame
+	@RequestMapping(value = "game/boardgame/chess")
+	public Map<String, Object> gameinfo_chess(HttpServletRequest request) {
+
+		gametblService.gameinfo_chess(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
+	
+	@RequestMapping(value = "game/boardgame/go")
+	public Map<String, Object> gameinfo_go(HttpServletRequest request) {
+
+		gametblService.gameinfo_go(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
+	
+	@RequestMapping(value = "game/boardgame/janggi")
+	public Map<String, Object> gameinfo_janggi(HttpServletRequest request) {
+
+		gametblService.gameinfo_janggi(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
 
 	
 	

@@ -48,27 +48,27 @@
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/chess.jpg" id=chess width="275" height="200" /></a>
 							
 							<section>
-								<div class="game-guide">
+								<div id="chess_data">
 								</div>
 							</section></li>
 							
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/go.jpg" id=go width="275" height="200" /></a>
 						
 						<section>
-							<div id="black_jack_data">
+							<div id="go_data">
 							</div>
 						</section></li>
 						
 						
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/janggi.jpg" id=janggi width="275" height="200" /></a>
 						<section>
-							<div id="bacara_data">
+							<div id="janggi_data">
 							</div>
 						</section></li>
 						
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/omok.jpeg" id=omok width="275" height="200" /></a>
 						<section>
-							<div id="hoola_data">
+							<div id="omok_data">
 							</div>
 						</section></li>
 					</ul>
@@ -221,6 +221,11 @@
 <script src="${pageContext.request.contextPath}/js/breakpoints.min.js"></script>
 <script src="${pageContext.request.contextPath}/js/util.js"></script>
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/chess.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/go.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/janggi.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/omok.js"></script>
+
 
 <!-- JQuery 이용을 위한 스크립트 링크  -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -233,10 +238,10 @@
 $('.demo').accordionortabs();
 </script>
 <script type="text/javascript">
-  document.querySelector('#poker_hover').style.display = "none";
-  document.querySelector('#blackjack_hover').style.display = "none";
-  document.querySelector('#bacara_hover').style.display = "none";
-  document.querySelector('#hoola_hover').style.display = "none";
+  document.querySelector('#chess_hover').style.display = "none";
+  document.querySelector('#go_hover').style.display = "none";
+  document.querySelector('#janggi_hover').style.display = "none";
+  document.querySelector('#omok_hover').style.display = "none";
   
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);

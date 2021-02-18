@@ -15,4 +15,10 @@ public interface GametblService {
 
 	public void gameinfo_seosda(HttpServletRequest request);
 
+	public void gameinfo_chess(HttpServletRequest request);
+
+	public void gameinfo_go(HttpServletRequest request);
+
+	public void gameinfo_janggi(HttpServletRequest request);
+
 }
