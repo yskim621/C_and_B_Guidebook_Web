@@ -139,6 +139,20 @@ public class GametblRestController {
 	
 		return map;
 	}
+	
+	@RequestMapping(value = "game/boardgame/omok")
+	public Map<String, Object> gameinfo_omok(HttpServletRequest request) {
+
+		gametblService.gameinfo_omok(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
 
 	
 	

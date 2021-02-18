@@ -31,6 +31,10 @@ window.addEventListener("load", function(){
 			// console.log(data);
 			janggi_data.innerHTML = data.result
 			
+			document.querySelector('#siteSub').style.display = "none";
+			document.querySelectorAll('.mw-jump-link')[0].style.display = "none";
+			document.querySelectorAll('.mw-jump-link')[1].style.display = "none";
+			
 		});
 		
 	});

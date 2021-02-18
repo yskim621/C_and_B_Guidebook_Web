@@ -21,4 +21,6 @@ public interface GametblService {
 
 	public void gameinfo_janggi(HttpServletRequest request);
 
+	public void gameinfo_omok(HttpServletRequest request);
+
 }
