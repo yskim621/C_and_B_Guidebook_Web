@@ -19,6 +19,7 @@ public class GametblRestController {
 	@Autowired
 	private GametblService gametblService;
 	
+	// Trumpcard
 	@RequestMapping(value = "game/trumpcard/black_jack")
 	public Map<String, Object> gameinfo_blackjack(HttpServletRequest request) {
 
@@ -62,4 +63,24 @@ public class GametblRestController {
 	
 		return map;
 	}
+	
+	
+	// Hwatu
+	@RequestMapping(value = "game/hwatu/gostop")
+	public Map<String, Object> gameinfo_gostop(HttpServletRequest request) {
+
+		gametblService.gameinfo_gostop(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
+	
+
+	
+	
 }

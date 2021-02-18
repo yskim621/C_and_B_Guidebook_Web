@@ -224,5 +224,58 @@ public class GametblServiceImpl implements GametblService {
 		// System.out.println(html);
 
 	}
-	//
+	
+	@Override
+	@Transactional
+	public void gameinfo_gostop(HttpServletRequest request) {
+		
+		// 파싱한 결과를 저장할 map
+		List<String> list = new ArrayList<String>();
+		
+		try {
+
+			// 1.주소 만들기 - 파라미터 확인
+			// String gameinfo = gametbl.getGameinfo();
+			String addr = "https://lovem74.tistory.com/65";
+			connection(addr);
+
+			//System.out.println(html);
+
+			// 데이터 존재 시 파싱
+			if (html != null && html.trim().length() > 0) {
+				// 문서 구조 가져오기
+				Document document = (Document) Jsoup.parse(html);
+				
+				
+				Elements elements1 = document.getElementsByClass("entry-content");
+
+				
+				
+				String content = elements1.toString();
+				
+				//System.out.println("content: " + content);
+				
+				list.add(content);
+				
+				content = "";
+
+				
+				request.setAttribute("result", list);
+
+			} else {
+				System.out.println("읽어온 데이터가 없음");
+			}
+
+
+		} catch (Exception e) {
+			System.err.println("다운로드 예외: " + e.getMessage());
+			e.printStackTrace();
+		}
+		// 데이터 확인
+		// System.out.println(html);
+
+	}
+	
+	//se_component_wrap
+
 }

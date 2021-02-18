@@ -10,4 +10,7 @@ public interface GametblService {
 	public void gameinfo_bacara(HttpServletRequest request);
 	
 	public void gameinfo_hoola(HttpServletRequest request);
+
+	public void gameinfo_gostop(HttpServletRequest request);
+
 }
