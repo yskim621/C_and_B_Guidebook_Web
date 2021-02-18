@@ -45,15 +45,24 @@
 			<section id="header">
 				<div class="container" align="center">
 					<ul class="demo">
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/gostop.jpg" id=gostop /></a>
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/gostop.jpg" id=gostop onmouseover="gostopChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/gostop_hover.jpg" id=gostop_hover height="200" width="275" onmouseout="gostopShowOriginal()" />
+							</a>
 								
 						<section>
 							<div id="gostop_data">
 							</div>
-						</section></li>
+						</section>
+						</li>
 						
 						
-						<li><a><img src="${pageContext.request.contextPath}/resources/images/seosda.png" id=seosda /></a>
+						<li>
+							<a>
+								<img src="${pageContext.request.contextPath}/resources/images/seosda.png" id=seosda onmouseover="seosdaChangeImg()" />
+								<img src="${pageContext.request.contextPath}/resources/images/seosda_hover.jpeg" id=seosda_hover height="200" width="275" onmouseout="seosdaShowOriginal()" />
+							</a>
 							
 						<section>	
 							<div id="seosda_data">
@@ -210,6 +219,7 @@
 <script src="${pageContext.request.contextPath}/js/util.js"></script>
 <script src="${pageContext.request.contextPath}/js/main.js"></script>
 <script src="${pageContext.request.contextPath}/js/gametbl/gostop.js"></script>
+<script src="${pageContext.request.contextPath}/js/gametbl/seosda.js"></script>
 
 
 <!-- JQuery 이용을 위한 스크립트 링크  -->
@@ -223,10 +233,9 @@
 $('.demo').accordionortabs();
 </script>
 <script type="text/javascript">
-  //document.querySelector('#poker_hover').style.display = "none";
-  //document.querySelector('#blackjack_hover').style.display = "none";
-  //document.querySelector('#bacara_hover').style.display = "none";
-  //document.querySelector('#hoola_hover').style.display = "none";
+  document.querySelector('#gostop_hover').style.display = "none";
+  document.querySelector('#seosda_hover').style.display = "none";
+
   
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-36251023-1']);

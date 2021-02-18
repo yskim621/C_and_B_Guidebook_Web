@@ -80,6 +80,20 @@ public class GametblRestController {
 		return map;
 	}
 	
+	@RequestMapping(value = "game/hwatu/seosda")
+	public Map<String, Object> gameinfo_seosda(HttpServletRequest request) {
+
+		gametblService.gameinfo_seosda(request);
+		
+		List<String> result = (List<String>) request.getAttribute("result");
+		
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("result", result);
+		// System.out.println("REST controller: " + result);
+	
+		return map;
+	}
+	
 
 	
 	

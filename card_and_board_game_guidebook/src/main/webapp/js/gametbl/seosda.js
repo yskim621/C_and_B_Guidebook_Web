@@ -1,14 +1,14 @@
 window.addEventListener("load", function(){
-	var gostop = document.getElementById("gostop_hover");
-	var gostop_data = document.getElementById("gostop_data");
+	var seosda = document.getElementById("seosda_hover");
+	var seosda_data = document.getElementById("seosda_data");
 
 
 	
-	gostop.addEventListener("click", function(){
+	seosda.addEventListener("click", function(){
 		//alert("클릭");
-		gostop_data.innerHTML = " ";
+		seosda_data.innerHTML = " ";
 		//ajax 요청 : select
-		var url = "hwatu/gostop";
+		var url = "hwatu/seosda";
 		
 		//ajax 객체를 생성
 		var request = new XMLHttpRequest();
@@ -29,7 +29,7 @@ window.addEventListener("load", function(){
 			var data = JSON.parse(e.target.responseText);
 			// alert(data.result);
 			// console.log(data);
-			gostop_data.innerHTML = data.result
+			seosda_data.innerHTML = data.result
 			
 		});
 		
@@ -38,13 +38,13 @@ window.addEventListener("load", function(){
 	
 });
 
-function gostopChangeImg(){
-	document.querySelector('#gostop').style.display = "none";
-	document.querySelector('#gostop_hover').style.display = "block";	
+function seosdaChangeImg(){
+	document.querySelector('#seosda').style.display = "none";
+	document.querySelector('#seosda_hover').style.display = "block";	
 }
   
-function gostopShowOriginal() {	
-	document.querySelector('#gostop_hover').style.display = "none";
-	document.querySelector('#gostop').style.display = "block";
+function seosdaShowOriginal() {	
+	document.querySelector('#seosda_hover').style.display = "none";
+	document.querySelector('#seosda').style.display = "block";
 }
 

@@ -13,4 +13,6 @@ public interface GametblService {
 
 	public void gameinfo_gostop(HttpServletRequest request);
 
+	public void gameinfo_seosda(HttpServletRequest request);
+
 }
