@@ -23,7 +23,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/trumpcard/black_jack")
 	public Map<String, Object> gameinfo_blackjack(HttpServletRequest request) {
 
-		gametblService.gameinfo_blackjack(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -38,7 +38,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/trumpcard/bacara")
 	public Map<String, Object> gameinfo_bacara(HttpServletRequest request) {
 
-		gametblService.gameinfo_bacara(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -53,7 +53,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/trumpcard/hoola")
 	public Map<String, Object> gameinfo_hoola(HttpServletRequest request) {
 
-		gametblService.gameinfo_hoola(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -70,7 +70,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/hwatu/gostop")
 	public Map<String, Object> gameinfo_gostop(HttpServletRequest request) {
 
-		gametblService.gameinfo_gostop(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -84,7 +84,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/hwatu/seosda")
 	public Map<String, Object> gameinfo_seosda(HttpServletRequest request) {
 
-		gametblService.gameinfo_seosda(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -101,7 +101,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/boardgame/chess")
 	public Map<String, Object> gameinfo_chess(HttpServletRequest request) {
 
-		gametblService.gameinfo_chess(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -115,7 +115,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/boardgame/go")
 	public Map<String, Object> gameinfo_go(HttpServletRequest request) {
 
-		gametblService.gameinfo_go(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -129,7 +129,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/boardgame/janggi")
 	public Map<String, Object> gameinfo_janggi(HttpServletRequest request) {
 
-		gametblService.gameinfo_janggi(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		
@@ -143,7 +143,7 @@ public class GametblRestController {
 	@RequestMapping(value = "game/boardgame/omok")
 	public Map<String, Object> gameinfo_omok(HttpServletRequest request) {
 
-		gametblService.gameinfo_omok(request);
+		gametblService.gameinfo(request);
 		
 		List<String> result = (List<String>) request.getAttribute("result");
 		

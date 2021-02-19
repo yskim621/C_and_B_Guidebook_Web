@@ -24,10 +24,10 @@ import gmail.yskim62100.c_and_b_guidebook.domain.Gametbl;
 public class GametblServiceImpl implements GametblService {
 	@Autowired
 	private GametblDao gametblDao;
-	
+
 	// 다운로드 받은 문자열을 저장할 변수
 	String html = null;
-	
+
 	public void connection(String addr) {
 		// URL url = new URL(gameinfo);
 		try {
@@ -67,551 +67,179 @@ public class GametblServiceImpl implements GametblService {
 		}
 	}
 
-
 	@Override
 	@Transactional
-	public void gameinfo_blackjack(HttpServletRequest request) {
-		
-		
+	public void gameinfo(HttpServletRequest request) {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
 
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
 		try {
 
-			
-			
-			System.out.println("Service: " + gametbl);
-			 
+			// 요청 주소의 마지막 부분 가져오기
+			String requestURI = request.getRequestURI();
+			String[] ar = requestURI.split("/");
+			String gamecode = ar[ar.length - 1];
+
+			System.out.println("gamecode: " + gamecode);
+
+			Gametbl gametbl = gametblDao.getGame(gamecode);
 
 			// 1.주소 만들기 - 파라미터 확인
 			String addr = gametbl.getGameinfo();
-			//String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
 			connection(addr);
 
-			//System.out.println(html);
+			switch (gamecode) {
+			case "black_jack":
+				// 데이터 존재 시 파싱
+				if (html != null && html.trim().length() > 0) {
+					// 문서 구조 가져오기
+					Document document = (Document) Jsoup.parse(html);
+					
+					// Parsing
+					Elements elements1 = document.getElementsByClass("thumb no1");
+					Elements elements2 = document.getElementsByClass("game-guide first");
 
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
+					// Serializable을 위해 toString으로 Elements의 자료형을 변환
+					String content = elements1.toString() + elements2.toString();
+					list.add(content);
 
-				Elements elements1 = document.getElementsByClass("thumb no1");
-				Elements elements2 = document.getElementsByClass("game-guide first");
-				
-				// Serializable을 위해 toString으로 Elements의 자료형을 변환
-				String content = elements1.toString() + elements2.toString();
-				list.add(content);
-				
-				content = "";
+					content = "";
 
-				request.setAttribute("result", list);
+					request.setAttribute("result", list);
 
-			} else {
-				System.out.println("읽어온 데이터가 없음");
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "bacara":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("thumb no2");
+					Elements elements2 = document.getElementsByClass("game-guide");
+					String content = elements1.toString() + elements2.get(1).toString();
+
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "hoola":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("entry-content");
+					String content = elements1.toString();
+
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "gostop":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("entry-content");
+					String content = elements1.toString();
+
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "seosda":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("entry-content");
+					String content = elements1.toString();
+
+					list.add(content);
+
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "chess":
+				if (html != null && html.trim().length() > 0) {
+
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("tt_article_useless_p_margin");
+					String content = elements1.toString();
+					
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "go":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("mw-parser-output");
+					String content = elements1.toString();
+
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "janggi":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("mw-body-content");
+					String content = elements1.toString();
+
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
+			case "omok":
+				if (html != null && html.trim().length() > 0) {
+					Document document = (Document) Jsoup.parse(html);
+					Elements elements1 = document.getElementsByClass("tt_article_useless_p_margin");
+					String content = elements1.toString();
+					
+					list.add(content);
+					content = "";
+
+					request.setAttribute("result", list);
+
+				} else {
+					System.out.println("읽어온 데이터가 없음");
+				}
+				break;
 			}
 
 		} catch (Exception e) {
 			System.err.println("다운로드 예외: " + e.getMessage());
 			e.printStackTrace();
 		}
-	}
-	
-	
-	@Override
-	@Transactional
-	public void gameinfo_bacara(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
-			connection(addr);
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("thumb no2");
-				Elements elements2 = document.getElementsByClass("game-guide");
-				
-
-				
-				
-				String content = elements1.toString() + elements2.get(1).toString();
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		// System.out.println(html);
-
-	}
-	
-	
-	@Override
-	@Transactional
-	public void gameinfo_hoola(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://lovem74.tistory.com/15";
-			connection(addr);
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("entry-content");
-
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		// System.out.println(html);
-
-	}
-	
-	@Override
-	@Transactional
-	public void gameinfo_gostop(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://lovem74.tistory.com/65";
-			connection(addr);
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("entry-content");
-
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-
-	}
-	
-	@Override
-	@Transactional
-	public void gameinfo_seosda(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://lovem74.tistory.com/35";
-			connection(addr);
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("entry-content");
-
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		// System.out.println(html);
-
-	}
-	
-	
-	// Boardgame
-	@Override
-	@Transactional
-	public void gameinfo_chess(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://getitall.tistory.com/entry/%EC%B2%B4%EC%8A%A4-%EC%B2%9C%EC%9E%AC%EB%90%98%EA%B8%B0-%EC%B2%B4%EC%8A%A4%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B7%9C%EC%B9%99-%EA%B8%B0%EB%AC%BC%EC%9D%98-%EC%9B%80%EC%A7%81%EC%9E%84";
-			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
-			//addr = https://getitall.tistory.com/entry/체스-천재되기-체스의-기본-규칙-기물의-움직임
-			connection(addr);
-			
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("tt_article_useless_p_margin");
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		//System.out.println(html);
-
-	}
-	
-	@Override
-	@Transactional
-	public void gameinfo_go(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://ko.wikibooks.org/wiki/%EB%B0%94%EB%91%91_%EC%9E%85%EB%AC%B8/%EA%B7%9C%EC%B9%99";
-			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
-			connection(addr);
-			//https://ko.wikibooks.org/wiki/바둑_입문/규칙
-			
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("mw-parser-output");
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		//System.out.println(html);
-
-	}
-	
-	
-	@Override
-	@Transactional
-	public void gameinfo_janggi(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://ko.wikibooks.org/wiki/%EC%9E%A5%EA%B8%B0/%EC%9E%A5%EA%B8%B0%EB%A5%BC_%EB%91%90%EB%8A%94_%EB%B0%A9%EB%B2%95";
-			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
-			connection(addr);
-			
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("mw-body-content");
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		//System.out.println(html);
-
-	}
-	
-	@Override
-	@Transactional
-	public void gameinfo_omok(HttpServletRequest request) {
-		
-		// 파싱한 결과를 저장할 map
-		List<String> list = new ArrayList<String>();
-		
-		// 요청 주소의 마지막 부분 가져오기
-		String requestURI = request.getRequestURI();
-		String[] ar = requestURI.split("/");
-		String gamecode = ar[ar.length - 1];
-
-		//System.out.println("gamecode: " + gamecode);
-		
-		Gametbl gametbl = gametblDao.getGame(gamecode);
-		
-		try {
-
-			// 1.주소 만들기 - 파라미터 확인
-			String addr = gametbl.getGameinfo();
-			//String addr = "https://schbeom.tistory.com/413";
-			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
-			connection(addr);
-			
-
-			//System.out.println(html);
-
-			// 데이터 존재 시 파싱
-			if (html != null && html.trim().length() > 0) {
-				// 문서 구조 가져오기
-				Document document = (Document) Jsoup.parse(html);
-				
-				
-				Elements elements1 = document.getElementsByClass("tt_article_useless_p_margin");
-				
-				
-				String content = elements1.toString();
-				
-				//System.out.println("content: " + content);
-				
-				list.add(content);
-				
-				content = "";
-
-				
-				request.setAttribute("result", list);
-
-			} else {
-				System.out.println("읽어온 데이터가 없음");
-			}
-
-
-		} catch (Exception e) {
-			System.err.println("다운로드 예외: " + e.getMessage());
-			e.printStackTrace();
-		}
-		// 데이터 확인
-		//System.out.println(html);
-
 	}
 
 }
