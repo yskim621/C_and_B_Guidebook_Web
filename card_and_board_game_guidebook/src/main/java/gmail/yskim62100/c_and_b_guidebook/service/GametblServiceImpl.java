@@ -18,6 +18,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import gmail.yskim62100.c_and_b_guidebook.dao.GametblDao;
+import gmail.yskim62100.c_and_b_guidebook.domain.Gametbl;
 
 @Service
 public class GametblServiceImpl implements GametblService {
@@ -81,17 +82,19 @@ public class GametblServiceImpl implements GametblService {
 		String gamecode = ar[ar.length - 1];
 
 		//System.out.println("gamecode: " + gamecode);
-
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
-			/*
-			 * // DAO 메소드 호출 Gametbl gametbl = gametblDao.gameinfo(gamecode);
-			 * System.out.println("Service: " + gametbl);
-			 */
+			
+			
+			System.out.println("Service: " + gametbl);
+			 
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
+			String addr = gametbl.getGameinfo();
+			//String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
 			connection(addr);
 
 			//System.out.println(html);
@@ -130,11 +133,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
+			String addr = gametbl.getGameinfo();
+			//String addr = "http://koreacasino.or.kr/kcasino/pr/gameGuide.do#";
 			connection(addr);
 
 			//System.out.println(html);
@@ -182,11 +194,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			String addr = "https://lovem74.tistory.com/15";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://lovem74.tistory.com/15";
 			connection(addr);
 
 			//System.out.println(html);
@@ -233,11 +254,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			String addr = "https://lovem74.tistory.com/65";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://lovem74.tistory.com/65";
 			connection(addr);
 
 			//System.out.println(html);
@@ -282,11 +312,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			String addr = "https://lovem74.tistory.com/35";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://lovem74.tistory.com/35";
 			connection(addr);
 
 			//System.out.println(html);
@@ -335,12 +374,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			
-			String addr = "https://getitall.tistory.com/entry/%EC%B2%B4%EC%8A%A4-%EC%B2%9C%EC%9E%AC%EB%90%98%EA%B8%B0-%EC%B2%B4%EC%8A%A4%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B7%9C%EC%B9%99-%EA%B8%B0%EB%AC%BC%EC%9D%98-%EC%9B%80%EC%A7%81%EC%9E%84";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://getitall.tistory.com/entry/%EC%B2%B4%EC%8A%A4-%EC%B2%9C%EC%9E%AC%EB%90%98%EA%B8%B0-%EC%B2%B4%EC%8A%A4%EC%9D%98-%EA%B8%B0%EB%B3%B8-%EA%B7%9C%EC%B9%99-%EA%B8%B0%EB%AC%BC%EC%9D%98-%EC%9B%80%EC%A7%81%EC%9E%84";
 			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
 			//addr = https://getitall.tistory.com/entry/체스-천재되기-체스의-기본-규칙-기물의-움직임
 			connection(addr);
@@ -389,12 +436,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			
-			String addr = "https://ko.wikibooks.org/wiki/%EB%B0%94%EB%91%91_%EC%9E%85%EB%AC%B8/%EA%B7%9C%EC%B9%99";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://ko.wikibooks.org/wiki/%EB%B0%94%EB%91%91_%EC%9E%85%EB%AC%B8/%EA%B7%9C%EC%B9%99";
 			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
 			connection(addr);
 			//https://ko.wikibooks.org/wiki/바둑_입문/규칙
@@ -444,12 +499,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			
-			String addr = "https://ko.wikibooks.org/wiki/%EC%9E%A5%EA%B8%B0/%EC%9E%A5%EA%B8%B0%EB%A5%BC_%EB%91%90%EB%8A%94_%EB%B0%A9%EB%B2%95";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://ko.wikibooks.org/wiki/%EC%9E%A5%EA%B8%B0/%EC%9E%A5%EA%B8%B0%EB%A5%BC_%EB%91%90%EB%8A%94_%EB%B0%A9%EB%B2%95";
 			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
 			connection(addr);
 			
@@ -497,12 +560,20 @@ public class GametblServiceImpl implements GametblService {
 		// 파싱한 결과를 저장할 map
 		List<String> list = new ArrayList<String>();
 		
+		// 요청 주소의 마지막 부분 가져오기
+		String requestURI = request.getRequestURI();
+		String[] ar = requestURI.split("/");
+		String gamecode = ar[ar.length - 1];
+
+		//System.out.println("gamecode: " + gamecode);
+		
+		Gametbl gametbl = gametblDao.getGame(gamecode);
+		
 		try {
 
 			// 1.주소 만들기 - 파라미터 확인
-			// String gameinfo = gametbl.getGameinfo();
-			
-			String addr = "https://schbeom.tistory.com/413";
+			String addr = gametbl.getGameinfo();
+			//String addr = "https://schbeom.tistory.com/413";
 			//String addr = URLEncoder.encode(txtEnc, "UTF-8");
 			connection(addr);
 			

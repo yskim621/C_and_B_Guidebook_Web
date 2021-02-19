@@ -8,7 +8,6 @@ public class Gametbl {
 	
 	private String gamecode;
 	private String gamecategory;
-	private String gamename;
 	private String gameinfo;
 	private String gamerule;
 	
@@ -19,11 +18,10 @@ public class Gametbl {
 
 
 
-	public Gametbl(String gamecode, String gamecategory, String gamename, String gameinfo, String gamerule) {
+	public Gametbl(String gamecode, String gamecategory, String gameinfo, String gamerule) {
 		super();
 		this.gamecode = gamecode;
 		this.gamecategory = gamecategory;
-		this.gamename = gamename;
 		this.gameinfo = gameinfo;
 		this.gamerule = gamerule;
 	}
@@ -53,19 +51,6 @@ public class Gametbl {
 	}
 
 
-
-	public String getGamename() {
-		return gamename;
-	}
-
-
-
-	public void setGamename(String gamename) {
-		this.gamename = gamename;
-	}
-
-
-
 	public String getGameinfo() {
 		return gameinfo;
 	}
@@ -92,8 +77,7 @@ public class Gametbl {
 
 	@Override
 	public String toString() {
-		return "Gametbl [gamecode=" + gamecode + ", gamecategory=" + gamecategory + ", gamename=" + gamename
-				+ ", gameinfo=" + gameinfo + ", gamerule=" + gamerule + "]";
+		return "Gametbl [gamecode=" + gamecode + ", gamecategory=" + gamecategory + ", gameinfo=" + gameinfo + ", gamerule=" + gamerule + "]";
 	}
 	
 	

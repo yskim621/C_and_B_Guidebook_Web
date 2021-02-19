@@ -7,7 +7,6 @@
 		<class name="Gametbl" table="gametbl">
 			<id name="gamecode" column="gamecode"/>
 			<property name="gamecategory" column="gamecategory"/>
-			<property name="gamename" column="gamename"/>
 			<property name="gameinfo" column="gameinfo"/>
 			<property name="gamerule" column="gamerule"/>
 		</class>

@@ -31,7 +31,28 @@ window.addEventListener("load", function(){
 			// console.log(data);
 			chess_data.innerHTML = data.result
 			
+			
+			document.querySelectorAll(".imageblock")[0].setAttribute("style", "display:inline-block;width:400px;;height:300;");
+			
+
+			
+			/*
+			setTimeout(function() {
+				//document.querySelectr('.container_postbtn \#post_button_group').style.display = "none";
+				//document.querySelector(".another_category another_category_color_gray").style.display = "none";
+				var temp = document.querySelectorAll(".table-wrap");
+				for(var index in temp){
+					temp[index].style.display = "none";
+				}
+							document.querySelector(".another_category another_category_color_gray").addEventListener("load", function(e){
+				document.querySelector(".another_category another_category_color_gray").style.display = "none";
+			});
+				
+			}, 5000);
+			*/
+			
 		});
+
 		
 	});
 	

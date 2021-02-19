@@ -12,7 +12,7 @@ public class GametblDao {
 	// 하이버네이트 사용 객체
 	private SessionFactory sessionFactory;
 	
-	public Gametbl gameinfo(String gamecode) {
+	public Gametbl getGame(String gamecode) {
 		
 		Gametbl gametbl = sessionFactory.getCurrentSession().get(Gametbl.class, gamecode);
 		return gametbl;
