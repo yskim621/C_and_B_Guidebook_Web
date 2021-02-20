@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
-
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -26,7 +26,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 	private BoardtblDao boardtblDao;
 	java.util.Date datautil = new java.util.Date();
 	Date datasql = new Date(datautil.getYear(), datautil.getMonth(), datautil.getDate());
-	
+	HttpSession session;
 	
 	@Override
 	@Transactional
@@ -177,7 +177,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardreadcnt(boardreadcnt);
 			boardtbl.setBoardwritedate(datasql.toString());
 			boardtbl.setMembernickname("karl");
-
+			
+			//System.out.println("session:" + session.getAttribute("membernickname"));
+			
 			boardtblDao.insert(boardtbl);
 
 			request.setAttribute("insert", true);

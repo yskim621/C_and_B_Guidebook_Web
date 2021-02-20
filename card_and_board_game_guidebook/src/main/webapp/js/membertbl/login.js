@@ -64,6 +64,7 @@ window.addEventListener("load", function(event) {
 					// 로그인 성공한 경우
 					else {
 						alert("로그인에 성공하셨습니다.")
+						alert(data.membernickname);
 						location.href = "../board/list";
 					}
 				});

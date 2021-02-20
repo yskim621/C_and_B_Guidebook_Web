@@ -6,6 +6,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,7 @@ public class MembertblServiceImpl implements MembertblService {
 	@Autowired
 	private MembertblDao membertblDao;
 	CryptoUtil cryptoUtil = new CryptoUtil();
+	
 	
 	@Override
 	@Transactional
@@ -125,7 +127,7 @@ public class MembertblServiceImpl implements MembertblService {
 	
 	@Override
 	@Transactional
-	public void login(HttpServletRequest request) {
+	public void login(HttpServletRequest request, HttpSession session) {
 		
 		// 파라미터 읽기
 		String membernickname = request.getParameter("membernickname");
@@ -151,11 +153,13 @@ public class MembertblServiceImpl implements MembertblService {
 		for(Membertbl member : list) {
 			if(BCrypt.checkpw(memberpassword, member.getMemberpassword())) {
 				map.put("membernickname", membernickname);
+				
 				try {
 					map.put("memberemail", cryptoUtil.decrypt(member.getMemberemail()));
 				} catch(Exception e) {}
 				map.put("result", true);
-				request.setAttribute("result", map);
+				session.setAttribute("result", map);
+				//request.setAttribute("result", map);
 				return;
 			}
 		}

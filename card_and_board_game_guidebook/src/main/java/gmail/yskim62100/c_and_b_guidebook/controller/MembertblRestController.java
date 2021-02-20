@@ -5,6 +5,7 @@ import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,9 +28,10 @@ public class MembertblRestController {
 	}
 	
 	@RequestMapping(value="member/login", method=RequestMethod.POST)
-	public Map<String, Object> login(HttpServletRequest request){
-		membertblService.login(request);
-		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+	public Map<String, Object> login(HttpServletRequest request, HttpSession session){
+		membertblService.login(request, session);
+		Map<String, Object> map = (Map<String, Object>) session.getAttribute("result");
+		//Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
 		return map;
 	}
 

@@ -44,9 +44,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-		
-		// 리턴부분이 Json형태로 형태로 자료를 만들기 위해서는 Serializable이 필요
+				
 		return map;
 	}
 	
@@ -59,8 +57,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -76,8 +73,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -90,8 +86,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -107,8 +102,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -121,8 +115,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -135,8 +128,7 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 	
@@ -149,11 +141,9 @@ public class GametblRestController {
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", result);
-		// System.out.println("REST controller: " + result);
-	
+			
 		return map;
 	}
 
-	
 	
 }

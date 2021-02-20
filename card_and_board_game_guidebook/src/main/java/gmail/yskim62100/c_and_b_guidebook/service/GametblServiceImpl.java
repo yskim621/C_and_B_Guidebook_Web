@@ -80,7 +80,7 @@ public class GametblServiceImpl implements GametblService {
 			String[] ar = requestURI.split("/");
 			String gamecode = ar[ar.length - 1];
 
-			System.out.println("gamecode: " + gamecode);
+			//System.out.println("gamecode: " + gamecode);
 
 			Gametbl gametbl = gametblDao.getGame(gamecode);
 
