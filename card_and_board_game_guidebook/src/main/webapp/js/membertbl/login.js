@@ -40,7 +40,7 @@ window.addEventListener("load", function(event) {
 				var request = new XMLHttpRequest();
 				
 				// 2. ajax 요청 설정
-				request.open('post', 'member/login', true);
+				request.open('post', '../member/login', true);
 				
 				// 3. ajax 파라미터 설정
 				// GET 방식이면 open의 URL뒤에 붙이고, POST 방식이면 FormData 객체를 생성하고 send
@@ -63,8 +63,7 @@ window.addEventListener("load", function(event) {
 					}
 					// 로그인 성공한 경우
 					else {
-						alert("로그인에 성공하셨습니다.")
-						alert(data.membernickname);
+						alert(data.membernickname + "님 환영합니다.");
 						location.href = "../board/list";
 					}
 				});

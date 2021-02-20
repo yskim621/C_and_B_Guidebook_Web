@@ -12,6 +12,8 @@ import org.mindrot.jbcrypt.BCrypt;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 
 import gmail.yskim62100.c_and_b_guidebook.dao.MembertblDao;
 import gmail.yskim62100.c_and_b_guidebook.domain.Membertbl;
@@ -159,7 +161,7 @@ public class MembertblServiceImpl implements MembertblService {
 				} catch(Exception e) {}
 				map.put("result", true);
 				session.setAttribute("result", map);
-				//request.setAttribute("result", map);
+				request.getSession().setAttribute("membernickname", membernickname);
 				return;
 			}
 		}

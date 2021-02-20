@@ -14,6 +14,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
@@ -21,6 +23,7 @@ import gmail.yskim62100.c_and_b_guidebook.dao.BoardtblDao;
 import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 
 @Service
+@SessionAttributes("membernickname")
 public class BoardtblServiceImpl implements BoardtblService {
 	@Autowired
 	private BoardtblDao boardtblDao;
@@ -129,6 +132,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 	
 	@Override
 	@Transactional
+	@ModelAttribute("membernickname")
 	public void insert(MultipartHttpServletRequest request) {
 		// boardnum, boardtitle, boardcontent,
 		// boardattachment을 만들어서 데이터를 삽입
@@ -176,9 +180,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 			boardtbl.setBoardattachment(boardattachment);
 			boardtbl.setBoardreadcnt(boardreadcnt);
 			boardtbl.setBoardwritedate(datasql.toString());
-			boardtbl.setMembernickname("karl");
+			boardtbl.setMembernickname((String)request.getSession().getAttribute("membernickname"));
 			
-			//System.out.println("session:" + session.getAttribute("membernickname"));
+			System.out.println("session:" + request.getSession().getAttribute("membernickname"));
 			
 			boardtblDao.insert(boardtbl);
 
@@ -241,7 +245,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		boardtbl.setBoardattachment(boardattachment);
 		boardtbl.setBoardreadcnt(Integer.parseInt(boardreadcnt));
 		boardtbl.setBoardwritedate(datasql.toString());
-		boardtbl.setMembernickname("karl");
+		boardtbl.setMembernickname((String)request.getSession().getAttribute("membernickname"));
 
 		System.out.println("Service: " + boardtbl);
 		boardtblDao.update(boardtbl);
