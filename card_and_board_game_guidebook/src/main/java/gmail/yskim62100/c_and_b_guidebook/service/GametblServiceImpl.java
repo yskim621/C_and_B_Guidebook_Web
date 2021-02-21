@@ -27,12 +27,13 @@ public class GametblServiceImpl implements GametblService {
 
 	// 다운로드 받은 문자열을 저장할 변수
 	String html = null;
-
-	public void connection(String addr) {
+	
+	
+	public void connection(String addr, String gamecode) {
 		// URL url = new URL(gameinfo);
 		try {
 			URL url = new URL(addr);
-
+			
 			// 2.연결 객체 만들기 - header 추가 여부 확인
 			HttpURLConnection con = (HttpURLConnection) url.openConnection();
 			con.setConnectTimeout(60000);
@@ -42,8 +43,14 @@ public class GametblServiceImpl implements GametblService {
 
 			// 3.스트림을 만들어서 문자열 읽어오기
 			// 확인 한 후 한글이 깨지면 수정
-			BufferedReader br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
-
+			BufferedReader br;
+			if("go".equals(gamecode)) {
+				br = new BufferedReader(new InputStreamReader(con.getInputStream(), "EUC-KR"));
+			} else {
+				br = new BufferedReader(new InputStreamReader(con.getInputStream(), "UTF-8"));
+			}
+			
+			
 			// 문자열을 임시로 저장할 인스턴스
 			StringBuilder sb = new StringBuilder();
 
@@ -86,7 +93,7 @@ public class GametblServiceImpl implements GametblService {
 
 			// 1.주소 만들기 - 파라미터 확인
 			String addr = gametbl.getGameinfo();
-			connection(addr);
+			connection(addr, gamecode);
 
 			switch (gamecode) {
 			case "black_jack":
@@ -192,7 +199,7 @@ public class GametblServiceImpl implements GametblService {
 			case "go":
 				if (html != null && html.trim().length() > 0) {
 					Document document = (Document) Jsoup.parse(html);
-					Elements elements1 = document.getElementsByClass("mw-parser-output");
+					Elements elements1 = document.getElementsByClass("scroll type3");
 					String content = elements1.toString();
 
 					list.add(content);
