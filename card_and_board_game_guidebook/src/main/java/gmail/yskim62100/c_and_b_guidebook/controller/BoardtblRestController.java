@@ -52,6 +52,32 @@ public class BoardtblRestController {
 		return map;
 	}
 	
+	@RequestMapping(value = "board/select/{pageno}", method = RequestMethod.POST)
+	public Map<String, Object> selectWithSearch(HttpServletRequest request) {
+		// 서비스 메소드를 호출해서 결과를 가져옵니다.
+		boardtblService.select(request);
+		List<Boardtbl> list = (List<Boardtbl>) request.getAttribute("list");
+		int count = (Integer) request.getAttribute("count");
+		String pageno = (String) request.getAttribute("pageno");
+		//int startpage = (Integer) request.getAttribute("startpage");
+		int endpage = (Integer) request.getAttribute("endpage");
+		//boolean prev = (Boolean) request.getAttribute("prev");
+		boolean next = (Boolean) request.getAttribute("next");
+		 
+		
+		// 가져온 데이터를 출력할 Map에 저장하고 Map을 출력
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("count", count);
+		map.put("list", list);
+		map.put("pageno", pageno);
+		//map.put("startpage", startpage);
+		map.put("endpage", endpage);
+		//map.put("prev", prev);
+		map.put("next", next);
+		
+		return map;
+	}
+	
 	
 	@RequestMapping(value = "board/detail/{boardnum}")
 	public Map<String, Object> detail(HttpServletRequest request) {

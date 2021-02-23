@@ -23,13 +23,13 @@ import gmail.yskim62100.c_and_b_guidebook.dao.BoardtblDao;
 import gmail.yskim62100.c_and_b_guidebook.domain.Boardtbl;
 
 @Service
-@SessionAttributes("membernickname")
 public class BoardtblServiceImpl implements BoardtblService {
 	@Autowired
 	private BoardtblDao boardtblDao;
+	HttpSession session;
 	java.util.Date datautil = new java.util.Date();
 	Date datasql = new Date(datautil.getYear(), datautil.getMonth(), datautil.getDate());
-	HttpSession session;
+	
 	
 	@Override
 	@Transactional
@@ -52,7 +52,9 @@ public class BoardtblServiceImpl implements BoardtblService {
 		// 파라미터 읽기
 		String searchtype = request.getParameter("searchtype");
 		String value = request.getParameter("value");
-
+		
+		System.out.println("searchtype: " + searchtype);
+		System.out.println("value: " + value);
 		
 		if (pageno == null) {
 			pageno = "1";
@@ -132,7 +134,6 @@ public class BoardtblServiceImpl implements BoardtblService {
 	
 	@Override
 	@Transactional
-	@ModelAttribute("membernickname")
 	public void insert(MultipartHttpServletRequest request) {
 		// boardnum, boardtitle, boardcontent,
 		// boardattachment을 만들어서 데이터를 삽입
