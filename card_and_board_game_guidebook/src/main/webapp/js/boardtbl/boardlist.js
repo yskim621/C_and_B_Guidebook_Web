@@ -104,7 +104,7 @@ function adddata(pageno, e){
 		msg	+=	"</table>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
 				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" /><br/>"+
-				"<div><form id='searchform'><select id='searchtype' name='searchtype'><option value='boardtitle'>제목</option><option value='membernickname'>작성자</option></select>"+
+				"<div><form id='searchform'><select id='searchtype' name='searchtype'><option value='boardtitle' selected>제목</option><option value='membernickname'>작성자</option></select>"+
 				"<span><input type='text' id='value' name='value'/></form>"+
 				"<input type='button' value='검색' id='searchbtn'/></span><div>"+
 				"</div>"
