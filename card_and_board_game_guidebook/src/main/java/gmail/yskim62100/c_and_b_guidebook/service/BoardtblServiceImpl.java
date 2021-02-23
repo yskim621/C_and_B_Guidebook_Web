@@ -52,9 +52,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		// 파라미터 읽기
 		String searchtype = request.getParameter("searchtype");
 		String value = request.getParameter("value");
-		
-		System.out.println("searchtype: " + searchtype);
-		System.out.println("value: " + value);
+	
 		
 		if (pageno == null) {
 			pageno = "1";

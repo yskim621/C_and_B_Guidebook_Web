@@ -31,15 +31,11 @@
 			</tr>
 		</table>
 		<a href="../alter/${boardtbl.boardnum}"><input type="button" value="수정" id="updatebtn" name="updatebtn" /></a>
-		<a href="../delete"><input type="button" value="삭제" id="deletebtn" name="deletebtn" /></a>
+		<input type="button" value="삭제" id="deletebtn" name="deletebtn" />
 		<input type="button" value="목록으로" id="listbtn" />
+		<input type="hidden" id="boardnum" name="boardnum" value="${boardtbl.boardnum}"/>
 		</form>
 	</div>
 </body>
-<!-- <script src="${pageContext.request.contextPath}/js/boardtbl/boarddetail.js"></script> -->
-<script>
-	document.getElementById("listbtn").addEventListener("click", function() {
-		location.href = "${pageContext.request.contextPath}/board/list";
-	});
-</script>
+<<script src="${pageContext.request.contextPath}/js/boardtbl/boarddetail.js"></script>
 </html>

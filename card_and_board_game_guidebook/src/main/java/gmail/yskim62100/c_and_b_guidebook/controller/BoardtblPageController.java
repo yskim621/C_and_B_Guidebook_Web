@@ -54,12 +54,5 @@ public class BoardtblPageController {
 		
 		return "boardtbl/update";
 	}
-	
-	
-	@RequestMapping(value="board/delete", method = RequestMethod.GET)
-	public String delete() {
-		
-		return "boardtbl/delete";
-	}
 
 }
