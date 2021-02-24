@@ -79,7 +79,7 @@ public class BoardtblServiceImpl implements BoardtblService {
 		if (pageno != null) {
 			int endPage = (int)(Math.ceil(Integer.parseInt(pageno)/10.0)*10.0);
 			
-			//int startPage = endPage - 9; 
+			int startPage = endPage - 9; 
 			
 			//전체 페이지 개수 구하기
 			int tempEndPage = (int)(Math.ceil(totalCount/(double)size));
@@ -89,13 +89,13 @@ public class BoardtblServiceImpl implements BoardtblService {
 			}
 					
 			//이전과 다음의 출력 여부 생성
-			//boolean prev = startPage == 1 ? false : true;
+			boolean prev = startPage == 1 ? false : true;
 			boolean next = endPage * size >= totalCount ? false : true;
 			
 			request.setAttribute("pageno", pageno);
-			//request.setAttribute("startpage", startPage);
+			request.setAttribute("startpage", startPage);
 			request.setAttribute("endpage", endPage);
-			//request.setAttribute("prev", prev);
+			request.setAttribute("prev", prev);
 			request.setAttribute("next", next);
 		}
 		

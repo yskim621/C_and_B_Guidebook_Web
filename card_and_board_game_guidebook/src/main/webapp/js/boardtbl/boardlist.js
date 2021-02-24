@@ -72,8 +72,6 @@ function adddata(pageno, e){
 		
 		// 결과를 파싱
 		var data = JSON.parse(e.target.responseText);
-		
-		//alert(data.count);
 
 	
 		for (temp in data.list){
@@ -87,19 +85,6 @@ function adddata(pageno, e){
     				"</tr>"
 		};
 		
-		// 더보기 버튼 만들기
-		/* 현재 페이지가 종료 페이지보다 작을 때만 생성
-		if(data.pageno < data.endpage){
-			//페이지 번호 하나 올리기
-			pageno = pageno + 1;
-					
-			msg += "<tr id='add'>" + "<td colspan='9' align='center'>" + "더보기"	+ "</td></tr>";
-			$("#board").html($("#board").html() + msg);
-			// id가 add 객체를 click하면 adddata라는 함수를 호출
-			
-		}
-		*/	
-
 				
 		msg	+=	"</table>"+
 				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
@@ -107,14 +92,24 @@ function adddata(pageno, e){
 				"<div><form id='searchform'><select id='searchtype' name='searchtype'><option value='boardtitle' selected>제목</option><option value='membernickname'>작성자</option></select>"+
 				"<span><input type='text' id='value' name='value'/></form>"+
 				"<input type='button' value='검색' id='searchbtn'/></span><div>"+
-				"</div>"
-		
-		
-		for(i=0; i<data.endpage; i=i+1){
-			msg +=  "<span align='center'><button onclick='ajaxGet("+ (i +1) + ")'>" + (i+1) + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</button></span>"	
-			board.innerHTML = msg;
+				"</div>"+
+				"<span align='center'>"
+				
+		if(data.prev == true){
+			msg += "<input type='button' value='&lt' id='prev' width='5' height='5' onclick='ajaxGet(" + (data.startpage - 10) + ")'/>"
 		}
 		
+		for(data.startpage; data.startpage<=data.endpage; data.startpage += 1){
+			msg +=  "<button onclick='ajaxGet("+ data.startpage + ")' style='font-size:1.2em;'>" + data.startpage + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</button>"	
+		}
+		
+		if(data.next == true){
+			msg +=  "<input type='button' value='&gt' id='next' width='5' height='5' onclick='ajaxGet(" + (data.endpage + 1) + ")'/>" 		
+		}
+		
+		msg += "</span>"
+		
+		board.innerHTML = msg;
 		
 		document.getElementById("boardwritebtn").addEventListener("click", function(){
 			location="write";

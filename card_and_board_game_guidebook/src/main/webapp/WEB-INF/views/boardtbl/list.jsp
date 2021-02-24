@@ -42,7 +42,7 @@
 			</div>
 
 			<div id="banner" align="center">
-			<h2 align="center">서비스 개선 건의사항</h2>				
+			<h2 align="center" style = "font-size:2em;">서비스 개선 건의사항</h2>	<br/><br/>			
 			<div class="container">
 				<div align="center" id="board"></div>
 					<div align="center">

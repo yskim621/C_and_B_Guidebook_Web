@@ -33,9 +33,9 @@ public class BoardtblRestController {
 		List<Boardtbl> list = (List<Boardtbl>) request.getAttribute("list");
 		int count = (Integer) request.getAttribute("count");
 		String pageno = (String) request.getAttribute("pageno");
-		//int startpage = (Integer) request.getAttribute("startpage");
+		int startpage = (Integer) request.getAttribute("startpage");
 		int endpage = (Integer) request.getAttribute("endpage");
-		//boolean prev = (Boolean) request.getAttribute("prev");
+		boolean prev = (Boolean) request.getAttribute("prev");
 		boolean next = (Boolean) request.getAttribute("next");
 		 
 		
@@ -44,9 +44,9 @@ public class BoardtblRestController {
 		map.put("count", count);
 		map.put("list", list);
 		map.put("pageno", pageno);
-		//map.put("startpage", startpage);
+		map.put("startpage", startpage);
 		map.put("endpage", endpage);
-		//map.put("prev", prev);
+		map.put("prev", prev);
 		map.put("next", next);
 		
 		return map;
@@ -59,9 +59,9 @@ public class BoardtblRestController {
 		List<Boardtbl> list = (List<Boardtbl>) request.getAttribute("list");
 		int count = (Integer) request.getAttribute("count");
 		String pageno = (String) request.getAttribute("pageno");
-		//int startpage = (Integer) request.getAttribute("startpage");
+		int startpage = (Integer) request.getAttribute("startpage");
 		int endpage = (Integer) request.getAttribute("endpage");
-		//boolean prev = (Boolean) request.getAttribute("prev");
+		boolean prev = (Boolean) request.getAttribute("prev");
 		boolean next = (Boolean) request.getAttribute("next");
 		 
 		
@@ -70,9 +70,9 @@ public class BoardtblRestController {
 		map.put("count", count);
 		map.put("list", list);
 		map.put("pageno", pageno);
-		//map.put("startpage", startpage);
+		map.put("startpage", startpage);
 		map.put("endpage", endpage);
-		//map.put("prev", prev);
+		map.put("prev", prev);
 		map.put("next", next);
 		
 		return map;
