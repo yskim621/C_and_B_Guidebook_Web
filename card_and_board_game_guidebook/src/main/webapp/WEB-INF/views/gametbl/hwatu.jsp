@@ -52,8 +52,10 @@
 							</a>
 								
 						<section>
-							<div id="gostop_data">
+							<div id="gostop_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/pb-4hAMSwRY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
+							<div id="gostop_data"></div>
 						</section>
 						</li>
 						
@@ -64,9 +66,11 @@
 								<img src="${pageContext.request.contextPath}/resources/images/seosda_hover.jpeg" id=seosda_hover height="200" width="275" onmouseout="seosdaShowOriginal()" />
 							</a>
 							
-						<section>	
-							<div id="seosda_data">
-							</div>
+						<section>
+							<div id="seosda_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/9PqPpkktdu4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>	
+							<div id="seosda_data"></div>
 						</section></li>
 					</ul>
 				</div>

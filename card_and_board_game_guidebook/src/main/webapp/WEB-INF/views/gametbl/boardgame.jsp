@@ -51,8 +51,10 @@
 								<img src="${pageContext.request.contextPath}/resources/images/chess_hover.jpg" id=chess_hover height="200" width="275" onmouseout="chessShowOriginal()" />
 							</a>
 							<section>
-								<div id="chess_data">
+								<div id="chess_media">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/MnOOFtDuR0E" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
+								<div id="chess_data"></div>
 							</section></li>
 							
 						<li>
@@ -61,8 +63,10 @@
 								<img src="${pageContext.request.contextPath}/resources/images/go_hover.jpg" id=go_hover height="200" width="275" onmouseout="goShowOriginal()" />
 							</a>
 							<section>
-								<div id="go_data">
+								<div id="go_media">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/-ezZ1Aavv-I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
+								<div id="go_data"></div>
 							</section>
 						</li>	
 						
@@ -72,8 +76,10 @@
 								<img src="${pageContext.request.contextPath}/resources/images/janggi_hover.png" id=janggi_hover height="200" width="275" onmouseout="janggiShowOriginal()" />
 							</a>
 						<section>
-							<div id="janggi_data">
+							<div id="janggi_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/t8Y0wC2ZK0I" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 							</div>
+							<div id="janggi_data"></div>
 						</section>
 						
 						</li>
@@ -84,8 +90,10 @@
 								<img src="${pageContext.request.contextPath}/resources/images/omok_hover.jpg" id=omok_hover height="200" width="275" onmouseout="omokShowOriginal()" />
 							</a>
 							<section>
-								<div id="omok_data">
+								<div id="omok_media">
+									<iframe width="560" height="315" src="https://www.youtube.com/embed/tfStV2zzrX4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 								</div>
+								<div id="omok_data"></div>
 							</section>
 						</li>
 					</ul>

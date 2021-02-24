@@ -60,8 +60,8 @@
 								<div class="game-guide">
 
 									<div class="wrap">
-										<div class="image">
-											<img src="${pageContext.request.contextPath}/resources/images/poker.jpg" height="250" width="400" />
+										<div id="media">
+											<iframe width="560" height="315" src="https://www.youtube.com/embed/3Vn74RL20GQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 										</div>
 										<div class="text">
 											<h3>Texas Held'em Poker</h3>
@@ -167,6 +167,9 @@
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/black_jack.jpg" id=black_jack onmouseover="blackjackChangeImg()" />
 								<img src="${pageContext.request.contextPath}/resources/images/blackjack_hover.png" id=blackjack_hover height="200" width="275" onmouseout="blackjackShowOriginal()"/></a>
 						<section>
+							<div id="black_jack_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/929ZmmxbPes" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
 							<div id="black_jack_data">
 							</div>
 						</section></li>
@@ -175,12 +178,18 @@
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/bacara.jpg" id=bacara onmouseover="bacaraChangeImg()"/>
 							<img src="${pageContext.request.contextPath}/resources/images/bacara_hover.png" id=bacara_hover height="200" width="275" onmouseout="bacaraShowOriginal()"/></a>
 						<section>
+							<div id="bacara_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/b90A6CfUP_k" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
 							<div id="bacara_data">
 							</div>
 						</section></li>
 						<li><a><img src="${pageContext.request.contextPath}/resources/images/hoola.png" id=hoola onmouseover="hoolaChangeImg()" />
 							<img src="${pageContext.request.contextPath}/resources/images/hoola_hover.png" id=hoola_hover height="200" width="275" onmouseout="hoolaShowOriginal()"/></a>
 						<section>
+							<div id="hoola_media">
+								<iframe width="560" height="315" src="https://www.youtube.com/embed/qSvAQmwR2SQ" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+							</div>
 							<div id="hoola_data">
 							</div>
 						</section></li>

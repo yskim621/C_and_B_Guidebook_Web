@@ -32,9 +32,8 @@ window.addEventListener("load", function(){
 			chess_data.innerHTML = data.result
 			
 			
-			document.querySelectorAll(".imageblock")[0].setAttribute("style", "display:inline-block;width:400px;;height:300;");
-			
-
+			//document.querySelectorAll(".imageblock")[0].setAttribute("style", "display:inline-block;width:400px;;height:300;");
+			document.querySelectorAll(".imageblock")[0].style.display = "none";
 			
 			/*
 			setTimeout(function() {
