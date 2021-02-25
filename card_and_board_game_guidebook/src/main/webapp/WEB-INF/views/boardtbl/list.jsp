@@ -43,7 +43,7 @@
 
 			<div id="banner" align="center">
 			<h2 align="center" style = "font-size:2em;">서비스 개선 건의사항</h2>	<br/><br/>			
-			<div class="container">
+			<div>
 				<div align="center" id="board"></div>
 					<div align="center">
 						<!-- 
@@ -69,29 +69,17 @@
 			</div>
 		</section>
 
-		<!-- Features -->
-		<section id="features" >
-			<div class="container" align="center">
-			</div>
-		</section>
+
 
 		<!-- Content -->
-		<section id="content">
+		<section id="banner">
 			<div class="container">
-				<div class="row aln-center">
-					<div class="col-4 col-12-medium">
+				<div>
+					<div>
 
 						<!-- Box #1 -->
 						<section>
-							<header>
-								<h2>Who We Are</h2>
-								<h3>A subheading about who we are</h3>
-							</header>
-							
-							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
-								magna sed. Suspendisse eu varius nibh. Suspendisse vitae magna
-								eget odio amet mollis justo facilisis quis. Sed sagittis amet
-								lorem ipsum.</p>
+
 						</section>
 
 					</div>
@@ -99,17 +87,7 @@
 
 						<!-- Box #2 -->
 						<section>
-							<header>
-								<h2>What We Do</h2>
-								<h3>A subheading about what we do</h3>
-							</header>
-							<ul class="check-list">
-								<li>Sed mattis quis rutrum accum</li>
-								<li>Eu varius nibh suspendisse lorem</li>
-								<li>Magna eget odio amet mollis justo</li>
-								<li>Facilisis quis sagittis mauris</li>
-								<li>Amet tellus gravida lorem ipsum</li>
-							</ul>
+
 						</section>
 
 					</div>
@@ -117,21 +95,7 @@
 
 						<!-- Box #3 -->
 						<section>
-							<header>
-								<h2>What People Are Saying</h2>
-								<h3>And a final subheading about our clients</h3>
-							</header>
-							<ul class="quote-list">
-								
-									<p>"Neque nisidapibus mattis"</p> <span>Jane Doe, CEO of
-										UntitledCorp</span></li>
-								
-									<p>"Lorem ipsum consequat!"</p> <span>John Doe,
-										President of FakeBiz</span></li>
-								
-									<p>"Magna veroeros amet tempus"</p> <span>Mary Smith,
-										CFO of UntitledBiz</span></li>
-							</ul>
+
 						</section>
 
 					</div>
@@ -139,79 +103,16 @@
 			</div>
 		</section>
 
-		<!-- Footer -->
-		<section id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-8 col-12-medium">
 
-						<!-- Links -->
-						<section>
-							<h2>Links to Important Stuff</h2>
-							<div>
-								<div class="row">
-									<div class="col-3 col-12-small">
-										<ul class="link-list last-child">
-											<li><a href="#">Neque amet dapibus</a></li>
-											<li><a href="#">Sed mattis quis rutrum</a></li>
-											<li><a href="#">Accumsan suspendisse</a></li>
-											<li><a href="#">Eu varius vitae magna</a></li>
-										</ul>
-									</div>
-									<div class="col-3 col-12-small">
-										<ul class="link-list last-child">
-											<li><a href="#">Neque amet dapibus</a></li>
-											<li><a href="#">Sed mattis quis rutrum</a></li>
-											<li><a href="#">Accumsan suspendisse</a></li>
-											<li><a href="#">Eu varius vitae magna</a></li>
-										</ul>
-									</div>
-									<div class="col-3 col-12-small">
-										<ul class="link-list last-child">
-											<li><a href="#">Neque amet dapibus</a></li>
-											<li><a href="#">Sed mattis quis rutrum</a></li>
-											<li><a href="#">Accumsan suspendisse</a></li>
-											<li><a href="#">Eu varius vitae magna</a></li>
-										</ul>
-									</div>
-									<div class="col-3 col-12-small">
-										<ul class="link-list last-child">
-											<li><a href="#">Neque amet dapibus</a></li>
-											<li><a href="#">Sed mattis quis rutrum</a></li>
-											<li><a href="#">Accumsan suspendisse</a></li>
-											<li><a href="#">Eu varius vitae magna</a></li>
-										</ul>
-									</div>
-								</div>
-							</div>
-						</section>
-
-					</div>
-					<div class="col-4 col-12-medium imp-medium">
-
-						<!-- Blurb -->
-						<section>
-							<h2>An Informative Text Blurb</h2>
-							<p>Duis neque nisi, dapibus sed mattis quis, rutrum accumsan
-								sed. Suspendisse eu varius nibh. Suspendisse vitae magna eget
-								odio amet mollis. Duis neque nisi, dapibus sed mattis quis, sed
-								rutrum accumsan sed. Suspendisse eu varius nibh lorem ipsum amet
-								dolor sit amet lorem ipsum consequat gravida justo mollis.</p>
-						</section>
-
-					</div>
-				</div>
-			</div>
-		</section>
 
 		<!-- Copyright -->
 		<div id="copyright">
-			&copy; Untitled. All rights reserved. | Design: <a
-				href="http://html5up.net">HTML5 UP</a>
+			&copy; yskim62100@gmail.com for any requirement
 		</div>
 
 	</div>
-
+	
+	
 	<!-- Scripts -->
 	<script src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
 	<script src="${pageContext.request.contextPath}/js/browser.min.js"></script>

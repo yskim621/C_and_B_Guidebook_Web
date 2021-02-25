@@ -60,7 +60,7 @@ function adddata(pageno, e){
 		
 		
 		var msg = "<div align=\"center\" id=\"board\" >"+
-			 	  "<table align='center' border='4'>"+
+			 	  "<table align='center' border='4' >"+
 				  "<tr>"+
 				  "<th align='center'>"+'게시글 번호'+"</th>"+
 				  "<th>"+'제목'+"</th>"+
@@ -80,31 +80,31 @@ function adddata(pageno, e){
     				"<td><a id='" + data.list[temp][0] + "' href='get/" + data.list[temp].boardnum + "'>"+ data.list[temp].boardtitle +"</a></td>"+
     				"<td align='center'>"+ data.list[temp].boardwritedate +"</td>"+
     				"<td align='center'>"+ data.list[temp].boardreadcnt +"</td>"+
-    				"<td>"+ data.list[temp].boardattachment +"</td>"+
+    				"<td style='font-size:1em;'>"+ data.list[temp].boardattachment +"</td>"+
     				"<td>"+ data.list[temp].membernickname +"</td>"+
     				"</tr>"
 		};
 		
 				
 		msg	+=	"</table>"+
-				"<input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' />"+
-				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" /><br/>"+
-				"<div><form id='searchform'><select id='searchtype' name='searchtype'><option value='boardtitle' selected>제목</option><option value='membernickname'>작성자</option></select>"+
+				"<div align='right'> <input type='button' value='글쓰기' id='boardwritebtn' name='boardwritebtn' style='align:right;'/>"+
+				"<input type=\"button\" value=\"메인으로\" id=\"mainbtn\" style='margin-right:10%;margin-bottom:1.5%;margin-top:1%'/></div><br/>"+
+				"<div><form id='searchform' style='margin-bottom:2em;'><select id='searchtype' name='searchtype'><option value='boardtitle' selected>제목</option><option value='membernickname'>작성자</option></select>"+
 				"<span><input type='text' id='value' name='value'/></form>"+
 				"<input type='button' value='검색' id='searchbtn'/></span><div>"+
 				"</div>"+
 				"<span align='center'>"
 				
 		if(data.prev == true){
-			msg += "<input type='button' value='&lt' id='prev' width='5' height='5' onclick='ajaxGet(" + (data.startpage - 10) + ")'/>"
+			msg += "<input type='button' value='&lt' id='prev' style='font-size:1.5em;' onclick='ajaxGet(" + (data.startpage - 10) + ")'/>"
 		}
 		
 		for(data.startpage; data.startpage<=data.endpage; data.startpage += 1){
-			msg +=  "<button onclick='ajaxGet("+ data.startpage + ")' style='font-size:1.2em;'>" + data.startpage + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</button>"	
+			msg +=  "<button onclick='ajaxGet("+ data.startpage + ")' style='font-size:1.5em;'>" + data.startpage + "&nbsp;&nbsp;&nbsp;&nbsp;" + "</button>"	
 		}
 		
 		if(data.next == true){
-			msg +=  "<input type='button' value='&gt' id='next' width='5' height='5' onclick='ajaxGet(" + (data.endpage + 1) + ")'/>" 		
+			msg +=  "<input type='button' value='&gt' id='next' style='font-size:1.5em;' onclick='ajaxGet(" + (data.endpage + 1) + ")'/>" 		
 		}
 		
 		msg += "</span>"
