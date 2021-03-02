@@ -135,15 +135,15 @@ public class MembertblServiceImpl implements MembertblService {
 		String membernickname = request.getParameter("membernickname");
 		String memberpassword = request.getParameter("memberpassword");
 		
-		// System.out.println("membernickname: " + membernickname);
-		// System.out.println("memberpassword: " + memberpassword);
+		//System.out.println("membernickname: " + membernickname);
+		//System.out.println("memberpassword: " + memberpassword);
 		
 		Map<String, Object> map = new HashMap<String, Object>();
 		map.put("result", false);
 		
 		// nickname을 가지고 데이터를 찾아오기
 		List<Membertbl> list = membertblDao.login(membernickname);
-		System.out.println("list: " + list);
+		//System.out.println("list: " + list);
 		
 		// nickname에 해당하는 데이터가 없다면 더이상 진행할 필요가 없음
 		if(list == null || list.size() < 1) {
@@ -153,15 +153,19 @@ public class MembertblServiceImpl implements MembertblService {
 		
 		// 찾아온 데이터와 비밀번호를 비교
 		for(Membertbl member : list) {
+			System.out.println("Memberpassword 가져오기: " + member.getMemberpassword());
 			if(BCrypt.checkpw(memberpassword, member.getMemberpassword())) {
+				System.out.println("Memberpassword 가져오기 성공");
 				map.put("membernickname", membernickname);
-				
+				/*
 				try {
 					map.put("memberemail", cryptoUtil.decrypt(member.getMemberemail()));
 				} catch(Exception e) {}
+				*/
 				map.put("result", true);
-				session.setAttribute("result", map);
+				request.setAttribute("result", map);
 				request.getSession().setAttribute("membernickname", membernickname);
+				System.out.println("map: " + map);
 				return;
 			}
 		}

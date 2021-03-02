@@ -25,14 +25,14 @@
 					<legend class="screen_out">로그인 정보 입력폼</legend>
 					<div class="box_login">
 						<div class="inp_text">
-							<label for="text" class="screen_out">닉네임</label> <input
-								type="email" id="membernickname" name="membernickname"
-								placeholder="닉네임을 입력하세요!">
+							<label for="text" class="screen_out">ID</label> <input
+								type="text" id="membernickname" name="membernickname"
+								placeholder="ID">
 						</div>
 						<div class="inp_text">
 							<label for="userpw" class="screen_out">비밀번호</label> <input
 								type="password" id="memberpassword" name="memberpassword"
-								placeholder="비밀번호를 입력하세요!">
+								placeholder="password">
 						</div>
 					</div>
 				</fieldset>

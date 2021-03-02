@@ -33,8 +33,8 @@ public class MembertblRestController {
 	@RequestMapping(value="member/login", method=RequestMethod.POST)
 	public Map<String, Object> login(HttpSession session, HttpServletRequest request){
 		membertblService.login(request, session);
-		Map<String, Object> map = (Map<String, Object>) session.getAttribute("result");
-		//Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
+		System.out.println("REST controller: " + map);
 		return map;
 	}
 

@@ -18,7 +18,7 @@
 			<table>
 				<tr>
 					<td>
-					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="영문 혹은 숫자로 로그인에 사용할 별명(5~30자)을 입력하시오." />
+					<input type="text" id="membernickname" name="membernickname" class="textinput" placeholder="영문 혹은 숫자로 로그인에 사용할 ID(5~30자) 입력하시오." />
 					<div id="membernicknamemsg"></div>
 					</td>
 				</tr>
