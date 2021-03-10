@@ -15,14 +15,14 @@
 			<value>com.mysql.jdbc.Driver</value>
 		</property>
 		<property name="url">
-			<value>jdbc:mysql://localhost:3306/yskim621?useUnicode=yes&amp;characterEncoding=UTF-8
+			<value>jdbc:mysql://localhost:3306/?useUnicode=yes&amp;characterEncoding=UTF-8
 			</value>
 		</property>
 		<property name="username">
-			<value>yskim621</value>
+			<value></value>
 		</property>
 		<property name="password">
-			<value>yoonsuk1410517!</value>
+			<value></value>
 		</property>
 	</bean>
 
