@@ -73,8 +73,19 @@ function adddata(pageno, e){
 		
 		// 결과를 파싱
 		var data = JSON.parse(e.target.responseText);
-
-	
+		
+		data.list.forEach(function(v, i){
+			msg +=  `<tr>
+					<td align="center"> ${v.boardnum}</td>
+					<td><a href="get/${v.boardnum}">${v.boardtitle}</a></td>
+					<td align="center">${v.boardwritedate}</td>
+					<td align='center'>${v.boardreadcnt}</td>
+					<td style='font-size:1em;'>${v.boardattachment}</td>
+					<td>${v.membernickname}</td>
+					</tr>`;
+		});
+		
+		/*
 		for (temp in data.list){
 			msg +=  "<tr>" + 
     				"<td align='center'>"+ data.list[temp].boardnum +"</td>"+
@@ -85,6 +96,7 @@ function adddata(pageno, e){
     				"<td>"+ data.list[temp].membernickname +"</td>"+
     				"</tr>"
 		};
+		*/
 		
 				
 		msg	+=	"</table>"+
