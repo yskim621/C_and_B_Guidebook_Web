@@ -12,6 +12,14 @@
 	href="${pageContext.request.contextPath}/css/login.css">
 
 <script src="${pageContext.request.contextPath}/js/membertbl/login.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=263332218"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '263332218');
+</script>
 </head>
 <body>
 	<h1 id="title">C & B Guidebook</h1>

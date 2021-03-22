@@ -14,6 +14,14 @@
  	height: 40em;
  }
 </style>
+<script async src="https://www.googletagmanager.com/gtag/js?id=263332218"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '263332218');
+</script>
 </head>
 <body>
 	<h1 align = "center">◆잘못된 URL 입니다. 다시 URL을 확인하시길 바랍니다◆</h1>

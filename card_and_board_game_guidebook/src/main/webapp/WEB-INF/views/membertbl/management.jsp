@@ -6,6 +6,14 @@
 <head>
 <meta charset="UTF-8">
 <title>회원 정보 관리</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=263332218"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', '263332218');
+</script>
 </head>
 <body>
 	<h3 align="center">회원 정보 관리</h3>
