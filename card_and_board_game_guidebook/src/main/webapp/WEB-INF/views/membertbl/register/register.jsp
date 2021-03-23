@@ -10,13 +10,13 @@
 <link rel="stylesheet" href="${pageContext.request.contextPath}/css/register.css">
 <!-- register/js/register.js -->
 <script src="${pageContext.request.contextPath}/js/membertbl/register.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=263332218"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2H59G05B23"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '263332218');
+  gtag('config', 'G-2H59G05B23');
 </script>
 </head>
 <body>

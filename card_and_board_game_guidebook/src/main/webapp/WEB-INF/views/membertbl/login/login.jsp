@@ -12,13 +12,13 @@
 	href="${pageContext.request.contextPath}/css/login.css">
 
 <script src="${pageContext.request.contextPath}/js/membertbl/login.js"></script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=263332218"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2H59G05B23"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '263332218');
+  gtag('config', 'G-2H59G05B23');
 </script>
 </head>
 <body>
