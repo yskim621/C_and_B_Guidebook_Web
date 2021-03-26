@@ -42,19 +42,19 @@ public class BoardtblDao {
 
 		if (searchtype == null) {
 			list = sessionFactory.getCurrentSession()
-					.createNativeQuery("select * from boardtbl limit " + start + "," + size, Boardtbl.class).getResultList();
+					.createNativeQuery("select * from boardtbl order by boardnum desc limit " + start + "," + size, Boardtbl.class).getResultList();
 		} else if (searchtype.equals("membernickname")) {
 			list = sessionFactory
 					.getCurrentSession().createNativeQuery("select * from boardtbl where "
-							+ "lower(membernickname) like \'" + value + "\' limit " + start + "," + size, Boardtbl.class)
+							+ "lower(membernickname) like \'" + value + "\' order by boardnum desc limit " + start + "," + size, Boardtbl.class)
 					.getResultList();
 		} else if (searchtype.equals("boardtitle")) {
 			list = sessionFactory.getCurrentSession().createNativeQuery("select * from boardtbl where "
-					+ "lower(boardtitle) like \'" + value + "\' limit " + start + "," + size, Boardtbl.class).getResultList();
+					+ "lower(boardtitle) like \'" + value + "\' order by boardnum desc limit " + start + "," + size, Boardtbl.class).getResultList();
 		} else if (searchtype.equals("both")) {
 			list = sessionFactory.getCurrentSession()
 					.createNativeQuery("select * from boardtbl where " + "lower(boardtitle) like \'" + value + "\'"
-							+ " or lower(membernickname) like \'" + value + "\' limit " + start + ", " + size, Boardtbl.class)
+							+ " or lower(membernickname) like \'" + value + "\' order by boardnum desc limit " + start + ", " + size, Boardtbl.class)
 					.getResultList();
 		}
 		return list;
