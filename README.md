@@ -1,6 +1,6 @@
 # Card & Board game Guidebook
 
-Server - REST API
+Server - REST Server
 View - Web / Android
 
 
