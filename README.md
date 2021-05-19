@@ -3,7 +3,7 @@
 Server - REST Server<br/>
 View - Web / Android<br/>
 
-구성 - 게임 룰 및 정보를 전달하기 위한 부분 / 서비스에 대한 불편 사항을 게시할 수 있는 게시판 / 게시판을 이용하기 위한 회원가입과 로그인 형태로 구분<br/>
+구성 - 게임 룰 및 정보를 전달 부분 / 서비스에 대한 불편 사항 게시판 / 게시판을 이용하기 위한 회원가입과 로그인 형태로 구분<br/>
 게시판 - 검색, 페이징, CRUD 등의 기본기능<br/>
 회원가입 - email은 복호화 가능한 암호화, password는 복호화 불가능한 암호화(crypto)<br/>
 
@@ -16,7 +16,7 @@ View - Web / Android<br/>
 
 ![image](https://user-images.githubusercontent.com/63395994/115344020-adc7c580-a1e7-11eb-8ff2-91e3615b00e9.png)
 
-![image](https://user-images.githubusercontent.com/63395994/115344071-c59f4980-a1e7-11eb-83ef-0fc1796d8d6b.png)
+![image](https://user-images.githubusercontent.com/63395994/115344071-c59f4980-a1e7-11eb-83ef-0fc1796d8d6b.png)<br/>
 
 ![image](https://user-images.githubusercontent.com/63395994/115344127-dbad0a00-a1e7-11eb-9291-145ebaf13710.png)
 
