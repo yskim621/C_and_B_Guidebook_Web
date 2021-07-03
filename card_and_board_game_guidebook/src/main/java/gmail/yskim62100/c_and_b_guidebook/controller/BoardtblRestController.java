@@ -125,7 +125,7 @@ public class BoardtblRestController {
 		else
 			map.put("result", false);
 		
-		System.out.println("RestController: " + result);
+		//System.out.println("RestController: " + result);
 		return map;
 		
 	}
@@ -138,7 +138,7 @@ public class BoardtblRestController {
 		
 		Map<String, Object> map = (Map<String, Object>) request.getAttribute("result");
 		
-		System.out.println("RestController: " + map);
+		//System.out.println("RestController: " + map);
 		return map;
 	}
 	

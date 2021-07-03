@@ -153,9 +153,9 @@ public class MembertblServiceImpl implements MembertblService {
 		
 		// 찾아온 데이터와 비밀번호를 비교
 		for(Membertbl member : list) {
-			System.out.println("Memberpassword 가져오기: " + member.getMemberpassword());
+			//System.out.println("Memberpassword 가져오기: " + member.getMemberpassword());
 			if(BCrypt.checkpw(memberpassword, member.getMemberpassword())) {
-				System.out.println("Memberpassword 가져오기 성공");
+				//System.out.println("Memberpassword 가져오기 성공");
 				map.put("membernickname", membernickname);
 				/*
 				try {
