@@ -71,7 +71,7 @@ function adddata(pageno, e){
 				  "<th>"+'작성자'+"</th>"+
 				  "</tr>"
 		
-		// 결과를 파싱
+		// 결과를 파싱 - 단순 String을 JavaScript Object로 변환
 		var data = JSON.parse(e.target.responseText);
 		
 		data.list.forEach(function(v, i){
